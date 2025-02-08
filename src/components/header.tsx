@@ -58,7 +58,10 @@ function DesktopNav() {
 
         <NavigationMenuItem>
           <DropdownMenu>
-            <DropdownMenuTrigger asChild>
+            <DropdownMenuTrigger
+              asChild
+              className="bg-opacity-25  hover:bg-opacity-55 dark:bg-opacity-25"
+            >
               <Button
                 className={`${navigationMenuTriggerStyle()}`}
                 variant="ghost"
