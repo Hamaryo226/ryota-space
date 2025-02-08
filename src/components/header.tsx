@@ -1,13 +1,10 @@
-/* eslint-disable @next/next/no-html-link-for-pages */
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { ModeToggle } from "@/components/dark-toggle";
@@ -114,46 +111,19 @@ function MobileNav() {
           <Link href="/">Home</Link>
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <Link href="/docs">Documentation</Link>
-        </DropdownMenuItem>
-        <DropdownMenuItem>
           <Link href="/about">About</Link>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuLabel>Getting started</DropdownMenuLabel>
+        <DropdownMenuLabel>Project</DropdownMenuLabel>
         <DropdownMenuItem>
-          <Link href="/docs">Introduction</Link>
+          <Link href="/Project/Frailty-Check-System">Frailty-Check-System</Link>
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <Link href="/docs/installation">Installation</Link>
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          <Link href="/docs/primitives/typography">Typography</Link>
+          <Link href="/Project/Supplemental-Documentation-System">
+            Supplemental-Documentation-System
+          </Link>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );
 }
-
-const ListItem = ({
-  className,
-  title,
-  children,
-  ...props
-}: React.ComponentPropsWithoutRef<"a"> & { title: string }) => {
-  return (
-    <li>
-      <NavigationMenuLink asChild>
-        <a
-          className={`block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground ${className}`}
-          {...props}
-        >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-            {children}
-          </p>
-        </a>
-      </NavigationMenuLink>
-    </li>
-  );
-};
