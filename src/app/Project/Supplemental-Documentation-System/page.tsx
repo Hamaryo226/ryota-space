@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "聴覚障碍者に向けたノートテイクシステム開発プロジェクト｜ryota-space",
   description:
     "聴覚障碍者に向けたノートテイクシステム開発プロジェクトの概要ページ",
+  appleWebApp: true,
 };
 
 export default function ProjectPage() {

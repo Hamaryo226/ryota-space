@@ -7,6 +7,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "トップ｜ryota-space",
   description: "ryota-spaceは、個人のポートフォリオサイトです。",
+  appleWebApp: true,
 };
 
 export default function top() {
