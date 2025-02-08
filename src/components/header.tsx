@@ -21,6 +21,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import type React from "react"; // Import React
+import { StarHalf } from "lucide-react";
 
 export function Header() {
   return (
@@ -28,7 +29,8 @@ export function Header() {
       <div className="container flex h-14 items-center justify-center px-4 sm:px-6 lg:px-8 mx-auto">
         <div className="flex items-center justify-between w-full">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <span className="font-bold">ryota-space</span>
+            <StarHalf />
+            <p className="font-bold">ryota-space</p>
           </Link>
           <div className="hidden md:flex">
             <DesktopNav />
@@ -48,48 +50,45 @@ function DesktopNav() {
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-              <li className="row-span-3">
-                <NavigationMenuLink asChild>
-                  <a
-                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                    href="/"
-                  >
-                    <div className="mb-2 mt-4 text-lg font-medium">
-                      ryota-space
-                    </div>
-                    <p className="text-sm leading-tight text-muted-foreground">
-                      Beautifully designed components that you can copy and
-                      paste into your apps. Accessible. Customizable. Open
-                      Source.
-                    </p>
-                  </a>
-                </NavigationMenuLink>
-              </li>
-              <ListItem href="/docs" title="Introduction">
-                Re-usable components built using Radix UI and Tailwind CSS.
-              </ListItem>
-              <ListItem href="/docs/installation" title="Installation">
-                How to install dependencies and structure your app.
-              </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Typography">
-                Styles for headings, paragraphs, lists...etc
-              </ListItem>
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link href="/docs" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Documentation
+          <Link href="/" legacyBehavior passHref>
+            <NavigationMenuLink
+              className={`${navigationMenuTriggerStyle()} bg-opacity-25 hover:bg-opacity-55 dark:bg-opacity-25`}
+            >
+              Home
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
+
         <NavigationMenuItem>
-          <Link href="/about" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button
+                className={`${navigationMenuTriggerStyle()}`}
+                variant="ghost"
+              >
+                Project
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="start">
+              <DropdownMenuItem asChild>
+                <Link href="/Project/Frailty-Check-System">
+                  Frailty-Check-System
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link href="/Project/Supplemental-Documentation-System">
+                  Supplemental-Documentation-System
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </NavigationMenuItem>
+
+        <NavigationMenuItem>
+          <Link href="/About" legacyBehavior passHref>
+            <NavigationMenuLink
+              className={`${navigationMenuTriggerStyle()} bg-opacity-25 hover:bg-opacity-55 dark:bg-opacity-25`}
+            >
               About
             </NavigationMenuLink>
           </Link>
