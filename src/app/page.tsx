@@ -13,7 +13,6 @@ export default function top() {
             //thumbnail={FCSdata.thumbnail}
             thumbnail="/fcs.png"
             title={FCSdata.title}
-            description={FCSdata.description}
             date={FCSdata.date}
           />
         </Link>
@@ -22,7 +21,6 @@ export default function top() {
             //thumbnail={SDSdata.thumbnail}
             thumbnail="/TheLost.png"
             title={SDSdata.title}
-            description={SDSdata.description}
             date={SDSdata.date}
           />
         </Link>

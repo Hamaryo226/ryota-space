@@ -5,13 +5,12 @@ import Image from "next/image";
 interface CardProps {
   thumbnail: string;
   title: string;
-  description: string;
   date: string;
 }
 
-const Card: React.FC<CardProps> = ({ thumbnail, title, description, date }) => {
+const Card: React.FC<CardProps> = ({ thumbnail, title, date }) => {
   return (
-    <div className="rounded-2xl border border-color-indigo shadow-lg duration-300 mb-auto">
+    <div className="rounded-2xl border border-color-indigo shadow-lg duration-300">
       <Image
         className="rounded-t-2xl w-full"
         src={thumbnail}
@@ -25,7 +24,6 @@ const Card: React.FC<CardProps> = ({ thumbnail, title, description, date }) => {
 
       <div className="p-3 rounded-b-2x shadow-inner">
         <h1 className="font-bold text-xl mb-3">{title}</h1>
-        <p className="text-sm">{description}</p>
         <p className="text-xs text-gray-400 mt-3">{date}</p>
       </div>
     </div>
