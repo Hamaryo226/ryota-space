@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import { CalendarDays } from "lucide-react";
 
 interface CardProps {
   thumbnail: string;
@@ -24,7 +25,13 @@ const Card: React.FC<CardProps> = ({ thumbnail, title, date }) => {
 
       <div className="p-3 rounded-b-2x shadow-inner">
         <h1 className="font-bold text-xl mb-3">{title}</h1>
-        <p className="text-xs text-gray-400 mt-3">{date}</p>
+
+        <div className="flex flex-row gap-1 leading-7 text-slate-500 mt-3">
+          <CalendarDays width={18} hanging={18} />
+          <p className="text-sm text-gray-500 content-center justify-center">
+            {date}
+          </p>
+        </div>
       </div>
     </div>
   );

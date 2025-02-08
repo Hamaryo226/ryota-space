@@ -1,6 +1,7 @@
 import Image from "next/image";
 import articleData from "public/Article/fcs.json";
 import type { Metadata } from "next";
+import { CalendarDays } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "高齢者に向けたフレイルチェックシステム開発プロジェクト｜ryota-space",
@@ -26,15 +27,8 @@ export default function ProjectPage() {
               {articleData.title}
             </h1>
 
-            <div className="flex flex-row mt-1 gap-1 leading-7 text-slate-400/50">
-              <Image
-                className="dark:invert text-slate-400/50"
-                src="/calendar-days.svg"
-                alt=""
-                priority
-                width={20}
-                height={20}
-              />
+            <div className="flex flex-row mt-1 gap-1 leading-7 text-slate-500">
+              <CalendarDays width={20} hanging={20} />
               <p>{articleData.date}</p>
             </div>
           </article>
