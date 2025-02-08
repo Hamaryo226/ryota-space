@@ -47,6 +47,26 @@ export default function ProjectPage() {
 
           <article>
             <div className="border-l-4 border-indigo-500">
+              <h3 className="font-bold text-2xl mt-5 mb-5 ps-2">参考文献</h3>
+            </div>
+            <ul className="leading-8">
+              {Object.entries(articleData.references).map(([text, url]) => (
+                <li key={url}>
+                  <a
+                    className="font-mono text-indigo-400 font-bold after:content-['_↗'] hover:underline decoration-indigo-500"
+                    href={url}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </article>
+
+          <article>
+            <div className="border-l-4 border-indigo-500">
               <h3 className="font-bold text-2xl mt-5 mb-5 ps-2">参考リンク</h3>
             </div>
             <ul className="leading-8">
