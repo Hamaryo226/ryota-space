@@ -1,5 +1,12 @@
 import Image from "next/image";
 import articleData from "public/Article/fcs.json";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "高齢者に向けたフレイルチェックシステム開発プロジェクト｜ryota-space",
+  description:
+    "高齢者に向けたフレイルチェックシステム開発プロジェクトの概要ページ",
+};
 
 export default function ProjectPage() {
   return (

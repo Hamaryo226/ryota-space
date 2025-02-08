@@ -1,5 +1,12 @@
 import Image from "next/image";
 import articleData from "public/Article/sds.json";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "聴覚障碍者に向けたノートテイクシステム開発プロジェクト｜ryota-space",
+  description:
+    "聴覚障碍者に向けたノートテイクシステム開発プロジェクトの概要ページ",
+};
 
 export default function ProjectPage() {
   return (

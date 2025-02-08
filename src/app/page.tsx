@@ -2,6 +2,12 @@ import Link from "next/link";
 import Card from "@/components/top-card";
 import FCSdata from "public/Article/fcs.json";
 import SDSdata from "public/Article/sds.json";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "トップ｜ryota-space",
+  description: "ryota-spaceは、個人のポートフォリオサイトです。",
+};
 
 export default function top() {
   return (
