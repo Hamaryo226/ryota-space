@@ -27,7 +27,7 @@ export default function ProjectPage() {
               {articleData.title}
             </h1>
 
-            <div className="flex flex-row mt-1 gap-1 leading-7 text-slate-500">
+            <div className="flex flex-row mt-1 gap-1 leading-7 text-gray-500">
               <CalendarDays width={20} hanging={20} />
               <p>{articleData.date}</p>
             </div>
