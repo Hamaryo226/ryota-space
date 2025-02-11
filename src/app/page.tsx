@@ -40,7 +40,9 @@ export default function top() {
 
       <div className="pb-10">
         <div className="grid grid-cols-2 text-3xl font-bold mb-8">
-          <h1 className="text-3xl font-bold text-start">Public Project</h1>
+          <h1 className="sm:text-3xl text-2xl font-bold text-start content-center">
+            Public Project
+          </h1>
           <div className="justify-self-end">
             <Link href="/Project">
               <Button variant="outline" size="icon">
@@ -72,7 +74,9 @@ export default function top() {
 
       <div className="pb-5">
         <div className="grid grid-cols-2 text-3xl font-bold mb-8">
-          <h1 className="text-3xl font-bold text-start">Private Project</h1>
+          <h1 className="sm:text-3xl text-2xl font-bold text-start  content-center">
+            Private Project
+          </h1>
           <div className="justify-self-end">
             <Link href="/Private">
               <Button variant="outline" size="icon">
