@@ -19,10 +19,10 @@ export default function pj() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
-          <Link href="/Private/Taiko-Re-Strap">
+          <Link href="/Project/Frailty-Check-System">
             <Card
               //thumbnail={TRSdata.thumbnail}
-              thumbnail="/Project/Frailty-Check-System"
+              thumbnail="/fcs.png"
               title={FCSdata.title}
               date={FCSdata.date}
             />
