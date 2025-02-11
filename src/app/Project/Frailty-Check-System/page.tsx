@@ -1,7 +1,7 @@
-import Image from "next/image";
 import articleData from "public/Article/fcs.json";
 import type { Metadata } from "next";
 import { CalendarDays } from "lucide-react";
+import { ImageWithAlt } from "@/components/image-with-alt";
 
 export const metadata: Metadata = {
   title: "高齢者に向けたフレイルチェックシステム開発プロジェクト｜ryota-space",
@@ -14,13 +14,12 @@ export default function ProjectPage() {
   return (
     <div className="px-5 py-8">
       <div className="w-full max-w-5xl justify-center mx-auto">
-        <Image
+        <ImageWithAlt
           className="rounded-2xl w-full"
           src="/fcs.png"
-          alt="Project Thumbnail"
+          alt="フレイルチェックシステム。（左）管理画面、（右）滑舌測定機能"
           width={1920}
           height={1080}
-          priority
         />
         <article className="mt-7 mb-7 pb-2 border-b-2 border-slate-500/15">
           <h1 className="font-bold sm:text-4xl sd:text-3xl text-2xl">
