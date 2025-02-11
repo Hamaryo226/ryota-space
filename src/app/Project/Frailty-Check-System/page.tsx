@@ -15,7 +15,7 @@ export default function ProjectPage() {
     <div className="px-5 py-8">
       <div className="w-full max-w-5xl justify-center mx-auto">
         <ImageWithAlt
-          className="rounded-2xl w-full"
+          className=""
           src="/fcs.png"
           alt="フレイルチェックシステム。（左）管理画面、（右）滑舌測定機能"
           width={1920}
