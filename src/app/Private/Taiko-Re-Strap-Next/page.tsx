@@ -4,9 +4,8 @@ import type { Metadata } from "next";
 import { CalendarDays } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "高齢者に向けたフレイルチェックシステム開発プロジェクト｜ryota-space",
-  description:
-    "高齢者に向けたフレイルチェックシステム開発プロジェクトの概要ページ",
+  title: "Taiko-Re-Strap-Next｜ryota-space",
+  description: "Taiko-Re-Strap-Nextの概要ページ",
   appleWebApp: true,
 };
 

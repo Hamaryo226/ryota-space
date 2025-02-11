@@ -1,12 +1,12 @@
 import Link from "next/link";
 import Card from "@/components/top-card";
-import TRSdata from "public/Article/trs.json";
-import TRSNdata from "public/Article/trsn.json";
+import FCSdata from "public/Article/fcs.json";
+import SDSdata from "public/Article/sds.json";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "プライベートプロジェクト｜ryota-space",
-  description: "プライベートプロジェクトの一覧ページ",
+  title: "パブリックプロジェクト｜ryota-space",
+  description: "パブリックプロジェクトの一覧ページ",
   appleWebApp: true,
 };
 
@@ -15,24 +15,24 @@ export default function pj() {
     <div className="container mx-auto px-4 py-8">
       <div className="pb-5">
         <div className="text-3xl font-bold mb-8">
-          <h1 className="text-3xl font-bold text-start">Private Project</h1>
+          <h1 className="text-3xl font-bold text-start">Public Project</h1>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
           <Link href="/Private/Taiko-Re-Strap">
             <Card
               //thumbnail={TRSdata.thumbnail}
-              thumbnail="/NotFound.png"
-              title={TRSdata.title}
-              date={TRSdata.date}
+              thumbnail="/Project/Frailty-Check-System"
+              title={FCSdata.title}
+              date={FCSdata.date}
             />
           </Link>
-          <Link href="/Private/Taiko-Re-Strap-Next">
+          <Link href="/Project/Supplemental-Documentation-System">
             <Card
               //thumbnail={TRSNdata.thumbnail}
-              thumbnail="/NotFound.png"
-              title={TRSNdata.title}
-              date={TRSNdata.date}
+              thumbnail="/TheLost.png"
+              title={SDSdata.title}
+              date={SDSdata.date}
             />
           </Link>
         </div>
