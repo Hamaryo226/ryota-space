@@ -25,6 +25,7 @@ export default function pj() {
               thumbnail="/fcs.png"
               title={FCSdata.title}
               date={FCSdata.date}
+              tags={["Python", "django", "javascript"]}
             />
           </Link>
           <Link href="/Project/Supplemental-Documentation-System">
@@ -33,6 +34,7 @@ export default function pj() {
               thumbnail="/TheLost.png"
               title={SDSdata.title}
               date={SDSdata.date}
+              tags={["PHP", "Python"]}
             />
           </Link>
         </div>

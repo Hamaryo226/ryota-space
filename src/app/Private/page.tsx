@@ -25,6 +25,7 @@ export default function pj() {
               thumbnail="/NotFound.png"
               title={TRSdata.title}
               date={TRSdata.date}
+              tags={["C#", ".NET Framework"]}
             />
           </Link>
           <Link href="/Private/Taiko-Re-Strap-Next">
@@ -33,6 +34,7 @@ export default function pj() {
               thumbnail="/NotFound.png"
               title={TRSNdata.title}
               date={TRSNdata.date}
+              tags={["C#", "DxLib"]}
             />
           </Link>
         </div>
