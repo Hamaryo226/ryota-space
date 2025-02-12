@@ -53,10 +53,30 @@ export default function top() {
               System Engineer, Programmer
             </p>
             <div className="flex flex-wrap justify-center md:justify-start gap-2 mt-2 mb-3">
-              <Badge variant="secondary">Python</Badge>
-              <Badge variant="secondary">PHP</Badge>
-              <Badge variant="secondary">C#</Badge>
-              <Badge variant="secondary">Next.js</Badge>
+              <Badge
+                variant="outline"
+                className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-lg"
+              >
+                Python
+              </Badge>
+              <Badge
+                variant="outline"
+                className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-lg"
+              >
+                PHP
+              </Badge>
+              <Badge
+                variant="outline"
+                className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-lg"
+              >
+                C#
+              </Badge>
+              <Badge
+                variant="outline"
+                className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-lg"
+              >
+                Next.js
+              </Badge>
             </div>
             <Dialog>
               <DialogTrigger asChild>
