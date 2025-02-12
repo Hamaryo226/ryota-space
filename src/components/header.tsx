@@ -111,17 +111,10 @@ function MobileNav() {
           <Link href="/">Home</Link>
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <Link href="/about">About</Link>
-        </DropdownMenuItem>
-        <DropdownMenuSeparator />
-        <DropdownMenuLabel>Project</DropdownMenuLabel>
-        <DropdownMenuItem>
-          <Link href="/Project/Frailty-Check-System">Frailty-Check-System</Link>
+          <Link href="/About">About</Link>
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <Link href="/Project/Supplemental-Documentation-System">
-            Supplemental-Documentation-System
-          </Link>
+          <Link href="/Project">Public Project</Link>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
