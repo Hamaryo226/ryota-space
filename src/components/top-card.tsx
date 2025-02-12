@@ -29,11 +29,7 @@ const Card: React.FC<CardProps> = ({ thumbnail, title, tags, date }) => {
         <h1 className="font-bold text-xl mb-3">{title}</h1>
         <div className="flex flex-row gap-1">
           {tags.map((tag) => (
-            <Badge
-              variant="secondary"
-              key={tag}
-              className="inline-flex items-center rounded-md bg-muted px-2 py-1 text-xs font-medium ring-1 ring-inset ring-gray-500/10 content-center"
-            >
+            <Badge variant="secondary" key={tag} className="content-center">
               {tag}
             </Badge>
           ))}
