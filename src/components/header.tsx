@@ -49,7 +49,7 @@ function DesktopNav() {
         <NavigationMenuItem>
           <Link href="/" legacyBehavior passHref>
             <NavigationMenuLink
-              className={`${navigationMenuTriggerStyle()} bg-opacity-25 hover:bg-opacity-55 dark:bg-opacity-25`}
+              className={`${navigationMenuTriggerStyle()} bg-opacity-0 hover:bg-opacity-20 dark:bg-opacity-0 dark:hover:bg-opacity-30`}
             >
               Home
             </NavigationMenuLink>
@@ -58,12 +58,9 @@ function DesktopNav() {
 
         <NavigationMenuItem>
           <DropdownMenu>
-            <DropdownMenuTrigger
-              asChild
-              className="bg-opacity-25  hover:bg-opacity-55 dark:bg-opacity-25"
-            >
+            <DropdownMenuTrigger asChild className="">
               <Button
-                className={`${navigationMenuTriggerStyle()}`}
+                className={`${navigationMenuTriggerStyle()} bg-opacity-0 hover:bg-opacity-20 dark:bg-opacity-0 dark:hover:bg-opacity-30`}
                 variant="ghost"
               >
                 Project
@@ -87,7 +84,7 @@ function DesktopNav() {
         <NavigationMenuItem>
           <Link href="/About" legacyBehavior passHref>
             <NavigationMenuLink
-              className={`${navigationMenuTriggerStyle()} bg-opacity-25 hover:bg-opacity-55 dark:bg-opacity-25`}
+              className={`${navigationMenuTriggerStyle()} bg-opacity-0 hover:bg-opacity-20 dark:bg-opacity-0 dark:hover:bg-opacity-30`}
             >
               About
             </NavigationMenuLink>
