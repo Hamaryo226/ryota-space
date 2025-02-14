@@ -7,6 +7,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import Link from "next/link";
+import { ImageWithAlt } from "@/components/image-with-alt";
 
 export const metadata: Metadata = {
   title: "About｜ryota-space",
@@ -18,7 +19,14 @@ export default function about() {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="pb-5">
-        <h1 className="text-3xl font-bold text-start mb-8 pb-3 border-b-2 border-zinc-700/10 dark:border-zinc-700">
+        <ImageWithAlt
+          className=""
+          src="/base.png"
+          alt="© 2025 ryota-space"
+          width={3840}
+          height={1523}
+        />
+        <h1 className="text-3xl font-bold text-start mt-7 mb-8 pb-3 border-b-2 border-zinc-700/10 dark:border-zinc-700">
           本サイトについて
         </h1>
         <p className="text-lg mb-8">

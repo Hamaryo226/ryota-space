@@ -9,13 +9,21 @@ interface ImageWithAltProps {
   className?: string;
 }
 
-export function ImageWithAlt({ src, alt, className }: ImageWithAltProps) {
+export function ImageWithAlt({
+  src,
+  alt,
+  width,
+  height,
+  className,
+}: ImageWithAltProps) {
   return (
-    <div className={cn("relative w-full aspect-video", className)}>
+    <div className={cn("relative w-full", className)}>
       <Image
         src={src || "/placeholder.svg"}
         alt={alt}
-        fill
+        layout="responsive"
+        width={width}
+        height={height}
         className="object-cover rounded-2xl w-full"
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         priority
