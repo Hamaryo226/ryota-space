@@ -22,7 +22,7 @@ export default function about() {
         <ImageWithAlt
           className=""
           src="/base.png"
-          alt="© 2025 ryota-space"
+          alt={`© ${new Date().getFullYear()} Ryota Hamaguchi. All rights reserved.`}
           width={3840}
           height={1523}
         />
