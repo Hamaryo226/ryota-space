@@ -32,7 +32,7 @@ const Card: React.FC<CardProps> = ({ thumbnail, title, tags, date }) => {
             <Badge
               key={tag}
               variant="outline"
-              className="content-center bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-lg"
+              className="content-center bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
             >
               {tag}
             </Badge>

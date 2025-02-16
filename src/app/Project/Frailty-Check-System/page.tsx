@@ -2,6 +2,7 @@ import articleData from "public/Article/fcs.json";
 import type { Metadata } from "next";
 import { CalendarDays } from "lucide-react";
 import { ImageWithAlt } from "@/components/image-with-alt";
+import { Badge } from "@/components/ui/badge";
 
 export const metadata: Metadata = {
   title: "高齢者に向けたフレイルチェックシステム開発プロジェクト｜ryota-space",
@@ -29,6 +30,27 @@ export default function ProjectPage() {
           <div className="flex flex-row mt-1 gap-1 leading-7 text-gray-500">
             <CalendarDays width={20} hanging={20} />
             <p>{articleData.date}</p>
+          </div>
+
+          <div className="flex flex-wrap gap-2 mt-2 mb-2">
+            <Badge
+              variant="outline"
+              className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
+            >
+              Python
+            </Badge>
+            <Badge
+              variant="outline"
+              className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
+            >
+              django
+            </Badge>
+            <Badge
+              variant="outline"
+              className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
+            >
+              javascript
+            </Badge>
           </div>
         </article>
 
