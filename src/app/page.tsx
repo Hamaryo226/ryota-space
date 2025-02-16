@@ -5,7 +5,6 @@ import SDSdata from "public/Article/sds.json";
 import TRSdata from "public/Article/trs.json";
 import TRSNdata from "public/Article/trsn.json";
 import type { Metadata } from "next";
-import { ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import {
@@ -21,10 +20,14 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Share } from "lucide-react";
-import { Globe } from "lucide-react";
-import { Twitter } from "lucide-react";
-import { Instagram } from "lucide-react";
+import {
+  ChevronRight,
+  Share,
+  Globe,
+  Twitter,
+  Instagram,
+  Github,
+} from "lucide-react";
 import { CopyButton } from "@/components/copy-button";
 
 export const metadata: Metadata = {
@@ -97,6 +100,16 @@ export default function top() {
               >
                 <Button variant="outline">
                   <Instagram />
+                </Button>
+              </Link>
+              <Link
+                href="https://github.com/HamaguchiRyota"
+                passHref
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button variant="outline">
+                  <Github />
                 </Button>
               </Link>
               <Dialog>
