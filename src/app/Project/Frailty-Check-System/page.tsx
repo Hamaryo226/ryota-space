@@ -177,7 +177,7 @@ export default function ProjectPage() {
       <div className="w-full max-w-5xl justify-center mx-auto">
         <ImageWithAlt
           className=""
-          src="/fcs.png"
+          src="/fcs.webp"
           alt="フレイルチェックシステム。（左）管理画面、（右）滑舌測定機能"
           width={1920}
           height={1080}

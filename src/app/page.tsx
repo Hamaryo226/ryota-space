@@ -193,7 +193,7 @@ export default function top() {
           <Link href="/Project/Frailty-Check-System">
             <Card
               //thumbnail={FCSdata.thumbnail}
-              thumbnail="/fcs.png"
+              thumbnail="/fcs.webp"
               title={FCSdata.title}
               date={FCSdata.date}
               tags={["Python", "django", "javascript"]}
@@ -202,7 +202,7 @@ export default function top() {
           <Link href="/Project/Supplemental-Documentation-System">
             <Card
               //thumbnail={SDSdata.thumbnail}
-              thumbnail="/TheLost.png"
+              thumbnail="/TheLost.webp"
               title={SDSdata.title}
               date={SDSdata.date}
               tags={["PHP", "Python"]}
@@ -228,7 +228,7 @@ export default function top() {
           <Link href="/Private/Taiko-Re-Strap">
             <Card
               //thumbnail={TRSdata.thumbnail}
-              thumbnail="/NotFound.png"
+              thumbnail="/NotFound.webp"
               title={TRSdata.title}
               date={TRSdata.date}
               tags={["C#", ".NET Framework"]}
@@ -237,7 +237,7 @@ export default function top() {
           <Link href="/Private/Taiko-Re-Strap-Next">
             <Card
               //thumbnail={TRSNdata.thumbnail}
-              thumbnail="/NotFound.png"
+              thumbnail="/NotFound.webp"
               title={TRSNdata.title}
               date={TRSNdata.date}
               tags={["C#", "DxLib"]}

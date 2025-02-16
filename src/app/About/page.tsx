@@ -21,7 +21,7 @@ export default function about() {
       <div className="pb-5">
         <ImageWithAlt
           className=""
-          src="/base.png"
+          src="/base.webp"
           alt={`© ${new Date().getFullYear()} Ryota Hamaguchi. All rights reserved.`}
           width={3840}
           height={1523}
