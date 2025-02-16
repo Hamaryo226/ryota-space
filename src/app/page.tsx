@@ -5,7 +5,6 @@ import SDSdata from "public/Article/sds.json";
 import TRSdata from "public/Article/trs.json";
 import TRSNdata from "public/Article/trsn.json";
 import type { Metadata } from "next";
-import { ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import {
@@ -21,10 +20,14 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Share } from "lucide-react";
-import { Globe } from "lucide-react";
-import { Twitter } from "lucide-react";
-import { Instagram } from "lucide-react";
+import {
+  ChevronRight,
+  Share,
+  Globe,
+  Twitter,
+  Instagram,
+  Github,
+} from "lucide-react";
 import { CopyButton } from "@/components/copy-button";
 
 export const metadata: Metadata = {
@@ -55,121 +58,119 @@ export default function top() {
             <div className="flex flex-wrap justify-center md:justify-start gap-2 mt-2 mb-3">
               <Badge
                 variant="outline"
-                className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-lg"
+                className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
               >
                 Python
               </Badge>
               <Badge
                 variant="outline"
-                className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-lg"
+                className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
               >
                 PHP
               </Badge>
               <Badge
                 variant="outline"
-                className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-lg"
+                className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
               >
                 C#
               </Badge>
               <Badge
                 variant="outline"
-                className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-lg"
+                className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
               >
                 Next.js
               </Badge>
             </div>
-            <Dialog>
-              <DialogTrigger asChild>
-                <Button variant="outline">
-                  <Share className="h-5 w-5" />
-                  <span>Share</span>
+            <div className="flex items-center space-x-2 justify-center md:justify-start">
+              <Link
+                href="https://twitter.com/_hamaryo"
+                passHref
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button
+                  variant="outline"
+                  className="transition delay-100 duration-150 ease-in-out hover:-translate-y-1"
+                >
+                  <Twitter />
                 </Button>
-              </DialogTrigger>
-              <DialogContent className="sm:max-w-md">
-                <DialogHeader>
-                  <DialogTitle>Social link</DialogTitle>
-                  <DialogDescription>
-                    Anyone who has this link will be able to view this.
-                  </DialogDescription>
-                </DialogHeader>
-                <div className="flex items-center space-x-2">
-                  <Link
-                    href="https://ryota-space.vercel.app/"
-                    passHref
-                    target="_blank"
-                    rel="noreferrer"
+              </Link>
+              <Link
+                href="https://www.instagram.com/hamaryo_2"
+                passHref
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button
+                  variant="outline"
+                  className="transition delay-100 duration-150 ease-in-out hover:-translate-y-1"
+                >
+                  <Instagram />
+                </Button>
+              </Link>
+              <Link
+                href="https://github.com/HamaguchiRyota"
+                passHref
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button
+                  variant="outline"
+                  className="transition delay-100 duration-150 ease-in-out hover:-translate-y-1"
+                >
+                  <Github />
+                </Button>
+              </Link>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button
+                    variant="outline"
+                    className="transition delay-100 duration-150 ease-in-out hover:-translate-y-1"
                   >
-                    <Button variant="outline">
-                      <Globe />
-                    </Button>
-                  </Link>
-                  <div className="grid flex-1 gap-2">
-                    <Label htmlFor="link" className="sr-only">
-                      Link
-                    </Label>
-                    <Input
-                      id="link"
-                      defaultValue="https://ryota-space.vercel.app/"
-                      readOnly
-                    />
+                    <Share className="h-5 w-5" />
+                    <span>Share</span>
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-md">
+                  <DialogHeader>
+                    <DialogTitle>Share link</DialogTitle>
+                    <DialogDescription>
+                      Anyone who has this link will be able to view this.
+                    </DialogDescription>
+                  </DialogHeader>
+                  <div className="flex items-center space-x-2">
+                    <Link
+                      href="https://ryota-space.vercel.app/"
+                      passHref
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <Button variant="outline">
+                        <Globe />
+                      </Button>
+                    </Link>
+                    <div className="grid flex-1 gap-2">
+                      <Label htmlFor="link" className="sr-only">
+                        Link
+                      </Label>
+                      <Input
+                        id="link"
+                        defaultValue="https://ryota-space.vercel.app/"
+                        readOnly
+                      />
+                    </div>
+                    <CopyButton value="https://ryota-space.vercel.app/" />
                   </div>
-                  <CopyButton value="https://ryota-space.vercel.app/" />
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Link
-                    href="https://twitter.com/_hamaryo"
-                    passHref
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <Button variant="outline">
-                      <Twitter />
-                    </Button>
-                  </Link>
-                  <div className="grid flex-1 gap-2">
-                    <Label htmlFor="link" className="sr-only">
-                      Link
-                    </Label>
-                    <Input
-                      id="link"
-                      defaultValue="https://x.com/_hamaryo"
-                      readOnly
-                    />
-                  </div>
-                  <CopyButton value="https://x.com/_hamaryo" />
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Link
-                    href="https://www.instagram.com/hamaryo_2"
-                    passHref
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <Button variant="outline">
-                      <Instagram />
-                    </Button>
-                  </Link>
-                  <div className="grid flex-1 gap-2">
-                    <Label htmlFor="link" className="sr-only">
-                      Link
-                    </Label>
-                    <Input
-                      id="link"
-                      defaultValue="https://www.instagram.com/hamaryo_2"
-                      readOnly
-                    />
-                  </div>
-                  <CopyButton value="https://www.instagram.com/hamaryo_2" />
-                </div>
-                <DialogFooter className="sm:justify-start">
-                  <DialogClose asChild>
-                    <Button type="button" variant="secondary">
-                      Close
-                    </Button>
-                  </DialogClose>
-                </DialogFooter>
-              </DialogContent>
-            </Dialog>
+                  <DialogFooter className="sm:justify-start">
+                    <DialogClose asChild>
+                      <Button type="button" variant="secondary">
+                        Close
+                      </Button>
+                    </DialogClose>
+                  </DialogFooter>
+                </DialogContent>
+              </Dialog>
+            </div>
           </div>
         </div>
       </div>

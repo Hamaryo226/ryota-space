@@ -13,7 +13,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ thumbnail, title, tags, date }) => {
   return (
-    <div className="rounded-2xl border shadow-lg dark:border-zinc-700 dark:bg-zinc-800/70">
+    <div className="rounded-2xl border shadow-lg dark:border-zinc-700 dark:bg-zinc-800/70 transition delay-75 duration-200 ease-in-out hover:-translate-y-2 hover:scale-60">
       <Image
         className="rounded-t-2xl w-full"
         src={thumbnail}
@@ -32,7 +32,7 @@ const Card: React.FC<CardProps> = ({ thumbnail, title, tags, date }) => {
             <Badge
               key={tag}
               variant="outline"
-              className="content-center bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-lg"
+              className="content-center bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
             >
               {tag}
             </Badge>

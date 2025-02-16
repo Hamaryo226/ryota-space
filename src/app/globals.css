@@ -11,3 +11,14 @@ body {
     --radius: 0.5rem;
   }
 }
+
+::-webkit-scrollbar {
+  width: 16px; /*スクロールバーの太さ*/
+  background-color: #f9f9f900; /*スクロールバーの背景色*/
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 15px; /*スクロールバーの丸み*/
+  box-shadow: inset 0 0 10px 10px #5b5b5b5a; /*スクロールバーの色*/
+  border: solid 6px transparent; /*スクロールバーの左右の余白*/
+}

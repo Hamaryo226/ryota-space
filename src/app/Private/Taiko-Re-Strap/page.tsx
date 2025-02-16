@@ -2,6 +2,7 @@ import Image from "next/image";
 import articleData from "public/Article/trs.json";
 import type { Metadata } from "next";
 import { CalendarDays } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
 export const metadata: Metadata = {
   title: "Taiko-Re-Strap｜ryota-space",
@@ -21,7 +22,7 @@ export default function ProjectPage() {
           height={1080}
           priority
         />
-        <article className="mt-7 mb-7 pb-2 border-b-2 border-slate-500/15">
+        <article className="mt-7 mb-7 pb-2 border-b-2 border-slate-500/30">
           <h1 className="font-bold sm:text-4xl sd:text-3xl text-2xl">
             {articleData.title}
           </h1>
@@ -29,6 +30,21 @@ export default function ProjectPage() {
           <div className="flex flex-row mt-1 gap-1 leading-7 text-gray-500">
             <CalendarDays width={20} hanging={20} />
             <p>{articleData.date}</p>
+          </div>
+
+          <div className="flex flex-wrap gap-2 mt-2 mb-2">
+            <Badge
+              variant="outline"
+              className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
+            >
+              C#
+            </Badge>
+            <Badge
+              variant="outline"
+              className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
+            >
+              .NET Framework
+            </Badge>
           </div>
         </article>
 
