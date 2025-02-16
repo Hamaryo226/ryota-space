@@ -78,98 +78,74 @@ export default function top() {
                 Next.js
               </Badge>
             </div>
-            <Dialog>
-              <DialogTrigger asChild>
+            <div className="flex items-center space-x-2">
+              <Link
+                href="https://twitter.com/_hamaryo"
+                passHref
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Button variant="outline">
-                  <Share className="h-5 w-5" />
-                  <span>Share</span>
+                  <Twitter />
                 </Button>
-              </DialogTrigger>
-              <DialogContent className="sm:max-w-md">
-                <DialogHeader>
-                  <DialogTitle>Social link</DialogTitle>
-                  <DialogDescription>
-                    Anyone who has this link will be able to view this.
-                  </DialogDescription>
-                </DialogHeader>
-                <div className="flex items-center space-x-2">
-                  <Link
-                    href="https://ryota-space.vercel.app/"
-                    passHref
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <Button variant="outline">
-                      <Globe />
-                    </Button>
-                  </Link>
-                  <div className="grid flex-1 gap-2">
-                    <Label htmlFor="link" className="sr-only">
-                      Link
-                    </Label>
-                    <Input
-                      id="link"
-                      defaultValue="https://ryota-space.vercel.app/"
-                      readOnly
-                    />
+              </Link>
+              <Link
+                href="https://www.instagram.com/hamaryo_2"
+                passHref
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button variant="outline">
+                  <Instagram />
+                </Button>
+              </Link>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button variant="outline">
+                    <Share className="h-5 w-5" />
+                    <span>Share</span>
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-md">
+                  <DialogHeader>
+                    <DialogTitle>Share link</DialogTitle>
+                    <DialogDescription>
+                      Anyone who has this link will be able to view this.
+                    </DialogDescription>
+                  </DialogHeader>
+                  <div className="flex items-center space-x-2">
+                    <Link
+                      href="https://ryota-space.vercel.app/"
+                      passHref
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <Button variant="outline">
+                        <Globe />
+                      </Button>
+                    </Link>
+                    <div className="grid flex-1 gap-2">
+                      <Label htmlFor="link" className="sr-only">
+                        Link
+                      </Label>
+                      <Input
+                        id="link"
+                        defaultValue="https://ryota-space.vercel.app/"
+                        readOnly
+                      />
+                    </div>
+                    <CopyButton value="https://ryota-space.vercel.app/" />
                   </div>
-                  <CopyButton value="https://ryota-space.vercel.app/" />
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Link
-                    href="https://twitter.com/_hamaryo"
-                    passHref
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <Button variant="outline">
-                      <Twitter />
-                    </Button>
-                  </Link>
-                  <div className="grid flex-1 gap-2">
-                    <Label htmlFor="link" className="sr-only">
-                      Link
-                    </Label>
-                    <Input
-                      id="link"
-                      defaultValue="https://x.com/_hamaryo"
-                      readOnly
-                    />
-                  </div>
-                  <CopyButton value="https://x.com/_hamaryo" />
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Link
-                    href="https://www.instagram.com/hamaryo_2"
-                    passHref
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <Button variant="outline">
-                      <Instagram />
-                    </Button>
-                  </Link>
-                  <div className="grid flex-1 gap-2">
-                    <Label htmlFor="link" className="sr-only">
-                      Link
-                    </Label>
-                    <Input
-                      id="link"
-                      defaultValue="https://www.instagram.com/hamaryo_2"
-                      readOnly
-                    />
-                  </div>
-                  <CopyButton value="https://www.instagram.com/hamaryo_2" />
-                </div>
-                <DialogFooter className="sm:justify-start">
-                  <DialogClose asChild>
-                    <Button type="button" variant="secondary">
-                      Close
-                    </Button>
-                  </DialogClose>
-                </DialogFooter>
-              </DialogContent>
-            </Dialog>
+                  <DialogFooter className="sm:justify-start">
+                    <DialogClose asChild>
+                      <Button type="button" variant="secondary">
+                        Close
+                      </Button>
+                    </DialogClose>
+                  </DialogFooter>
+                </DialogContent>
+              </Dialog>
+            </div>
           </div>
         </div>
       </div>
