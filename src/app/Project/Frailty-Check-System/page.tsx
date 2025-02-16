@@ -21,7 +21,7 @@ export default function ProjectPage() {
           width={1920}
           height={1080}
         />
-        <article className="mt-7 mb-7 pb-2 border-b-2 border-slate-500/15">
+        <article className="mt-7 mb-7 pb-2 border-b-2 border-slate-500/30">
           <h1 className="font-bold sm:text-4xl sd:text-3xl text-2xl">
             {articleData.title}
           </h1>
