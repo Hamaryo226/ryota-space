@@ -88,7 +88,10 @@ export default function top() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <Button variant="outline">
+                <Button
+                  variant="outline"
+                  className="transition delay-100 duration-150 ease-in-out hover:-translate-y-1"
+                >
                   <Twitter />
                 </Button>
               </Link>
@@ -98,7 +101,10 @@ export default function top() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <Button variant="outline">
+                <Button
+                  variant="outline"
+                  className="transition delay-100 duration-150 ease-in-out hover:-translate-y-1"
+                >
                   <Instagram />
                 </Button>
               </Link>
@@ -108,13 +114,19 @@ export default function top() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <Button variant="outline">
+                <Button
+                  variant="outline"
+                  className="transition delay-100 duration-150 ease-in-out hover:-translate-y-1"
+                >
                   <Github />
                 </Button>
               </Link>
               <Dialog>
                 <DialogTrigger asChild>
-                  <Button variant="outline">
+                  <Button
+                    variant="outline"
+                    className="transition delay-100 duration-150 ease-in-out hover:-translate-y-1"
+                  >
                     <Share className="h-5 w-5" />
                     <span>Share</span>
                   </Button>
