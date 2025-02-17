@@ -16,7 +16,7 @@ export default function ProjectPage() {
       <div className="w-full max-w-5xl justify-center mx-auto">
         <Image
           className="rounded-2xl w-full"
-          src="/NotFound.png"
+          src="/NotFound.webp"
           alt="Project Thumbnail"
           width={1920}
           height={1080}

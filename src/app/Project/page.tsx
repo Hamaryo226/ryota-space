@@ -22,7 +22,7 @@ export default function pj() {
           <Link href="/Project/Frailty-Check-System">
             <Card
               //thumbnail={TRSdata.thumbnail}
-              thumbnail="/fcs.png"
+              thumbnail="/fcs.webp"
               title={FCSdata.title}
               date={FCSdata.date}
               tags={["Python", "django", "javascript"]}
@@ -31,7 +31,7 @@ export default function pj() {
           <Link href="/Project/Supplemental-Documentation-System">
             <Card
               //thumbnail={TRSNdata.thumbnail}
-              thumbnail="/TheLost.png"
+              thumbnail="/TheLost.webp"
               title={SDSdata.title}
               date={SDSdata.date}
               tags={["PHP", "Python"]}

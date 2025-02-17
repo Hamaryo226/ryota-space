@@ -136,7 +136,7 @@ export default function ProjectPage() {
       <div className="w-full max-w-5xl justify-center mx-auto">
         <ImageWithAlt
           className="rounded-2xl w-full"
-          src="/TheLost.png"
+          src="/TheLost.webp"
           alt="実際のノートテイクシステム画面"
           width={1920}
           height={1080}

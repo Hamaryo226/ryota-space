@@ -22,7 +22,7 @@ export default function pj() {
           <Link href="/Private/Taiko-Re-Strap">
             <Card
               //thumbnail={TRSdata.thumbnail}
-              thumbnail="/NotFound.png"
+              thumbnail="/NotFound.webp"
               title={TRSdata.title}
               date={TRSdata.date}
               tags={["C#", ".NET Framework"]}
@@ -31,7 +31,7 @@ export default function pj() {
           <Link href="/Private/Taiko-Re-Strap-Next">
             <Card
               //thumbnail={TRSNdata.thumbnail}
-              thumbnail="/NotFound.png"
+              thumbnail="/NotFound.webp"
               title={TRSNdata.title}
               date={TRSNdata.date}
               tags={["C#", "DxLib"]}
