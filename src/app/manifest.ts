@@ -6,6 +6,7 @@ export default function manifest(): MetadataRoute.Manifest {
     short_name: "ryota-space",
     description: "ryota-spaceは、個人のポートフォリオサイトです。",
     start_url: "/",
+    scope: "/",
     display: "standalone",
     background_color: "#fff",
     theme_color: "#fff",
