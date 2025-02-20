@@ -19,6 +19,22 @@ export const metadata: Metadata = {
   title: "ryota-space",
   description: "Ryota's personal space",
   appleWebApp: true,
+  openGraph: {
+    title: "ryota-space",
+    description: "",
+    url: "https://ryota-space.vercel.app",
+    siteName: "ryota-space",
+    images: [
+      {
+        url: "/logo/favicon.ico",
+        width: 200,
+        height: 200,
+        alt: "ryota-space",
+      },
+    ],
+    locale: "ja_JP",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
