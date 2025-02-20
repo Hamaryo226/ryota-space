@@ -5,7 +5,7 @@ import { Separator } from "@/components/ui/separator";
 export function Footer() {
   return (
     <footer className="bg-background text-foreground">
-      <Separator className="my-2" />
+      <Separator />
       <div className="container mx-auto py-8 px-4">
         {/* Copyright and additional links */}
         <div className="flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground">
