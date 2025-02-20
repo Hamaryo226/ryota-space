@@ -2,21 +2,12 @@
 
 import { useState } from "react";
 import articleData from "public/Article/sds.json";
-//import type { Metadata } from "next";
 import { CalendarDays } from "lucide-react";
 import { ImageWithAlt } from "@/components/image-with-alt";
 import { AccordionCodeBlock } from "@/components/accordion-code-block";
 import { Badge } from "@/components/ui/badge";
 import { Languages } from "lucide-react";
 import { Button } from "@/components/ui/button";
-/*
-export const metadata: Metadata = {
-  title: "聴覚障碍者に向けたノートテイクシステム開発プロジェクト｜ryota-space",
-  description:
-    "聴覚障碍者に向けたノートテイクシステム開発プロジェクトの概要ページ",
-  appleWebApp: true,
-};
-*/
 
 const saveframesCode = `
 import sys
