@@ -1,16 +1,13 @@
+"use client";
+
+import { useState } from "react";
 import articleData from "public/Article/fcs.json";
-import type { Metadata } from "next";
 import { CalendarDays } from "lucide-react";
 import { ImageWithAlt } from "@/components/image-with-alt";
 import { AccordionCodeBlock } from "@/components/accordion-code-block";
 import { Badge } from "@/components/ui/badge";
-
-export const metadata: Metadata = {
-  title: "高齢者に向けたフレイルチェックシステム開発プロジェクト｜ryota-space",
-  description:
-    "高齢者に向けたフレイルチェックシステム開発プロジェクトの概要ページ",
-  appleWebApp: true,
-};
+import { Languages } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Code = `
 const startBtn = document.querySelector('#start-btn');
@@ -77,6 +74,10 @@ function checker(str, target) {
 `.trim();
 
 export default function ProjectPage() {
+  const [isEnglish, setIsEnglish] = useState(false);
+
+  const data = isEnglish ? articleData.english : articleData;
+
   return (
     <div className="px-5 py-8">
       <div className="w-full max-w-5xl justify-center mx-auto">
@@ -89,73 +90,84 @@ export default function ProjectPage() {
         />
         <article className="mt-7 mb-7 pb-2 border-b-2 border-slate-500/30">
           <h1 className="font-bold sm:text-4xl sd:text-3xl text-2xl">
-            {articleData.title}
+            {data.title}
           </h1>
 
           <div className="flex flex-row mt-1 gap-1 leading-7 text-gray-500">
             <CalendarDays width={20} hanging={20} />
-            <p>{articleData.date}</p>
+            <p>{data.date}</p>
           </div>
 
-          <div className="flex flex-wrap gap-2 mt-2 mb-2">
+          <div className="flex flex-wrap gap-2">
             <Badge
               variant="outline"
-              className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
+              className="mt-2 mb-2 bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
             >
               Python
             </Badge>
             <Badge
               variant="outline"
-              className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
+              className="mt-2 mb-2 bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
             >
               django
             </Badge>
             <Badge
               variant="outline"
-              className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
+              className="mt-2 mb-2 bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
             >
               javascript
             </Badge>
+            <Button
+              onClick={() => setIsEnglish(!isEnglish)}
+              className="gap-0 ml-auto"
+              variant="ghost"
+            >
+              <span>{isEnglish}</span>
+              <Languages width={25} />
+            </Button>
           </div>
         </article>
 
-        {Object.entries(articleData.content).map(
-          ([sectionTitle, sectionContent]) => (
-            <article key={sectionTitle}>
-              <div className="border-l-4 border-indigo-500">
-                <h3 className="font-bold text-2xl mt-5 mb-5 ps-2">
-                  {sectionTitle}
-                </h3>
-              </div>
-              <div className="leading-8">{sectionContent}</div>
-            </article>
-          )
-        )}
+        {Object.entries(data.content).map(([sectionTitle, sectionContent]) => (
+          <article key={sectionTitle}>
+            <div className="border-l-4 border-indigo-500">
+              <h3 className="font-bold text-2xl mt-5 mb-5 ps-2">
+                {sectionTitle}
+              </h3>
+            </div>
+            <div className="leading-8">{sectionContent}</div>
+          </article>
+        ))}
 
         <article className="mt-7">
           <div className="border-l-4 border-indigo-500">
             <h3 className="font-bold text-2xl mt-5 mb-5 ps-2">
-              システムに関するコード
+              {isEnglish ? "System Code" : "システムに関するコード"}
             </h3>
           </div>
           <div className="max-w-full space-y-4">
             <AccordionCodeBlock
-              title="滑舌測定"
-              description="滑舌測定機能で使用している音声認識のコードです。"
+              title={isEnglish ? "Smoothness measurement function" : "滑舌測定"}
+              description={
+                isEnglish
+                  ? "This is the speech recognition code used in the glottometry function."
+                  : "滑舌測定機能で使用している音声認識のコードです。"
+              }
               code={Code}
               language="javascript"
-              codeTitle="web_speech_api.js
-"
+              codeTitle="web_speech_api.js"
             />
           </div>
         </article>
 
         <article>
           <div className="border-l-4 border-indigo-500">
-            <h3 className="font-bold text-2xl mt-5 mb-5 ps-2">参考リンク</h3>
+            <h3 className="font-bold text-2xl mt-5 mb-5 ps-2">
+              {isEnglish ? "Reference Links" : "参考リンク"}
+            </h3>
           </div>
           <ul className="leading-8">
-            {Object.entries(articleData.links).map(([text, url]) => (
+            {Object.entries(data.links).map(([text, url]) => (
               <li key={url}>
                 <a
                   className="font-mono text-indigo-400 font-bold after:content-['_↗'] hover:underline decoration-indigo-500"
