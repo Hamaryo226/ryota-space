@@ -62,6 +62,18 @@ export default function ProjectPage() {
 
         <article>
           <div className="border-l-4 border-indigo-500">
+            <h3 className="font-bold text-2xl mt-5 mb-5 ps-2">デモ動画</h3>
+          </div>
+          <div className="px-5">
+            <iframe
+              className="aspect-video w-full rounded-2xl"
+              src="https://www.youtube.com/embed/lHob7eKV1a8"
+            ></iframe>
+          </div>
+        </article>
+
+        <article>
+          <div className="border-l-4 border-indigo-500">
             <h3 className="font-bold text-2xl mt-5 mb-5 ps-2">参考リンク</h3>
           </div>
           <ul className="leading-8">
