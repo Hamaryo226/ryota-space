@@ -5,7 +5,7 @@ import SDSdata from "public/Article/sds.json";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "パブリックプロジェクト｜ryota-space",
+  title: "Public Project｜ryota-space",
   description: "パブリックプロジェクトの一覧ページ",
   appleWebApp: true,
 };

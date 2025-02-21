@@ -31,7 +31,7 @@ import {
 import { CopyButton } from "@/components/copy-button";
 
 export const metadata: Metadata = {
-  title: "トップ｜ryota-space",
+  title: "Home｜ryota-space",
   description: "ryota-spaceは、個人のポートフォリオサイトです。",
   appleWebApp: true,
 };

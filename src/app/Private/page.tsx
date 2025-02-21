@@ -5,7 +5,7 @@ import TRSNdata from "public/Article/trsn.json";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "プライベートプロジェクト｜ryota-space",
+  title: "Private Project｜ryota-space",
   description: "プライベートプロジェクトの一覧ページ",
   appleWebApp: true,
 };
