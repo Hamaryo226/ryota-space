@@ -13,6 +13,7 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuGroup,
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
@@ -67,16 +68,33 @@ function DesktopNav() {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start">
-              <DropdownMenuItem asChild>
-                <Link href="/Project/Frailty-Check-System">
-                  Frailty-Check-System
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <Link href="/Project/Supplemental-Documentation-System">
-                  Supplemental-Documentation-System
-                </Link>
-              </DropdownMenuItem>
+              <DropdownMenuLabel>Public</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuGroup>
+                <DropdownMenuItem asChild>
+                  <Link href="/Project/Frailty-Check-System">
+                    Frailty-Check-System
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/Project/Supplemental-Documentation-System">
+                    Supplemental-Documentation-System
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuGroup>
+              <DropdownMenuSeparator />
+              <DropdownMenuLabel>Private</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuGroup>
+                <DropdownMenuItem asChild>
+                  <Link href="/Private/Taiko-Re-Strap">Taiko-Re-Strap</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/Private/Taiko-Re-Strap-Next">
+                    Taiko-Re-Strap-Next
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuGroup>
             </DropdownMenuContent>
           </DropdownMenu>
         </NavigationMenuItem>
