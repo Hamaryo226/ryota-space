@@ -116,6 +116,9 @@ function MobileNav() {
         <DropdownMenuItem>
           <Link href="/Project">Public Project</Link>
         </DropdownMenuItem>
+        <DropdownMenuItem>
+          <Link href="/Private">Private Project</Link>
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );
