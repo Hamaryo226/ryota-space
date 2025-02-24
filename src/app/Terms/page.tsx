@@ -1,5 +1,3 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function TermsOfUse() {
@@ -97,14 +95,6 @@ export default function TermsOfUse() {
           </p>
         </CardContent>
       </Card>
-      <div className="mt-6 flex justify-between">
-        <Button asChild>
-          <Link href="/">ホームに戻る</Link>
-        </Button>
-        <Button asChild>
-          <Link href="/privacy-policy">プライバシーポリシー</Link>
-        </Button>
-      </div>
     </div>
   );
 }
