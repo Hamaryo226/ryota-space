@@ -41,137 +41,7 @@ export default function top() {
     <div className="container mx-auto px-4 py-8">
       <div className="pb-10">
         <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
-          <Image
-            className="w-40 h-40 rounded-sm row-span-3"
-            src="/hamaryo.jpg"
-            alt="Large avatar"
-            width={200}
-            height={200}
-          />
-          <div className="text-center md:text-left">
-            <p className="text-4xl md:text-5xl font-bold mb-2">
-              Hamaguchi-Ryota
-            </p>
-            <p className="text-xl text-gray-500 max-w-2xl">
-              System Engineer, Programmer
-            </p>
-            <div className="flex flex-wrap justify-center md:justify-start gap-2 mt-2 mb-3">
-              <Badge
-                variant="outline"
-                className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
-              >
-                Python
-              </Badge>
-              <Badge
-                variant="outline"
-                className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
-              >
-                PHP
-              </Badge>
-              <Badge
-                variant="outline"
-                className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
-              >
-                C#
-              </Badge>
-              <Badge
-                variant="outline"
-                className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
-              >
-                Next.js
-              </Badge>
-            </div>
-            <div className="flex items-center space-x-2 justify-center md:justify-start">
-              <Link
-                href="https://twitter.com/_hamaryo"
-                passHref
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Button
-                  variant="outline"
-                  className="transition delay-100 duration-150 ease-in-out hover:-translate-y-1"
-                >
-                  <Twitter />
-                </Button>
-              </Link>
-              <Link
-                href="https://www.instagram.com/hamaryo_2"
-                passHref
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Button
-                  variant="outline"
-                  className="transition delay-100 duration-150 ease-in-out hover:-translate-y-1"
-                >
-                  <Instagram />
-                </Button>
-              </Link>
-              <Link
-                href="https://github.com/HamaguchiRyota"
-                passHref
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Button
-                  variant="outline"
-                  className="transition delay-100 duration-150 ease-in-out hover:-translate-y-1"
-                >
-                  <Github />
-                </Button>
-              </Link>
-              <Dialog>
-                <DialogTrigger asChild>
-                  <Button
-                    variant="outline"
-                    className="transition delay-100 duration-150 ease-in-out hover:-translate-y-1"
-                  >
-                    <Share className="h-5 w-5" />
-                    <span>Share</span>
-                  </Button>
-                </DialogTrigger>
-                <DialogContent className="sm:max-w-md">
-                  <DialogHeader>
-                    <DialogTitle>Share link</DialogTitle>
-                    <DialogDescription>
-                      Anyone who has this link will be able to view this.
-                    </DialogDescription>
-                  </DialogHeader>
-                  <div className="flex items-center space-x-2">
-                    <Link
-                      href="https://ryota-space.vercel.app/"
-                      passHref
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <Button variant="outline">
-                        <Globe />
-                      </Button>
-                    </Link>
-                    <div className="grid flex-1 gap-2">
-                      <Label htmlFor="link" className="sr-only">
-                        Link
-                      </Label>
-                      <Input
-                        id="link"
-                        defaultValue="https://ryota-space.vercel.app/"
-                        readOnly
-                      />
-                    </div>
-                    <CopyButton value="https://ryota-space.vercel.app/" />
-                  </div>
-                  <DialogFooter className="sm:justify-start">
-                    <DialogClose asChild>
-                      <Button type="button" variant="secondary">
-                        Close
-                      </Button>
-                    </DialogClose>
-                  </DialogFooter>
-                </DialogContent>
-              </Dialog>
-            </div>
-          </div>
+          <HeadName />
         </div>
       </div>
 
@@ -248,5 +118,149 @@ export default function top() {
         </div>
       </div>
     </div>
+  );
+}
+
+function TopBadge() {
+  return (
+    <>
+      <Badge
+        variant="outline"
+        className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
+      >
+        Python
+      </Badge>
+      <Badge
+        variant="outline"
+        className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
+      >
+        PHP
+      </Badge>
+      <Badge
+        variant="outline"
+        className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
+      >
+        C#
+      </Badge>
+      <Badge
+        variant="outline"
+        className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
+      >
+        Next.js
+      </Badge>
+    </>
+  );
+}
+
+function HeadName() {
+  return (
+    <>
+      <Image
+        className="w-40 h-40 rounded-sm row-span-3"
+        src="/hamaryo.jpg"
+        alt="Large avatar"
+        width={200}
+        height={200}
+      />
+      <div className="text-center md:text-left">
+        <p className="text-4xl md:text-5xl font-bold mb-2">Hamaguchi-Ryota</p>
+        <p className="text-xl text-gray-500 max-w-2xl">
+          System Engineer, Programmer
+        </p>
+        <div className="flex flex-wrap justify-center md:justify-start gap-2 mt-2 mb-3">
+          <TopBadge />
+        </div>
+        <div className="flex items-center space-x-2 justify-center md:justify-start">
+          <Link
+            href="https://twitter.com/_hamaryo"
+            passHref
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Button
+              variant="outline"
+              className="transition delay-100 duration-150 ease-in-out hover:-translate-y-1"
+            >
+              <Twitter />
+            </Button>
+          </Link>
+          <Link
+            href="https://www.instagram.com/hamaryo_2"
+            passHref
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Button
+              variant="outline"
+              className="transition delay-100 duration-150 ease-in-out hover:-translate-y-1"
+            >
+              <Instagram />
+            </Button>
+          </Link>
+          <Link
+            href="https://github.com/HamaguchiRyota"
+            passHref
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Button
+              variant="outline"
+              className="transition delay-100 duration-150 ease-in-out hover:-translate-y-1"
+            >
+              <Github />
+            </Button>
+          </Link>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button
+                variant="outline"
+                className="transition delay-100 duration-150 ease-in-out hover:-translate-y-1"
+              >
+                <Share className="h-5 w-5" />
+                <span>Share</span>
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-md">
+              <DialogHeader>
+                <DialogTitle>Share link</DialogTitle>
+                <DialogDescription>
+                  Anyone who has this link will be able to view this.
+                </DialogDescription>
+              </DialogHeader>
+              <div className="flex items-center space-x-2">
+                <Link
+                  href="https://ryota-space.vercel.app/"
+                  passHref
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Button variant="outline">
+                    <Globe />
+                  </Button>
+                </Link>
+                <div className="grid flex-1 gap-2">
+                  <Label htmlFor="link" className="sr-only">
+                    Link
+                  </Label>
+                  <Input
+                    id="link"
+                    defaultValue="https://ryota-space.vercel.app/"
+                    readOnly
+                  />
+                </div>
+                <CopyButton value="https://ryota-space.vercel.app/" />
+              </div>
+              <DialogFooter className="sm:justify-start">
+                <DialogClose asChild>
+                  <Button type="button" variant="secondary">
+                    Close
+                  </Button>
+                </DialogClose>
+              </DialogFooter>
+            </DialogContent>
+          </Dialog>
+        </div>
+      </div>
+    </>
   );
 }
