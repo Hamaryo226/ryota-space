@@ -5,7 +5,7 @@ import TRSNdata from "public/Article/trsn.json";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "プライベートプロジェクト｜ryota-space",
+  title: "Private Project｜ryota-space",
   description: "プライベートプロジェクトの一覧ページ",
   appleWebApp: true,
 };
@@ -22,7 +22,7 @@ export default function pj() {
           <Link href="/Private/Taiko-Re-Strap">
             <Card
               //thumbnail={TRSdata.thumbnail}
-              thumbnail="/NotFound.webp"
+              thumbnail="/Taiko-Re-Strap.webp"
               title={TRSdata.title}
               date={TRSdata.date}
               tags={["C#", ".NET Framework"]}
@@ -31,7 +31,7 @@ export default function pj() {
           <Link href="/Private/Taiko-Re-Strap-Next">
             <Card
               //thumbnail={TRSNdata.thumbnail}
-              thumbnail="/NotFound.webp"
+              thumbnail="/Taiko-Re-Strap-Next.webp"
               title={TRSNdata.title}
               date={TRSNdata.date}
               tags={["C#", "DxLib"]}

@@ -4,10 +4,9 @@
   "date": "2022年5月 ~ 2024年6月",
   "description": "",
   "content": {
-    "概要": "",
-    "目的": ""
+    "概要": "某音楽ゲームのアーケード版をPCで再現したソフトウェア「Taiko-Re-Strap」を開発。"
   },
   "links": {
-    "repo": ""
+    "repo": "https://github.com/HamaguchiRyota/Taiko-Re-Strap"
   }
 }

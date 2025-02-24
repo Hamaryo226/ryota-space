@@ -4,10 +4,9 @@
   "date": "2024年5月 ~ ",
   "description": "",
   "content": {
-    "概要": "",
-    "目的": ""
+    "概要": "某音楽ゲームのアーケード版をPCで再現したソフトウェア「Taiko-Re-Strap-Next」を開発。"
   },
   "links": {
-    "repo": ""
+    "repo": "https://github.com/HamaguchiRyota/Taiko-Re-Strap-Next"
   }
 }

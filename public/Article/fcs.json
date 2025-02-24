@@ -11,5 +11,20 @@
   },
   "links": {
     "プロジェクト演習2024": "https://open.shonan.bunkyo.ac.jp/proen/2024_prode/2024_a16-%e9%ab%98%e9%bd%a2%e8%80%85%e3%81%ab%e5%90%91%e3%81%91%e3%81%9f%e3%83%95%e3%83%ac%e3%82%a4%e3%83%ab%e3%83%81%e3%82%a7%e3%83%83%e3%82%af%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a0%e9%96%8b%e7%99%ba"
+  },
+  "english": {
+    "thumbnail": "./public/Fcs.png",
+    "title": "Development Project of Frailty Check System for Elderly",
+    "date": "January 2024 ~ December 2024",
+    "description": "Developed a web system using Django and speech recognition to support frailty checks for the elderly.",
+    "content": {
+      "Overview": "The state of physical and mental function and vitality declining in old age, leading to frailty, is called 'frailty'. It is attracting attention as a key to extending healthy life expectancy or as a pre-care group. According to the health business guidelines that take into account the characteristics of the elderly, municipalities are required to make efforts to implement frailty checks and vitality checks at community centers, etc., using their own frailty check sheets, operated by residents. In Yokosuka City, frailty check classes are held several times a year by volunteers. However, the shortage of volunteers serving as instructors and the difference in their abilities are challenges. In this project, we developed a web system using Django and speech recognition to support classroom management tasks and frailty checks conducted by volunteers, aiming to solve these issues.",
+      "Expected Client": "Health Promotion Division, Health Department, Yokosuka City, Kanagawa Prefecture",
+      "Purpose": "Support for frailty checks in frailty check classes",
+      "Goal": "Reduce staff tasks by 5 items from the workflow diagram"
+    },
+    "links": {
+      "Project Exercise 2024": "https://open.shonan.bunkyo.ac.jp/proen/2024_prode/2024_a16-%e9%ab%98%e9%bd%a2%e8%80%85%e3%81%ab%e5%90%91%e3%81%91%e3%81%9f%e3%83%95%e3%83%ac%e3%82%a4%e3%83%ab%e3%83%81%e3%82%a7%e3%83%83%e3%82%af%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a0%e9%96%8b%e7%99%ba"
+    }
   }
 }

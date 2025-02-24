@@ -1,8 +1,8 @@
-import Image from "next/image";
 import articleData from "public/Article/trsn.json";
 import type { Metadata } from "next";
 import { CalendarDays } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { ImageWithAlt } from "@/components/image-with-alt";
 
 export const metadata: Metadata = {
   title: "Taiko-Re-Strap-Next｜ryota-space",
@@ -14,13 +14,12 @@ export default function ProjectPage() {
   return (
     <div className="px-5 py-8">
       <div className="w-full max-w-5xl justify-center mx-auto">
-        <Image
+        <ImageWithAlt
           className="rounded-2xl w-full"
-          src="/NotFound.webp"
-          alt="Project Thumbnail"
+          src="/Taiko-Re-Strap-Next.webp"
+          alt="Taiko-Re-Strap-Next"
           width={1920}
           height={1080}
-          priority
         />
         <article className="mt-7 mb-7 pb-2 border-b-2 border-slate-500/30">
           <h1 className="font-bold sm:text-4xl sd:text-3xl text-2xl">
@@ -56,10 +55,22 @@ export default function ProjectPage() {
                   {sectionTitle}
                 </h3>
               </div>
-              <p className="leading-8">{sectionContent}</p>
+              <p className="leading-7">{sectionContent}</p>
             </article>
           )
         )}
+
+        <article>
+          <div className="border-l-4 border-indigo-500">
+            <h3 className="font-bold text-2xl mt-5 mb-5 ps-2">デモ動画</h3>
+          </div>
+          <div className="px-5">
+            <iframe
+              className="aspect-video w-full rounded-2xl"
+              src="https://www.youtube.com/embed/sJtMLTu9eQY"
+            ></iframe>
+          </div>
+        </article>
 
         <article>
           <div className="border-l-4 border-indigo-500">

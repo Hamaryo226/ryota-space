@@ -14,5 +14,23 @@
   },
   "links": {
     "プロジェクト演習2023": "https://open.shonan.bunkyo.ac.jp/proen/2023_pro-bc/2023_b08-%e8%81%b4%e8%a6%9a%e9%9a%9c%e7%a2%8d%e8%80%85%e3%81%ab%e5%90%91%e3%81%91%e3%81%9f%e3%83%8e%e3%83%bc%e3%83%88%e3%83%86%e3%82%a4%e3%82%af%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a0%e9%96%8b%e7%99%ba"
+  },
+  "english": {
+    "thumbnail": "../TheLost.png",
+    "title": "Note-taking System Development Project for Hearing Impaired",
+    "date": "August 2023 ~ December 2023",
+    "description": "Developed a system to create note-taking materials by extracting audio and slides from lecture videos to support hearing-impaired individuals.",
+    "content": {
+      "Overview": "According to the Act on the Elimination of Discrimination against Persons with Disabilities, universities are required to provide reasonable accommodations for students with disabilities. According to the University of Tokyo Barrier-Free Support Office, there are four types of support for students with hearing impairments: PC take, note-taking, note creation, and subtitle insertion. However, there are issues such as a shortage of information support personnel and differences in their abilities. In fact, there have been cases reported to JASSO where small universities could not provide note-taking assistance due to lack of personnel, or where students could not be assigned information support personnel with the desired expertise in science and engineering. This project aimed to solve these issues by developing a system that creates note-taking materials by extracting audio and slides from lecture videos to replace the support provided by information support personnel for hearing-impaired individuals.",
+      "Purpose": "To create supplementary materials with reasonable accommodations for hearing-impaired individuals from lecture materials."
+    },
+    "references": {
+      "University of Tokyo Barrier-Free Support Office. 'Examples of Support'": "https://ds.adm.u-tokyo.ac.jp/receive-support/student02.html",
+      "Japan Student Services Organization. 'Case No.194 (Hearing Impairment) Regarding the Offer of Note-taking Assistance during Classes | JASSO'": "https://www.jasso.go.jp/statistics/gakusei_shogai_kaiketsu/case_aud/194.html",
+      "Japan Student Services Organization. 'Case No.18 (Deaf) Request for a Student Information Supporter with an Understanding of Science and Engineering | JASSO'": "https://www.jasso.go.jp/statistics/gakusei_shogai_kaiketsu/case_aud/18.html"
+    },
+    "links": {
+      "Project Exercise 2023": "https://open.shonan.bunkyo.ac.jp/proen/2023_pro-bc/2023_b08-%e8%81%b4%e8%a6%9a%e9%9a%9c%e7%a2%8d%e8%80%85%e3%81%ab%e5%90%91%e3%81%91%e3%81%9f%e3%83%8e%e3%83%bc%e3%83%88%e3%83%86%e3%82%a4%e3%82%af%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a0%e9%96%8b%e7%99%ba"
+    }
   }
 }

@@ -1,16 +1,13 @@
+"use client";
+
+import { useState } from "react";
 import articleData from "public/Article/sds.json";
-import type { Metadata } from "next";
 import { CalendarDays } from "lucide-react";
 import { ImageWithAlt } from "@/components/image-with-alt";
 import { AccordionCodeBlock } from "@/components/accordion-code-block";
 import { Badge } from "@/components/ui/badge";
-
-export const metadata: Metadata = {
-  title: "聴覚障碍者に向けたノートテイクシステム開発プロジェクト｜ryota-space",
-  description:
-    "聴覚障碍者に向けたノートテイクシステム開発プロジェクトの概要ページ",
-  appleWebApp: true,
-};
+import { Languages } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const saveframesCode = `
 import sys
@@ -131,6 +128,9 @@ img_to_txt(dir_path + "/" + input_str)# OCRするフォルダパス
 `.trim();
 
 export default function ProjectPage() {
+  const [isEnglish, setIsEnglish] = useState(false);
+
+  const data = isEnglish ? articleData.english : articleData;
   return (
     <div className="px-5 py-8">
       <div className="w-full max-w-5xl justify-center mx-auto">
@@ -143,67 +143,89 @@ export default function ProjectPage() {
         />
         <article className="mt-7 mb-7 pb-2 border-b-2 border-slate-500/30">
           <h1 className="font-bold sm:text-4xl sd:text-3xl text-2xl">
-            {articleData.title}
+            {data.title}
           </h1>
 
           <div className="flex flex-row mt-1 gap-1 leading-7 text-gray-500">
             <CalendarDays width={20} hanging={20} />
-            <p>{articleData.date}</p>
+            <p>{data.date}</p>
           </div>
 
-          <div className="flex flex-wrap gap-2 mt-2 mb-2">
+          <div className="flex flex-wrap gap-2">
             <Badge
               variant="outline"
-              className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
+              className="mt-2 mb-2 bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
             >
               Python
             </Badge>
             <Badge
               variant="outline"
-              className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
+              className="mt-2 mb-2 bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
             >
-              django
+              javascript
             </Badge>
+            <Button
+              onClick={() => setIsEnglish(!isEnglish)}
+              className="gap-0 ml-auto"
+              variant="ghost"
+            >
+              <span>{isEnglish}</span>
+              <Languages width={25} />
+            </Button>
           </div>
         </article>
 
-        {Object.entries(articleData.content).map(
-          ([sectionTitle, sectionContent]) => (
-            <article key={sectionTitle}>
-              <div className="border-l-4 border-indigo-500">
-                <h3 className="font-bold text-2xl mt-5 mb-5 ps-2">
-                  {sectionTitle}
-                </h3>
-              </div>
-              <div className="leading-8">{sectionContent}</div>
-            </article>
-          )
-        )}
+        {Object.entries(data.content).map(([sectionTitle, sectionContent]) => (
+          <article key={sectionTitle}>
+            <div className="border-l-4 border-indigo-500">
+              <h3 className="font-bold text-2xl mt-5 mb-5 ps-2">
+                {sectionTitle}
+              </h3>
+            </div>
+            <div className="leading-7">{sectionContent}</div>
+          </article>
+        ))}
 
         <article className="mt-7">
           <div className="border-l-4 border-indigo-500">
             <h3 className="font-bold text-2xl mt-5 mb-5 ps-2">
-              システムに関するコード
+              {isEnglish ? "System Code" : "システムに関するコード"}
             </h3>
           </div>
           <div className="max-w-full space-y-4">
             <AccordionCodeBlock
-              title="01 - 連番画像出力"
-              description="入力された動画ファイル(パス)からopencvを使って連番画像を出力する"
+              title={
+                isEnglish ? "01 - sequential number image" : "01 - 連番画像出力"
+              }
+              description={
+                isEnglish
+                  ? "Output sequentially numbered images from an input video file (path) using opencv"
+                  : "入力された動画ファイル(パス)からopencvを使って連番画像を出力する"
+              }
               code={saveframesCode}
               language="python"
               codeTitle="saveframes.py"
             />
             <AccordionCodeBlock
-              title="02 - 重複画像削除"
-              description="連番画像から重複した画像をdiffを使って削除する"
+              title={
+                isEnglish ? "02 - Remove duplicate images" : "02 - 重複画像削除"
+              }
+              description={
+                isEnglish
+                  ? "Remove duplicate images from sequentially numbered images using diff"
+                  : "連番画像から重複した画像をdiffを使って削除する"
+              }
               code={removeCode}
               language="python"
               codeTitle="remove.py"
             />
             <AccordionCodeBlock
-              title="03 - テキスト認識"
-              description="tesseract-ocrを使って画像からテキストを認識する"
+              title={isEnglish ? "03 - Text Recognition" : "03 - テキスト認識"}
+              description={
+                isEnglish
+                  ? "Recognizing text from images using tesseract-ocr"
+                  : "tesseract-ocrを使って画像からテキストを認識する"
+              }
               code={ocrCode}
               language="python"
               codeTitle="ocr.py"
@@ -213,10 +235,12 @@ export default function ProjectPage() {
 
         <article>
           <div className="border-l-4 border-indigo-500">
-            <h3 className="font-bold text-2xl mt-5 mb-5 ps-2">参考文献</h3>
+            <h3 className="font-bold text-2xl mt-5 mb-5 ps-2">
+              {isEnglish ? "References" : "参考文献"}
+            </h3>
           </div>
           <ul className="leading-8">
-            {Object.entries(articleData.references).map(([text, url]) => (
+            {Object.entries(data.references).map(([text, url]) => (
               <li key={url}>
                 <a
                   className="font-mono text-indigo-400 font-bold after:content-['_↗'] hover:underline decoration-indigo-500"
@@ -233,10 +257,12 @@ export default function ProjectPage() {
 
         <article>
           <div className="border-l-4 border-indigo-500">
-            <h3 className="font-bold text-2xl mt-5 mb-5 ps-2">参考リンク</h3>
+            <h3 className="font-bold text-2xl mt-5 mb-5 ps-2">
+              {isEnglish ? "Reference Links" : "参考リンク"}
+            </h3>
           </div>
           <ul className="leading-8">
-            {Object.entries(articleData.links).map(([text, url]) => (
+            {Object.entries(data.links).map(([text, url]) => (
               <li key={url}>
                 <a
                   className="font-mono text-indigo-400 font-bold after:content-['_↗'] hover:underline decoration-indigo-500"

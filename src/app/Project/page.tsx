@@ -5,7 +5,7 @@ import SDSdata from "public/Article/sds.json";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "パブリックプロジェクト｜ryota-space",
+  title: "Public Project｜ryota-space",
   description: "パブリックプロジェクトの一覧ページ",
   appleWebApp: true,
 };
@@ -26,6 +26,7 @@ export default function pj() {
               title={FCSdata.title}
               date={FCSdata.date}
               tags={["Python", "django", "javascript"]}
+              eng
             />
           </Link>
           <Link href="/Project/Supplemental-Documentation-System">
@@ -35,6 +36,7 @@ export default function pj() {
               title={SDSdata.title}
               date={SDSdata.date}
               tags={["PHP", "Python"]}
+              eng
             />
           </Link>
         </div>

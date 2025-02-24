@@ -31,7 +31,7 @@ import {
 import { CopyButton } from "@/components/copy-button";
 
 export const metadata: Metadata = {
-  title: "トップ｜ryota-space",
+  title: "Home｜ryota-space",
   description: "ryota-spaceは、個人のポートフォリオサイトです。",
   appleWebApp: true,
 };
@@ -197,6 +197,7 @@ export default function top() {
               title={FCSdata.title}
               date={FCSdata.date}
               tags={["Python", "django", "javascript"]}
+              eng
             />
           </Link>
           <Link href="/Project/Supplemental-Documentation-System">
@@ -206,6 +207,7 @@ export default function top() {
               title={SDSdata.title}
               date={SDSdata.date}
               tags={["PHP", "Python"]}
+              eng
             />
           </Link>
         </div>
@@ -228,7 +230,7 @@ export default function top() {
           <Link href="/Private/Taiko-Re-Strap">
             <Card
               //thumbnail={TRSdata.thumbnail}
-              thumbnail="/NotFound.webp"
+              thumbnail="/Taiko-Re-Strap.webp"
               title={TRSdata.title}
               date={TRSdata.date}
               tags={["C#", ".NET Framework"]}
@@ -237,7 +239,7 @@ export default function top() {
           <Link href="/Private/Taiko-Re-Strap-Next">
             <Card
               //thumbnail={TRSNdata.thumbnail}
-              thumbnail="/NotFound.webp"
+              thumbnail="/Taiko-Re-Strap-Next.webp"
               title={TRSNdata.title}
               date={TRSNdata.date}
               tags={["C#", "DxLib"]}

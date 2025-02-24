@@ -24,7 +24,7 @@ export function ImageWithAlt({
         layout="responsive"
         width={width}
         height={height}
-        className="object-cover rounded-2xl w-full"
+        className="object-cover rounded-2xl w-full shadow-lg dark:shadow-zinc-600"
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         priority={true}
       />

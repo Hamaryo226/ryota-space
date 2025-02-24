@@ -1,7 +1,7 @@
 "use client";
 import type React from "react";
 import Image from "next/image";
-import { CalendarDays } from "lucide-react";
+import { CalendarDays, Languages } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 interface CardProps {
@@ -9,14 +9,21 @@ interface CardProps {
   title: string;
   date: string;
   tags: string[];
+  eng?: boolean; // Add eng prop with default value as false
 }
 
-const Card: React.FC<CardProps> = ({ thumbnail, title, tags, date }) => {
+const Card: React.FC<CardProps> = ({
+  thumbnail,
+  title,
+  tags,
+  date,
+  eng = false,
+}) => {
   return (
     <div className="rounded-2xl border shadow-lg dark:border-zinc-700 dark:bg-zinc-800/70 transition delay-75 duration-200 ease-in-out hover:-translate-y-2 hover:scale-60">
       <Image
         className="rounded-t-2xl aspect-video"
-        src={thumbnail || "/NotFound.webp"} ///NotFound.webp
+        src={thumbnail || "/NotFound.webp"}
         height={1920}
         width={1080}
         alt="Project Thumbnail"
@@ -43,6 +50,7 @@ const Card: React.FC<CardProps> = ({ thumbnail, title, tags, date }) => {
           <p className="text-sm text-gray-500 content-center justify-center">
             {date}
           </p>
+          {eng && <Languages className="ml-auto" width={18} height={18} />}
         </div>
       </div>
     </div>

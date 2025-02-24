@@ -13,6 +13,7 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuGroup,
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
@@ -23,7 +24,7 @@ import { StarHalf } from "lucide-react";
 export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white bg-opacity-45 dark:bg-black dark:bg-opacity-45 dark:border-zinc-500 border-border/40 bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 items-center justify-center px-4 sm:px-4 lg:px-4 mx-auto">
+      <div className="container flex h-14 items-center justify-center px-4 mx-auto">
         <div className="flex items-center justify-between w-full">
           <Link href="/" className="mr-6 flex items-center space-x-2">
             <StarHalf />
@@ -33,7 +34,7 @@ export function Header() {
             <DesktopNav />
           </div>
         </div>
-        <div className="flex justify-between items-end space-x-4">
+        <div className="flex justify-between items-end space-x-2">
           <MobileNav />
           <ModeToggle />
         </div>
@@ -67,16 +68,33 @@ function DesktopNav() {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start">
-              <DropdownMenuItem asChild>
-                <Link href="/Project/Frailty-Check-System">
-                  Frailty-Check-System
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <Link href="/Project/Supplemental-Documentation-System">
-                  Supplemental-Documentation-System
-                </Link>
-              </DropdownMenuItem>
+              <DropdownMenuLabel>Public</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuGroup>
+                <DropdownMenuItem asChild>
+                  <Link href="/Project/Frailty-Check-System">
+                    Frailty-Check-System
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/Project/Supplemental-Documentation-System">
+                    Supplemental-Documentation-System
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuGroup>
+              <DropdownMenuSeparator />
+              <DropdownMenuLabel>Private</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuGroup>
+                <DropdownMenuItem asChild>
+                  <Link href="/Private/Taiko-Re-Strap">Taiko-Re-Strap</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/Private/Taiko-Re-Strap-Next">
+                    Taiko-Re-Strap-Next
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuGroup>
             </DropdownMenuContent>
           </DropdownMenu>
         </NavigationMenuItem>
@@ -115,6 +133,9 @@ function MobileNav() {
         </DropdownMenuItem>
         <DropdownMenuItem>
           <Link href="/Project">Public Project</Link>
+        </DropdownMenuItem>
+        <DropdownMenuItem>
+          <Link href="/Private">Private Project</Link>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
