@@ -26,6 +26,7 @@ export default function pj() {
               title={FCSdata.title}
               date={FCSdata.date}
               tags={["Python", "django", "javascript"]}
+              eng
             />
           </Link>
           <Link href="/Project/Supplemental-Documentation-System">
@@ -35,6 +36,7 @@ export default function pj() {
               title={SDSdata.title}
               date={SDSdata.date}
               tags={["PHP", "Python"]}
+              eng
             />
           </Link>
         </div>
