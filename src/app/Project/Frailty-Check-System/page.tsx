@@ -135,7 +135,7 @@ export default function ProjectPage() {
                 {sectionTitle}
               </h3>
             </div>
-            <div className="leading-8">{sectionContent}</div>
+            <div className="leading-7">{sectionContent}</div>
           </article>
         ))}
 
