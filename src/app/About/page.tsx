@@ -34,82 +34,7 @@ export default function about() {
           <br />
         </p>
         <div className="flex items-center justify-center space-x-4 mb-8 p-8">
-          <TooltipProvider delayDuration={100}>
-            <Tooltip>
-              <Link
-                href="https://nextjs.org/"
-                passHref
-                target="_blank"
-                rel="noreferrer"
-              >
-                <TooltipTrigger>
-                  <Image
-                    src="/nextjs-icon-light-background.svg"
-                    alt="Large avatar"
-                    width={180}
-                    height={180}
-                    className="dark:hidden"
-                  />
-                  <Image
-                    src="/nextjs-icon-dark-background.svg"
-                    alt="Large avatar"
-                    width={180}
-                    height={180}
-                    className="dark:block hidden"
-                  />
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>Next.js</p>
-                </TooltipContent>
-              </Link>
-            </Tooltip>
-          </TooltipProvider>
-          <TooltipProvider delayDuration={100}>
-            <Tooltip>
-              <Link
-                href="https://ui.shadcn.com/"
-                passHref
-                target="_blank"
-                rel="noreferrer"
-              >
-                <TooltipTrigger>
-                  <Image
-                    src="/shadcn-ui-seeklogo.svg"
-                    alt="Large avatar"
-                    width={180}
-                    height={180}
-                    className="dark:invert"
-                  />
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>shadcn</p>
-                </TooltipContent>
-              </Link>
-            </Tooltip>
-          </TooltipProvider>
-          <TooltipProvider delayDuration={100}>
-            <Tooltip>
-              <Link
-                href="https://vercel.com/"
-                passHref
-                target="_blank"
-                rel="noreferrer"
-              >
-                <TooltipTrigger>
-                  <Image
-                    src="/vercel-icon-dark.svg"
-                    alt="Large avatar"
-                    width={190}
-                    height={190}
-                    className="dark:invert"
-                  />
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>Vercel</p>
-                </TooltipContent>
-              </Link>
-            </Tooltip>
-          </TooltipProvider>
+          <BackendIcon />
         </div>
 
         <p className="text-lg">
@@ -117,5 +42,88 @@ export default function about() {
         </p>
       </div>
     </div>
+  );
+}
+
+function BackendIcon() {
+  return (
+    <>
+      <TooltipProvider delayDuration={100}>
+        <Tooltip>
+          <Link
+            href="https://nextjs.org/"
+            passHref
+            target="_blank"
+            rel="noreferrer"
+          >
+            <TooltipTrigger>
+              <Image
+                src="/nextjs-icon-light-background.svg"
+                alt="Large avatar"
+                width={180}
+                height={180}
+                className="dark:hidden"
+              />
+              <Image
+                src="/nextjs-icon-dark-background.svg"
+                alt="Large avatar"
+                width={180}
+                height={180}
+                className="dark:block hidden"
+              />
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Next.js</p>
+            </TooltipContent>
+          </Link>
+        </Tooltip>
+      </TooltipProvider>
+      <TooltipProvider delayDuration={100}>
+        <Tooltip>
+          <Link
+            href="https://ui.shadcn.com/"
+            passHref
+            target="_blank"
+            rel="noreferrer"
+          >
+            <TooltipTrigger>
+              <Image
+                src="/shadcn-ui-seeklogo.svg"
+                alt="Large avatar"
+                width={180}
+                height={180}
+                className="dark:invert"
+              />
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>shadcn</p>
+            </TooltipContent>
+          </Link>
+        </Tooltip>
+      </TooltipProvider>
+      <TooltipProvider delayDuration={100}>
+        <Tooltip>
+          <Link
+            href="https://vercel.com/"
+            passHref
+            target="_blank"
+            rel="noreferrer"
+          >
+            <TooltipTrigger>
+              <Image
+                src="/vercel-icon-dark.svg"
+                alt="Large avatar"
+                width={190}
+                height={190}
+                className="dark:invert"
+              />
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Vercel</p>
+            </TooltipContent>
+          </Link>
+        </Tooltip>
+      </TooltipProvider>
+    </>
   );
 }
