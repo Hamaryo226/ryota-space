@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
+//import { Header } from "@/components/header";
+//import { Footer } from "@/components/footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
 const geistSans = Geist({
@@ -54,10 +54,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
+          {/*<Header />*/}
           {children}
           <GoogleAnalytics gaId="G-0GZDYB8RRC" />
-          <Footer />
+          {/*<Footer />*/}
         </ThemeProvider>
       </body>
     </html>

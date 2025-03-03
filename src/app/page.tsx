@@ -1,4 +1,4 @@
-import Link from "next/link";
+/*
 import Card from "@/components/top-card";
 import FCSdata from "public/Article/fcs.json";
 import SDSdata from "public/Article/sds.json";
@@ -29,15 +29,24 @@ import {
   Github,
 } from "lucide-react";
 import { CopyButton } from "@/components/copy-button";
-
+*/
+"use client";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
+import { Particles } from "@/components/ui/particles";
+/*
 export const metadata: Metadata = {
   title: "Home｜ryota-space",
   description: "ryota-spaceは、個人のポートフォリオサイトです。",
   appleWebApp: true,
 };
+*/
 
 export default function top() {
   return (
+    /*
     <div className="container mx-auto px-4 py-8">
       <div className="pb-10">
         <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
@@ -118,9 +127,11 @@ export default function top() {
         </div>
       </div>
     </div>
+    */
+    <Wait />
   );
 }
-
+/*
 function TopBadge() {
   return (
     <>
@@ -262,5 +273,58 @@ function HeadName() {
         </div>
       </div>
     </>
+  );
+}
+*/
+
+function Wait() {
+  const { theme } = useTheme();
+  const [color, setColor] = useState("#ffffff");
+
+  useEffect(() => {
+    setColor(theme === "dark" ? "#ffffff" : "#000000");
+  }, [theme]);
+  return (
+    <div className="flex items-center justify-center min-h-screen px-4 py-8">
+      <motion.div
+        initial={{ opacity: 0.0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 0.3,
+          duration: 0.8,
+          ease: "easeInOut",
+        }}
+        className="relative flex flex-col gap-4 items-center justify-center px-4"
+      >
+        <div className="text-4xl md:text-7xl font-bold dark:text-white text-center">
+          Currently rebuilding page design...
+        </div>
+        <div className="font-extralight text-base md:text-4xl dark:text-neutral-200 py-4">
+          Please wait a moment.
+        </div>
+        <Link href="https://www.instagram.com/hamaryo_2/">
+          <button className="bg-black dark:bg-white rounded-full w-fit text-white dark:text-black px-4 py-2">
+            View Details
+          </button>
+        </Link>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0.0, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 0.3,
+          duration: 0.6,
+          ease: "easeInOut",
+        }}
+      >
+        <Particles
+          className="absolute inset-0"
+          quantity={100}
+          ease={80}
+          color={color}
+          refresh
+        />
+      </motion.div>
+    </div>
   );
 }
