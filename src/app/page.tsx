@@ -1,4 +1,4 @@
-import Link from "next/link";
+/*
 import Card from "@/components/top-card";
 import FCSdata from "public/Article/fcs.json";
 import SDSdata from "public/Article/sds.json";
@@ -29,149 +29,28 @@ import {
   Github,
 } from "lucide-react";
 import { CopyButton } from "@/components/copy-button";
-
+*/
+"use client";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
+import { Particles } from "@/components/ui/particles";
+/*
 export const metadata: Metadata = {
   title: "Home｜ryota-space",
   description: "ryota-spaceは、個人のポートフォリオサイトです。",
   appleWebApp: true,
 };
+*/
 
 export default function top() {
   return (
+    /*
     <div className="container mx-auto px-4 py-8">
       <div className="pb-10">
         <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
-          <Image
-            className="w-40 h-40 rounded-sm row-span-3"
-            src="/hamaryo.jpg"
-            alt="Large avatar"
-            width={200}
-            height={200}
-          />
-          <div className="text-center md:text-left">
-            <p className="text-4xl md:text-5xl font-bold mb-2">
-              Hamaguchi-Ryota
-            </p>
-            <p className="text-xl text-gray-500 max-w-2xl">
-              System Engineer, Programmer
-            </p>
-            <div className="flex flex-wrap justify-center md:justify-start gap-2 mt-2 mb-3">
-              <Badge
-                variant="outline"
-                className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
-              >
-                Python
-              </Badge>
-              <Badge
-                variant="outline"
-                className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
-              >
-                PHP
-              </Badge>
-              <Badge
-                variant="outline"
-                className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
-              >
-                C#
-              </Badge>
-              <Badge
-                variant="outline"
-                className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
-              >
-                Next.js
-              </Badge>
-            </div>
-            <div className="flex items-center space-x-2 justify-center md:justify-start">
-              <Link
-                href="https://twitter.com/_hamaryo"
-                passHref
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Button
-                  variant="outline"
-                  className="transition delay-100 duration-150 ease-in-out hover:-translate-y-1"
-                >
-                  <Twitter />
-                </Button>
-              </Link>
-              <Link
-                href="https://www.instagram.com/hamaryo_2"
-                passHref
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Button
-                  variant="outline"
-                  className="transition delay-100 duration-150 ease-in-out hover:-translate-y-1"
-                >
-                  <Instagram />
-                </Button>
-              </Link>
-              <Link
-                href="https://github.com/HamaguchiRyota"
-                passHref
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Button
-                  variant="outline"
-                  className="transition delay-100 duration-150 ease-in-out hover:-translate-y-1"
-                >
-                  <Github />
-                </Button>
-              </Link>
-              <Dialog>
-                <DialogTrigger asChild>
-                  <Button
-                    variant="outline"
-                    className="transition delay-100 duration-150 ease-in-out hover:-translate-y-1"
-                  >
-                    <Share className="h-5 w-5" />
-                    <span>Share</span>
-                  </Button>
-                </DialogTrigger>
-                <DialogContent className="sm:max-w-md">
-                  <DialogHeader>
-                    <DialogTitle>Share link</DialogTitle>
-                    <DialogDescription>
-                      Anyone who has this link will be able to view this.
-                    </DialogDescription>
-                  </DialogHeader>
-                  <div className="flex items-center space-x-2">
-                    <Link
-                      href="https://ryota-space.vercel.app/"
-                      passHref
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <Button variant="outline">
-                        <Globe />
-                      </Button>
-                    </Link>
-                    <div className="grid flex-1 gap-2">
-                      <Label htmlFor="link" className="sr-only">
-                        Link
-                      </Label>
-                      <Input
-                        id="link"
-                        defaultValue="https://ryota-space.vercel.app/"
-                        readOnly
-                      />
-                    </div>
-                    <CopyButton value="https://ryota-space.vercel.app/" />
-                  </div>
-                  <DialogFooter className="sm:justify-start">
-                    <DialogClose asChild>
-                      <Button type="button" variant="secondary">
-                        Close
-                      </Button>
-                    </DialogClose>
-                  </DialogFooter>
-                </DialogContent>
-              </Dialog>
-            </div>
-          </div>
+          <HeadName />
         </div>
       </div>
 
@@ -247,6 +126,205 @@ export default function top() {
           </Link>
         </div>
       </div>
+    </div>
+    */
+    <Wait />
+  );
+}
+/*
+function TopBadge() {
+  return (
+    <>
+      <Badge
+        variant="outline"
+        className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
+      >
+        Python
+      </Badge>
+      <Badge
+        variant="outline"
+        className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
+      >
+        PHP
+      </Badge>
+      <Badge
+        variant="outline"
+        className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
+      >
+        C#
+      </Badge>
+      <Badge
+        variant="outline"
+        className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
+      >
+        Next.js
+      </Badge>
+    </>
+  );
+}
+
+function HeadName() {
+  return (
+    <>
+      <Image
+        className="w-40 h-40 rounded-sm row-span-3"
+        src="/hamaryo.jpg"
+        alt="Large avatar"
+        width={200}
+        height={200}
+      />
+      <div className="text-center md:text-left">
+        <p className="text-4xl md:text-5xl font-bold mb-2">Hamaguchi-Ryota</p>
+        <p className="text-xl text-gray-500 max-w-2xl">
+          System Engineer, Programmer
+        </p>
+        <div className="flex flex-wrap justify-center md:justify-start gap-2 mt-2 mb-3">
+          <TopBadge />
+        </div>
+        <div className="flex items-center space-x-2 justify-center md:justify-start">
+          <Link
+            href="https://twitter.com/_hamaryo"
+            passHref
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Button
+              variant="outline"
+              className="transition delay-100 duration-150 ease-in-out hover:-translate-y-1"
+            >
+              <Twitter />
+            </Button>
+          </Link>
+          <Link
+            href="https://www.instagram.com/hamaryo_2"
+            passHref
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Button
+              variant="outline"
+              className="transition delay-100 duration-150 ease-in-out hover:-translate-y-1"
+            >
+              <Instagram />
+            </Button>
+          </Link>
+          <Link
+            href="https://github.com/HamaguchiRyota"
+            passHref
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Button
+              variant="outline"
+              className="transition delay-100 duration-150 ease-in-out hover:-translate-y-1"
+            >
+              <Github />
+            </Button>
+          </Link>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button
+                variant="outline"
+                className="transition delay-100 duration-150 ease-in-out hover:-translate-y-1"
+              >
+                <Share className="h-5 w-5" />
+                <span>Share</span>
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-md">
+              <DialogHeader>
+                <DialogTitle>Share link</DialogTitle>
+                <DialogDescription>
+                  Anyone who has this link will be able to view this.
+                </DialogDescription>
+              </DialogHeader>
+              <div className="flex items-center space-x-2">
+                <Link
+                  href="https://ryota-space.vercel.app/"
+                  passHref
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Button variant="outline">
+                    <Globe />
+                  </Button>
+                </Link>
+                <div className="grid flex-1 gap-2">
+                  <Label htmlFor="link" className="sr-only">
+                    Link
+                  </Label>
+                  <Input
+                    id="link"
+                    defaultValue="https://ryota-space.vercel.app/"
+                    readOnly
+                  />
+                </div>
+                <CopyButton value="https://ryota-space.vercel.app/" />
+              </div>
+              <DialogFooter className="sm:justify-start">
+                <DialogClose asChild>
+                  <Button type="button" variant="secondary">
+                    Close
+                  </Button>
+                </DialogClose>
+              </DialogFooter>
+            </DialogContent>
+          </Dialog>
+        </div>
+      </div>
+    </>
+  );
+}
+*/
+
+function Wait() {
+  const { theme } = useTheme();
+  const [color, setColor] = useState("#ffffff");
+
+  useEffect(() => {
+    setColor(theme === "dark" ? "#ffffff" : "#000000");
+  }, [theme]);
+  return (
+    <div className="flex items-center justify-center min-h-screen px-4 py-8">
+      <motion.div
+        initial={{ opacity: 0.0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 0.3,
+          duration: 0.8,
+          ease: "easeInOut",
+        }}
+        className="relative flex flex-col gap-4 items-center justify-center px-4"
+      >
+        <div className="text-4xl md:text-7xl font-bold dark:text-white text-center">
+          Currently rebuilding page design...
+        </div>
+        <div className="font-extralight text-base md:text-4xl dark:text-neutral-200 py-4">
+          Please wait a moment.
+        </div>
+        <Link href="https://www.instagram.com/hamaryo_2/">
+          <button className="bg-black dark:bg-white rounded-full w-fit text-white dark:text-black px-4 py-2">
+            View Details
+          </button>
+        </Link>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0.0, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 0.3,
+          duration: 0.6,
+          ease: "easeInOut",
+        }}
+      >
+        <Particles
+          className="absolute inset-0"
+          quantity={100}
+          ease={80}
+          color={color}
+          refresh
+        />
+      </motion.div>
     </div>
   );
 }
