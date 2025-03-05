@@ -1,187 +1,79 @@
-/*
-import Card from "@/components/top-card";
-import FCSdata from "public/Article/fcs.json";
-import SDSdata from "public/Article/sds.json";
-import TRSdata from "public/Article/trs.json";
-import TRSNdata from "public/Article/trsn.json";
-import type { Metadata } from "next";
+"use client";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogClose,
-  DialogHeader,
-  DialogFooter,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import {
-  ChevronRight,
-  Share,
-  Globe,
-  Twitter,
-  Instagram,
-  Github,
-} from "lucide-react";
-import { CopyButton } from "@/components/copy-button";
-*/
-"use client";
-import Link from "next/link";
-import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { useTheme } from "next-themes";
-import { Particles } from "@/components/ui/particles";
-/*
-export const metadata: Metadata = {
-  title: "Home｜ryota-space",
-  description: "ryota-spaceは、個人のポートフォリオサイトです。",
-  appleWebApp: true,
-};
-*/
+import { Footer } from "@/components/footer";
+import { Twitter, Instagram, Github, Youtube } from "lucide-react";
+import Link from "next/link";
+//import { motion } from "framer-motion";
 
-export default function top() {
+export default function Home() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
   return (
-    /*
-    <div className="container mx-auto px-4 py-8">
-      <div className="pb-10">
-        <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
-          <HeadName />
-        </div>
-      </div>
-
-      <div className="pb-10">
-        <div className="grid grid-cols-2 text-3xl font-bold mb-8">
-          <h1 className="sm:text-3xl text-2xl font-bold text-start content-center">
-            Public Project
-          </h1>
-          <div className="justify-self-end">
-            <Link href="/Project">
-              <Button variant="outline" size="icon">
-                <ChevronRight />
-              </Button>
-            </Link>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
-          <Link href="/Project/Frailty-Check-System">
-            <Card
-              //thumbnail={FCSdata.thumbnail}
-              thumbnail="/fcs.webp"
-              title={FCSdata.title}
-              date={FCSdata.date}
-              tags={["Python", "django", "javascript"]}
-              eng
-            />
-          </Link>
-          <Link href="/Project/Supplemental-Documentation-System">
-            <Card
-              //thumbnail={SDSdata.thumbnail}
-              thumbnail="/TheLost.webp"
-              title={SDSdata.title}
-              date={SDSdata.date}
-              tags={["PHP", "Python"]}
-              eng
-            />
-          </Link>
-        </div>
-      </div>
-
-      <div className="pb-5">
-        <div className="grid grid-cols-2 text-3xl font-bold mb-8">
-          <h1 className="sm:text-3xl text-2xl font-bold text-start  content-center">
-            Private Project
-          </h1>
-          <div className="justify-self-end">
-            <Link href="/Private">
-              <Button variant="outline" size="icon">
-                <ChevronRight />
-              </Button>
-            </Link>
-          </div>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
-          <Link href="/Private/Taiko-Re-Strap">
-            <Card
-              //thumbnail={TRSdata.thumbnail}
-              thumbnail="/Taiko-Re-Strap.webp"
-              title={TRSdata.title}
-              date={TRSdata.date}
-              tags={["C#", ".NET Framework"]}
-            />
-          </Link>
-          <Link href="/Private/Taiko-Re-Strap-Next">
-            <Card
-              //thumbnail={TRSNdata.thumbnail}
-              thumbnail="/Taiko-Re-Strap-Next.webp"
-              title={TRSNdata.title}
-              date={TRSNdata.date}
-              tags={["C#", "DxLib"]}
-            />
-          </Link>
-        </div>
-      </div>
-    </div>
-    */
-    <Wait />
-  );
-}
-/*
-function TopBadge() {
-  return (
-    <>
-      <Badge
-        variant="outline"
-        className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
-      >
-        Python
-      </Badge>
-      <Badge
-        variant="outline"
-        className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
-      >
-        PHP
-      </Badge>
-      <Badge
-        variant="outline"
-        className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
-      >
-        C#
-      </Badge>
-      <Badge
-        variant="outline"
-        className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
-      >
-        Next.js
-      </Badge>
-    </>
-  );
-}
-
-function HeadName() {
-  return (
-    <>
-      <Image
-        className="w-40 h-40 rounded-sm row-span-3"
-        src="/hamaryo.jpg"
-        alt="Large avatar"
-        width={200}
-        height={200}
+    <div className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-[#1e1e1e] text-zinc-50">
+      {/* Magical forest mist effect */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-30"
+        style={{
+          background: `radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, rgba(150, 150, 150, 0.2), transparent 80%)`,
+        }}
       />
-      <div className="text-center md:text-left">
-        <p className="text-4xl md:text-5xl font-bold mb-2">Hamaguchi-Ryota</p>
-        <p className="text-xl text-gray-500 max-w-2xl">
-          System Engineer, Programmer
-        </p>
-        <div className="flex flex-wrap justify-center md:justify-start gap-2 mt-2 mb-3">
-          <TopBadge />
+
+      {/* Enchanted forest decorative elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Vine-like borders */}
+        <div className="absolute left-0 top-0 h-32 w-32">
+          <div className="absolute h-full w-[1px] bg-gradient-to-b from-zinc-600/40 to-transparent" />
+          <div className="absolute h-[1px] w-full bg-gradient-to-r from-zinc-600/40 to-transparent" />
         </div>
-        <div className="flex items-center space-x-2 justify-center md:justify-start">
+        <div className="absolute bottom-0 right-0 h-32 w-32">
+          <div className="absolute bottom-0 right-0 h-full w-[1px] bg-gradient-to-t from-zinc-600/40 to-transparent" />
+          <div className="absolute bottom-0 h-[1px] w-full bg-gradient-to-l from-zinc-600/40 to-transparent" />
+        </div>
+
+        {/* Mystical forest patterns */}
+        <div className="absolute left-8 top-8 h-64 w-64 rounded-full bg-gradient-to-br from-zinc-900/20 via-zinc-800/10 to-transparent" />
+        <div className="absolute bottom-8 right-8 h-64 w-64 rounded-full bg-gradient-to-tl from-zinc-900/20 via-zinc-800/10 to-transparent" />
+      </div>
+
+      <div className="container relative flex max-w-3xl flex-col items-center justify-center gap-8 px-4 text-center">
+        {/* Profile Image with enchanted border */}
+        <div className="relative">
+          <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-zinc-600 via-zinc-500/50 to-zinc-600 opacity-75 blur-md" />
+          <div className="relative h-24 w-24 overflow-hidden rounded-full border-2 border-zinc-700">
+            <Image
+              src="/hamaryo.jpg"
+              alt="Profile"
+              width={96}
+              height={96}
+              className="object-cover"
+            />
+          </div>
+        </div>
+
+        <div className="space-y-2">
+          <h1 className="bg-gradient-to-r from-zinc-300 via-zinc-200/90 to-zinc-300 bg-clip-text text-4xl font-bold tracking-tighter text-transparent sm:text-5xl">
+            Hamaguchi Ryota
+          </h1>
+          <p className="text-xl text-zinc-400">System Engineer, Programmer</p>
+        </div>
+
+        <p className="max-w-[600px] text-zinc-200/80 md:text-lg">
+          PC turns off the power.
+        </p>
+
+        <div className="flex flex-wrap justify-center gap-4">
+          {/* Nature-themed magical buttons */}
           <Link
             href="https://twitter.com/_hamaryo"
             passHref
@@ -190,9 +82,11 @@ function HeadName() {
           >
             <Button
               variant="outline"
-              className="transition delay-100 duration-150 ease-in-out hover:-translate-y-1"
+              size="icon"
+              className="group border-zinc-800/50 bg-zinc-900/30 text-zinc-400 backdrop-blur-sm transition-all hover:border-zinc-500 hover:bg-zinc-800/40 hover:text-zinc-200"
             >
-              <Twitter />
+              <Twitter className="h-5 w-5 transition-transform group-hover:scale-110" />
+              <span className="sr-only">X</span>
             </Button>
           </Link>
           <Link
@@ -203,9 +97,11 @@ function HeadName() {
           >
             <Button
               variant="outline"
-              className="transition delay-100 duration-150 ease-in-out hover:-translate-y-1"
+              size="icon"
+              className="group border-zinc-800/50 bg-zinc-900/30 text-zinc-400 backdrop-blur-sm transition-all hover:border-zinc-500 hover:bg-zinc-800/40 hover:text-zinc-200"
             >
-              <Instagram />
+              <Instagram className="h-5 w-5 transition-transform group-hover:scale-110" />
+              <span className="sr-only">Instagram</span>
             </Button>
           </Link>
           <Link
@@ -216,115 +112,49 @@ function HeadName() {
           >
             <Button
               variant="outline"
-              className="transition delay-100 duration-150 ease-in-out hover:-translate-y-1"
+              size="icon"
+              className="group border-zinc-800/50 bg-zinc-900/30 text-zinc-400 backdrop-blur-sm transition-all hover:border-zinc-500 hover:bg-zinc-800/40 hover:text-zinc-200"
             >
-              <Github />
+              <Github className="h-5 w-5 transition-transform group-hover:scale-110" />
+              <span className="sr-only">GitHub</span>
             </Button>
           </Link>
-          <Dialog>
-            <DialogTrigger asChild>
-              <Button
-                variant="outline"
-                className="transition delay-100 duration-150 ease-in-out hover:-translate-y-1"
-              >
-                <Share className="h-5 w-5" />
-                <span>Share</span>
-              </Button>
-            </DialogTrigger>
-            <DialogContent className="sm:max-w-md">
-              <DialogHeader>
-                <DialogTitle>Share link</DialogTitle>
-                <DialogDescription>
-                  Anyone who has this link will be able to view this.
-                </DialogDescription>
-              </DialogHeader>
-              <div className="flex items-center space-x-2">
-                <Link
-                  href="https://ryota-space.vercel.app/"
-                  passHref
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Button variant="outline">
-                    <Globe />
-                  </Button>
-                </Link>
-                <div className="grid flex-1 gap-2">
-                  <Label htmlFor="link" className="sr-only">
-                    Link
-                  </Label>
-                  <Input
-                    id="link"
-                    defaultValue="https://ryota-space.vercel.app/"
-                    readOnly
-                  />
-                </div>
-                <CopyButton value="https://ryota-space.vercel.app/" />
-              </div>
-              <DialogFooter className="sm:justify-start">
-                <DialogClose asChild>
-                  <Button type="button" variant="secondary">
-                    Close
-                  </Button>
-                </DialogClose>
-              </DialogFooter>
-            </DialogContent>
-          </Dialog>
+          <Link
+            href="https://www.youtube.com/@Fumolat"
+            passHref
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Button
+              variant="outline"
+              size="icon"
+              className="group border-zinc-800/50 bg-zinc-900/30 text-zinc-400 backdrop-blur-sm transition-all hover:border-zinc-500 hover:bg-zinc-800/40 hover:text-zinc-200"
+            >
+              <Youtube className="h-5 w-5 transition-transform group-hover:scale-110" />
+              <span className="sr-only">YouTube</span>
+            </Button>
+          </Link>
+        </div>
+
+        <div className="flex gap-4 flex-row">
+          <Button
+            variant="outline"
+            className="border-zinc-800/50 bg-zinc-900/30 text-zinc-400 backdrop-blur-sm transition-all hover:border-zinc-500 hover:bg-zinc-800/40 hover:text-zinc-200"
+            disabled
+          >
+            Project
+          </Button>
+          <Button
+            className="relative overflow-hidden bg-gradient-to-r from-zinc-700 to-zinc-600 text-zinc-50 transition-all hover:from-zinc-600 hover:to-zinc-500"
+            disabled
+          >
+            <span className="relative z-10">About</span>
+            <div className="absolute inset-0 bg-gradient-to-r from-zinc-600 to-zinc-500 opacity-0 transition-opacity hover:opacity-100" />
+          </Button>
         </div>
       </div>
-    </>
-  );
-}
-*/
 
-function Wait() {
-  const { theme } = useTheme();
-  const [color, setColor] = useState("#ffffff");
-
-  useEffect(() => {
-    setColor(theme === "dark" ? "#ffffff" : "#000000");
-  }, [theme]);
-  return (
-    <div className="flex items-center justify-center min-h-screen px-4 py-8">
-      <motion.div
-        initial={{ opacity: 0.0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{
-          delay: 0.3,
-          duration: 0.8,
-          ease: "easeInOut",
-        }}
-        className="relative flex flex-col gap-4 items-center justify-center px-4"
-      >
-        <div className="text-4xl md:text-7xl font-bold dark:text-white text-center">
-          Currently rebuilding page design...
-        </div>
-        <div className="font-extralight text-base md:text-4xl dark:text-neutral-200 py-4">
-          Please wait a moment.
-        </div>
-        <Link href="https://www.instagram.com/hamaryo_2/">
-          <button className="bg-black dark:bg-white rounded-full w-fit text-white dark:text-black px-4 py-2">
-            View Details
-          </button>
-        </Link>
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0.0, y: 0 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{
-          delay: 0.3,
-          duration: 0.6,
-          ease: "easeInOut",
-        }}
-      >
-        <Particles
-          className="absolute inset-0"
-          quantity={100}
-          ease={80}
-          color={color}
-          refresh
-        />
-      </motion.div>
+      <Footer />
     </div>
   );
 }
