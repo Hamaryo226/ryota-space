@@ -29,23 +29,6 @@ export default function Home() {
         }}
       />
 
-      {/* Enchanted forest decorative elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Vine-like borders */}
-        <div className="absolute left-0 top-0 h-32 w-32">
-          <div className="absolute h-full w-[1px] bg-gradient-to-b from-zinc-600/40 to-transparent" />
-          <div className="absolute h-[1px] w-full bg-gradient-to-r from-zinc-600/40 to-transparent" />
-        </div>
-        <div className="absolute bottom-0 right-0 h-32 w-32">
-          <div className="absolute bottom-0 right-0 h-full w-[1px] bg-gradient-to-t from-zinc-600/40 to-transparent" />
-          <div className="absolute bottom-0 h-[1px] w-full bg-gradient-to-l from-zinc-600/40 to-transparent" />
-        </div>
-
-        {/* Mystical forest patterns */}
-        <div className="absolute left-8 top-8 h-64 w-64 rounded-full bg-gradient-to-br from-zinc-900/20 via-zinc-800/10 to-transparent" />
-        <div className="absolute bottom-8 right-8 h-64 w-64 rounded-full bg-gradient-to-tl from-zinc-900/20 via-zinc-800/10 to-transparent" />
-      </div>
-
       <div className="container relative flex max-w-3xl flex-col items-center justify-center gap-8 px-4 text-center">
         {/* Profile Image with enchanted border */}
         <div className="relative">
