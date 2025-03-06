@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import {
+  ChevronDown,
   Twitter,
   Instagram,
   Github,
@@ -185,8 +186,13 @@ export default function Home() {
             </Button>
           </div>
         </div>
+        <ChevronDown className="absolute bottom-4 animate-bounce h-8 w-8 text-zinc-400" />
       </div>
       <div className="container max-w-3xl mx-auto mt-8">
+        <h2 className="text-2xl font-bold text-zinc-200 text-center">
+          Projects
+        </h2>
+        <p className="text-zinc-300"></p>
         <BentoGrid items={itemsSample} />
       </div>
     </div>
