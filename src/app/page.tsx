@@ -168,7 +168,7 @@ export default function Home() {
               </Button>
             </Link>
           </div>
-
+          {/*
           <div className="flex gap-4 flex-row">
             <Button
               variant="outline"
@@ -185,8 +185,9 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-r from-zinc-600 to-zinc-500 opacity-0 transition-opacity hover:opacity-100" />
             </Button>
           </div>
+          */}
         </div>
-        <ChevronDown className="absolute bottom-36 md:bottom-6 animate-bounce h-8 w-8 text-zinc-400" />
+        <ChevronDown className="absolute bottom-32 md:bottom-6 animate-bounce h-8 w-8 text-zinc-400" />
       </div>
       <div className="container max-w-3xl mx-auto mt-8">
         <h2 className="text-2xl font-bold text-zinc-200 text-center">
