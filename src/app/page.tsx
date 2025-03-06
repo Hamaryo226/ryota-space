@@ -186,7 +186,7 @@ export default function Home() {
             </Button>
           </div>
         </div>
-        <ChevronDown className="absolute bottom-4 animate-bounce h-8 w-8 text-zinc-400" />
+        <ChevronDown className="absolute bottom-36 md:bottom-6 animate-bounce h-8 w-8 text-zinc-400" />
       </div>
       <div className="container max-w-3xl mx-auto mt-8">
         <h2 className="text-2xl font-bold text-zinc-200 text-center">
