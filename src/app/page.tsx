@@ -1,7 +1,5 @@
-"use client";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import {
   ChevronDown,
   Twitter,
@@ -57,28 +55,9 @@ const itemsSample: BentoItem[] = [
 ];
 
 export default function Home() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
-
   return (
     <div>
       <div className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden text-zinc-50">
-        {/* Magical forest mist effect */}
-        <div
-          className="pointer-events-none absolute inset-0 opacity-30"
-          style={{
-            background: `radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, rgba(150, 150, 150, 0.2), transparent 80%)`,
-          }}
-        />
-
         <div className="container relative flex max-w-3xl flex-col items-center justify-center gap-8 px-4 text-center">
           {/* Profile Image with enchanted border */}
           <div className="relative">
@@ -168,24 +147,6 @@ export default function Home() {
               </Button>
             </Link>
           </div>
-          {/*
-          <div className="flex gap-4 flex-row">
-            <Button
-              variant="outline"
-              className="border-zinc-800/50 bg-zinc-900/30 text-zinc-400 backdrop-blur-sm transition-all hover:border-zinc-500 hover:bg-zinc-800/40 hover:text-zinc-200"
-              disabled
-            >
-              Project
-            </Button>
-            <Button
-              className="relative overflow-hidden bg-gradient-to-r from-zinc-700 to-zinc-600 text-zinc-50 transition-all hover:from-zinc-600 hover:to-zinc-500"
-              disabled
-            >
-              <span className="relative z-10">About</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-zinc-600 to-zinc-500 opacity-0 transition-opacity hover:opacity-100" />
-            </Button>
-          </div>
-          */}
         </div>
         <ChevronDown className="absolute bottom-32 md:bottom-6 animate-bounce h-8 w-8 text-zinc-400" />
       </div>
