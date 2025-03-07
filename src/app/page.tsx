@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import {
@@ -12,6 +13,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { BentoGrid, type BentoItem } from "@/components/Bento";
+import { motion } from "framer-motion";
 
 const itemsSample: BentoItem[] = [
   {
@@ -148,7 +150,19 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <ChevronDown className="absolute bottom-32 md:bottom-6 animate-bounce h-8 w-8 text-zinc-400" />
+
+        <motion.div
+          initial={{ opacity: 0.0, x: 0, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 0.3,
+            duration: 0.8,
+            ease: "easeInOut",
+          }}
+          className="flex justify-center items-center"
+        >
+          <ChevronDown className="absolute bottom-32 md:bottom-6 animate-bounce h-8 w-8 text-zinc-400" />
+        </motion.div>
       </div>
       <div className="container max-w-3xl mx-auto mt-8">
         <h2 className="text-2xl font-bold text-zinc-200 text-center">
