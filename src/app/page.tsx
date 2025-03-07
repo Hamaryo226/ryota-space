@@ -82,7 +82,7 @@ export default function Home() {
             <p className="text-xl text-zinc-400">System Engineer, Programmer</p>
           </div>
 
-          <p className="max-w-[600px] text-zinc-200/80 md:text-lg">
+          <p className="italic max-w-[600px] text-zinc-200/80 md:text-lg">
             PC turns off the power.
           </p>
 
@@ -165,7 +165,7 @@ export default function Home() {
         </motion.div>
       </div>
       <div className="container max-w-3xl mx-auto mt-8">
-        <h2 className="text-2xl font-bold text-zinc-200 text-center">
+        <h2 className="sm:text-3xl text-2xl font-bold text-zinc-200 text-center">
           Projects
         </h2>
         <p className="text-zinc-300"></p>
