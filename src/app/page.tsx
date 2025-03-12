@@ -62,93 +62,125 @@ export default function Home() {
       <div className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden text-zinc-50">
         <div className="container relative flex max-w-3xl flex-col items-center justify-center gap-8 px-4 text-center">
           {/* Profile Image with enchanted border */}
-          <div className="relative">
-            <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-zinc-600 via-zinc-500/50 to-zinc-600 opacity-75 blur-md" />
-            <div className="relative h-24 w-24 overflow-hidden rounded-full border-2 border-zinc-700">
-              <Image
-                src="/hamaryo.jpg"
-                alt="Profile"
-                width={96}
-                height={96}
-                className="object-cover"
-              />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="relative">
+              <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-zinc-600 via-zinc-500/50 to-zinc-600 opacity-75 blur-md" />
+              <div className="relative h-24 w-24 overflow-hidden rounded-full border-2 border-zinc-700">
+                <Image
+                  src="/hamaryo.jpg"
+                  alt="Profile"
+                  width={96}
+                  height={96}
+                  className="object-cover"
+                />
+              </div>
             </div>
-          </div>
+          </motion.div>
 
           <div className="space-y-2">
-            <h1 className="bg-gradient-to-r from-zinc-300 via-zinc-200/90 to-zinc-300 bg-clip-text text-4xl font-bold tracking-tighter text-transparent sm:text-5xl">
-              Hamaguchi Ryota
-            </h1>
-            <p className="text-xl text-zinc-400">System Engineer, Programmer</p>
+            <motion.div
+              transition={{ duration: 0.2 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+            >
+              <h1 className="bg-gradient-to-r from-zinc-300 via-zinc-200/90 to-zinc-300 bg-clip-text text-4xl font-bold tracking-tighter text-transparent sm:text-5xl">
+                Hamaguchi Ryota
+              </h1>
+            </motion.div>
+            <motion.div
+              transition={{ duration: 0.2, delay: 0.1 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+            >
+              <p className="text-xl text-zinc-400">
+                System Engineer, Programmer
+              </p>
+            </motion.div>
           </div>
 
-          <p className="italic max-w-[600px] text-zinc-200/80 md:text-lg">
-            PC turns off the power.
-          </p>
+          <motion.div
+            transition={{ duration: 0.2, delay: 0.2 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+          >
+            <p className="italic max-w-[600px] text-zinc-200/80 md:text-lg">
+              PC turns off the power.
+            </p>
+          </motion.div>
 
-          <div className="flex flex-wrap justify-center gap-4">
-            {/* Nature-themed magical buttons */}
-            <Link
-              href="https://twitter.com/_hamaryo"
-              passHref
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Button
-                variant="outline"
-                size="icon"
-                className="group border-zinc-800/50 bg-zinc-900/30 text-zinc-400 backdrop-blur-sm transition-all hover:border-zinc-500 hover:bg-zinc-800/40 hover:text-zinc-200"
+          <motion.div
+            transition={{ duration: 0.2, delay: 0.3 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+          >
+            <div className="flex flex-wrap justify-center gap-4">
+              {/* Nature-themed magical buttons */}
+              <Link
+                href="https://twitter.com/_hamaryo"
+                passHref
+                target="_blank"
+                rel="noreferrer"
               >
-                <Twitter className="h-5 w-5 transition-transform group-hover:scale-110" />
-                <span className="sr-only">X</span>
-              </Button>
-            </Link>
-            <Link
-              href="https://www.instagram.com/hamaryo_2"
-              passHref
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Button
-                variant="outline"
-                size="icon"
-                className="group border-zinc-800/50 bg-zinc-900/30 text-zinc-400 backdrop-blur-sm transition-all hover:border-zinc-500 hover:bg-zinc-800/40 hover:text-zinc-200"
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="group border-zinc-800/50 bg-zinc-900/30 text-zinc-400 backdrop-blur-sm transition-all hover:border-zinc-500 hover:bg-zinc-800/40 hover:text-zinc-200"
+                >
+                  <Twitter className="h-5 w-5 transition-transform group-hover:scale-110" />
+                  <span className="sr-only">X</span>
+                </Button>
+              </Link>
+              <Link
+                href="https://www.instagram.com/hamaryo_2"
+                passHref
+                target="_blank"
+                rel="noreferrer"
               >
-                <Instagram className="h-5 w-5 transition-transform group-hover:scale-110" />
-                <span className="sr-only">Instagram</span>
-              </Button>
-            </Link>
-            <Link
-              href="https://github.com/HamaguchiRyota"
-              passHref
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Button
-                variant="outline"
-                size="icon"
-                className="group border-zinc-800/50 bg-zinc-900/30 text-zinc-400 backdrop-blur-sm transition-all hover:border-zinc-500 hover:bg-zinc-800/40 hover:text-zinc-200"
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="group border-zinc-800/50 bg-zinc-900/30 text-zinc-400 backdrop-blur-sm transition-all hover:border-zinc-500 hover:bg-zinc-800/40 hover:text-zinc-200"
+                >
+                  <Instagram className="h-5 w-5 transition-transform group-hover:scale-110" />
+                  <span className="sr-only">Instagram</span>
+                </Button>
+              </Link>
+              <Link
+                href="https://github.com/HamaguchiRyota"
+                passHref
+                target="_blank"
+                rel="noreferrer"
               >
-                <Github className="h-5 w-5 transition-transform group-hover:scale-110" />
-                <span className="sr-only">GitHub</span>
-              </Button>
-            </Link>
-            <Link
-              href="https://www.youtube.com/@Fumolat"
-              passHref
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Button
-                variant="outline"
-                size="icon"
-                className="group border-zinc-800/50 bg-zinc-900/30 text-zinc-400 backdrop-blur-sm transition-all hover:border-zinc-500 hover:bg-zinc-800/40 hover:text-zinc-200"
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="group border-zinc-800/50 bg-zinc-900/30 text-zinc-400 backdrop-blur-sm transition-all hover:border-zinc-500 hover:bg-zinc-800/40 hover:text-zinc-200"
+                >
+                  <Github className="h-5 w-5 transition-transform group-hover:scale-110" />
+                  <span className="sr-only">GitHub</span>
+                </Button>
+              </Link>
+              <Link
+                href="https://www.youtube.com/@Fumolat"
+                passHref
+                target="_blank"
+                rel="noreferrer"
               >
-                <Youtube className="h-5 w-5 transition-transform group-hover:scale-110" />
-                <span className="sr-only">YouTube</span>
-              </Button>
-            </Link>
-          </div>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="group border-zinc-800/50 bg-zinc-900/30 text-zinc-400 backdrop-blur-sm transition-all hover:border-zinc-500 hover:bg-zinc-800/40 hover:text-zinc-200"
+                >
+                  <Youtube className="h-5 w-5 transition-transform group-hover:scale-110" />
+                  <span className="sr-only">YouTube</span>
+                </Button>
+              </Link>
+            </div>
+          </motion.div>
         </div>
 
         <motion.div
@@ -169,7 +201,18 @@ export default function Home() {
           Projects
         </h2>
         <p className="text-zinc-300"></p>
-        <BentoGrid items={itemsSample} />
+        {itemsSample.map((item, index) => (
+          <motion.div
+            key={index}
+            className=""
+            initial={{ opacity: 0, y: -50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.35, delay: index * 0.2 }}
+          >
+            <BentoGrid items={[item]} />
+          </motion.div>
+        ))}
       </div>
     </div>
   );
