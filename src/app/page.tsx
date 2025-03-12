@@ -193,7 +193,7 @@ export default function Home() {
           }}
           className="flex justify-center items-center"
         >
-          <ChevronDown className="absolute bottom-32 md:bottom-6 animate-bounce h-8 w-8 text-zinc-400" />
+          <ChevronDown className="absolute bottom-6 animate-bounce h-8 w-8 text-zinc-400" />
         </motion.div>
       </div>
       <div className="container max-w-3xl mx-auto mt-8">
