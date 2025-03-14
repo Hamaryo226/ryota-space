@@ -13,6 +13,7 @@ export interface BentoItem {
   cta?: string;
   colSpan?: number;
   hasPersistentHover?: boolean;
+  link: string;
 }
 
 interface BentoGridProps {
@@ -30,6 +31,7 @@ const itemsSample: BentoItem[] = [
     tags: ["Statistics", "Reports", "AI"],
     colSpan: 2,
     hasPersistentHover: false,
+    link: "/projects/analytics-dashboard",
   },
   {
     title: "Task Manager",
@@ -39,6 +41,7 @@ const itemsSample: BentoItem[] = [
     status: "Updated",
     tags: ["Productivity", "Automation"],
     colSpan: 2,
+    link: "/projects/task-manager",
   },
   {
     title: "Media Library",
@@ -47,6 +50,7 @@ const itemsSample: BentoItem[] = [
     icon: <Video className="w-4 h-4 text-purple-500" />,
     tags: ["Storage", "CDN"],
     colSpan: 2,
+    link: "/projects/media-library",
   },
   {
     title: "Global Network",
@@ -56,6 +60,7 @@ const itemsSample: BentoItem[] = [
     status: "Beta",
     tags: ["Infrastructure", "Edge"],
     colSpan: 2,
+    link: "/projects/global-network",
   },
 ];
 /*

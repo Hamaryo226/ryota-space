@@ -25,6 +25,7 @@ const itemsSample: BentoItem[] = [
     status: "Closed",
     tags: ["Python", "Django", "JavaScript"],
     colSpan: 2,
+    link: "/Project/Frailty-Check-System", // 追加
   },
   {
     title: "Supplemental-Documentation-System",
@@ -35,6 +36,7 @@ const itemsSample: BentoItem[] = [
     status: "Closed",
     tags: ["PHP", "Python"],
     colSpan: 2,
+    link: "/projects/supplemental-documentation-system", // 追加
   },
   {
     title: "Taiko-Re-Strap-Next",
@@ -44,6 +46,7 @@ const itemsSample: BentoItem[] = [
     tags: ["C Sharp", "DxLib"],
     status: "In Progress",
     colSpan: 2,
+    link: "/projects/taiko-re-strap-next", // 追加
   },
   {
     title: "Taiko-Re-Strap",
@@ -53,6 +56,7 @@ const itemsSample: BentoItem[] = [
     status: "Closed",
     tags: ["C Sharp", ".NET Framework"],
     colSpan: 2,
+    link: "/projects/taiko-re-strap", // 追加
   },
 ];
 
@@ -210,7 +214,9 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.35, delay: index * 0.2 }}
           >
-            <BentoGrid items={[item]} />
+            <Link href={item.link} passHref>
+              <BentoGrid items={[item]} />
+            </Link>
           </motion.div>
         ))}
       </div>

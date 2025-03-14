@@ -1,13 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import articleData from "public/Article/fcs.json";
-import { CalendarDays } from "lucide-react";
-import { ImageWithAlt } from "@/components/image-with-alt";
-import { AccordionCodeBlock } from "@/components/accordion-code-block";
-import { Badge } from "@/components/ui/badge";
-import { Languages } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Languages } from "lucide-react";
+import { AccordionCodeBlock } from "@/components/accordion-code-block";
+import { ChevronLeft } from "lucide-react";
+import Link from "next/link";
 
 const Code = `
 const startBtn = document.querySelector('#start-btn');
@@ -77,74 +77,60 @@ export default function ProjectPage() {
   const [isEnglish, setIsEnglish] = useState(false);
 
   const data = isEnglish ? articleData.english : articleData;
-
   return (
-    <div className="px-5 py-8">
-      <div className="w-full max-w-5xl justify-center mx-auto">
-        <ImageWithAlt
-          className=""
-          src="/fcs.webp"
-          alt="フレイルチェックシステム。（左）管理画面、（右）滑舌測定機能"
-          width={1920}
-          height={1080}
-        />
-        <article className="mt-7 mb-7 pb-2 border-b-2 border-slate-500/30">
-          <h1 className="font-bold sm:text-4xl sd:text-3xl text-2xl">
-            {data.title}
-          </h1>
-
-          <div className="flex flex-row mt-1 gap-1 leading-7 text-gray-500">
-            <CalendarDays width={20} hanging={20} />
-            <p>{data.date}</p>
+    <div className="w-full max-w-5xl max-h-5xl justify-center mx-auto">
+      <div className="flex flex-row items-center justify-between lg:px-0 px-4 py-4">
+        <Link href="/">
+          <Button variant="outline" size="icon">
+            <ChevronLeft />
+          </Button>
+        </Link>
+      </div>
+      <Image
+        className="lg:rounded-lg"
+        src="/fcs.webp"
+        alt="Frailty-Check-System"
+        width={1920}
+        height={1080}
+      />
+      <div className="px-5">
+        <p className="text-xs font-semibold text-zinc-600 text-center py-1">
+          Frailty Check System
+        </p>
+        <div className="py-4 lg:py-7 text-center">
+          <p className="text-4xl font-semibold py-4 lg:py-7">{data.title}</p>
+          {/* Profile Image with enchanted border 
+          <time className="text-center text-gray-500">null</time>
+          <div className="relative h-24 w-24 overflow-hidden rounded-full border-2 border-zinc-700">
+            <Image
+              src="/hamaryo.jpg"
+              alt="Profile"
+              width={96}
+              height={96}
+              className="object-cover"
+            />
           </div>
-
-          <div className="flex flex-wrap gap-2">
-            <Badge
-              variant="outline"
-              className="mt-2 mb-2 bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
-            >
-              Python
-            </Badge>
-            <Badge
-              variant="outline"
-              className="mt-2 mb-2 bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
-            >
-              django
-            </Badge>
-            <Badge
-              variant="outline"
-              className="mt-2 mb-2 bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
-            >
-              javascript
-            </Badge>
-            <Button
-              onClick={() => setIsEnglish(!isEnglish)}
-              className="gap-0 ml-auto"
-              variant="ghost"
-            >
-              <span>{isEnglish}</span>
-              <Languages width={25} />
-            </Button>
-          </div>
-        </article>
-
+          */}
+          <Button
+            onClick={() => setIsEnglish(!isEnglish)}
+            className="gap-0 ml-auto"
+            variant="ghost"
+          >
+            <span>{isEnglish}</span>
+            <Languages width={25} />
+          </Button>
+        </div>
         {Object.entries(data.content).map(([sectionTitle, sectionContent]) => (
-          <article key={sectionTitle}>
-            <div className="border-l-4 border-indigo-500">
-              <h3 className="font-bold text-2xl mt-5 mb-5 ps-2">
-                {sectionTitle}
-              </h3>
-            </div>
-            <div className="leading-7">{sectionContent}</div>
+          <article key={sectionTitle} className="py-4">
+            <p className="font-bold text-3xl mt-4 mb-5">{sectionTitle}</p>
+            <div className="leading-7 text-zinc-400">{sectionContent}</div>
           </article>
         ))}
+        <article className="py-4">
+          <p className="font-bold text-3xl mt-5 mb-5">
+            {isEnglish ? "System Code" : "システムに関するコード"}
+          </p>
 
-        <article className="mt-7">
-          <div className="border-l-4 border-indigo-500">
-            <h3 className="font-bold text-2xl mt-5 mb-5 ps-2">
-              {isEnglish ? "System Code" : "システムに関するコード"}
-            </h3>
-          </div>
           <div className="max-w-full space-y-4">
             <AccordionCodeBlock
               title={isEnglish ? "Smoothness measurement function" : "滑舌測定"}
@@ -160,17 +146,16 @@ export default function ProjectPage() {
           </div>
         </article>
 
-        <article>
-          <div className="border-l-4 border-indigo-500">
-            <h3 className="font-bold text-2xl mt-5 mb-5 ps-2">
-              {isEnglish ? "Reference Links" : "参考リンク"}
-            </h3>
-          </div>
+        <article className="py-4">
+          <h3 className="font-bold text-3xl mt-5 mb-5">
+            {isEnglish ? "Reference Links" : "参考リンク"}
+          </h3>
+
           <ul className="leading-8">
             {Object.entries(data.links).map(([text, url]) => (
               <li key={url}>
                 <a
-                  className="font-mono text-indigo-400 font-bold after:content-['_↗'] hover:underline decoration-indigo-500"
+                  className="font-mono text-indigo-300 font-bold after:content-['_↗'] hover:underline decoration-indigo-300"
                   href={url}
                   target="_blank"
                   rel="noreferrer"
