@@ -27,9 +27,9 @@ export const metadata: Metadata = {
     siteName: "ryota-space",
     images: [
       {
-        url: "/logo/favicon.ico",
-        width: 200,
-        height: 200,
+        url: "/icon/og.webp",
+        width: 1920,
+        height: 1080,
         alt: "ryota-space",
       },
     ],
@@ -37,9 +37,9 @@ export const metadata: Metadata = {
     type: "website",
   },
   icons: {
-    icon: "/logo/favicon.ico",
-    shortcut: "/logo/favicon-16x16.png",
-    apple: "/logo/apple-touch-icon.png",
+    icon: "/icon/favicon.ico",
+    shortcut: "/icon/favicon-16x16.png",
+    apple: "/icon/apple-touch-icon.png",
   },
 };
 
