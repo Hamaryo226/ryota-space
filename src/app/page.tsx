@@ -36,7 +36,7 @@ const itemsSample: BentoItem[] = [
     status: "Closed",
     tags: ["PHP", "Python"],
     colSpan: 2,
-    link: "/Project/supplemental-documentation-system", // 追加
+    link: "/Project/Supplemental-Documentation-System", // 追加
   },
   {
     title: "Taiko-Re-Strap-Next",
