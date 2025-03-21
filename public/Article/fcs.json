@@ -14,7 +14,7 @@
   },
   "english": {
     "thumbnail": "./public/Fcs.png",
-    "title": "Development Project of Frailty Check System for Elderly",
+    "title": "Development Project of Frailty Check System for Elderly People",
     "date": "January 2024 ~ December 2024",
     "description": "Developed a web system using Django and speech recognition to support frailty checks for the elderly.",
     "content": {
