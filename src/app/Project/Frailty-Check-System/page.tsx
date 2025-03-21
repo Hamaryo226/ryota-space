@@ -6,8 +6,6 @@ import articleData from "public/Article/fcs.json";
 import { Button } from "@/components/ui/button";
 import { Languages } from "lucide-react";
 import { AccordionCodeBlock } from "@/components/accordion-code-block";
-import { ChevronLeft } from "lucide-react";
-import Link from "next/link";
 
 export default function ProjectPage() {
   const [isEnglish, setIsEnglish] = useState(false);
@@ -17,13 +15,6 @@ export default function ProjectPage() {
 
   return (
     <div className="w-full max-w-5xl max-h-5xl justify-center mx-auto">
-      <div className="flex flex-row items-center justify-between lg:px-0 px-4 py-4">
-        <Link href="/">
-          <Button variant="outline" size="icon">
-            <ChevronLeft />
-          </Button>
-        </Link>
-      </div>
       <Image
         className="lg:rounded-lg"
         src={articleData.thumbnail}

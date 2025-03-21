@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Header } from "@/components/header";
 
 export const metadata: Metadata = {
   title: "Supplemental-Documentation-System｜ryota-space",
@@ -27,5 +28,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <div>{children}</div>;
+  return (
+    <div>
+      <Header />
+      {children}
+    </div>
+  );
 }
