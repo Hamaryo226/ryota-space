@@ -36,7 +36,7 @@ const itemsSample: BentoItem[] = [
     status: "Closed",
     tags: ["PHP", "Python"],
     colSpan: 2,
-    link: "/projects/supplemental-documentation-system", // 追加
+    link: "/Project/supplemental-documentation-system", // 追加
   },
   {
     title: "Taiko-Re-Strap-Next",
@@ -46,7 +46,7 @@ const itemsSample: BentoItem[] = [
     tags: ["C Sharp", "DxLib"],
     status: "In Progress",
     colSpan: 2,
-    link: "/projects/taiko-re-strap-next", // 追加
+    link: "/Private/Taiko-Re-Strap-Next", // 追加
   },
   {
     title: "Taiko-Re-Strap",
@@ -56,7 +56,7 @@ const itemsSample: BentoItem[] = [
     status: "Closed",
     tags: ["C Sharp", ".NET Framework"],
     colSpan: 2,
-    link: "/projects/taiko-re-strap", // 追加
+    link: "/Private/Taiko-Re-Strap", // 追加
   },
 ];
 
