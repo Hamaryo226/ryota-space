@@ -1,30 +1,53 @@
 {
-  "thumbnail": "./public/Fcs.png",
-  "title": "高齢者に向けたフレイルチェックシステム開発プロジェクト",
-  "date": "2024年1月 ~ 2024年12月",
-  "description": "高齢者のフレイルチェックを支援するため、Djangoや音声認識を用いたWebシステムを開発。",
+  "thumbnail": "/fcs.webp",
+  "title": {
+    "ja": "高齢者に向けたフレイルチェックシステム開発プロジェクト",
+    "en": "Development Project of Frailty Check System for Elderly People"
+  },
+  "systemname": "Frailty-Check-System",
+  "date": {
+    "ja": "2024年1月 ~ 2024年12月",
+    "en": "January 2024 ~ December 2024"
+  },
+  "description": {
+    "ja": "高齢者のフレイルチェックを支援するため、Djangoや音声認識を用いたWebシステムを開発。",
+    "en": "Developed a web system using Django and speech recognition to support frailty checks for the elderly."
+  },
   "content": {
-    "概要": "高齢期になり心身の機能や活力が衰え、虚弱になった状態を「フレイル」と呼ぶ。要介護予備群、または健康寿命延伸のカギとして注目されている。高齢者の特性を踏まえた保健事業ガイドラインによって、自治体には住民主体の運営によって市町村独自のフレイルチェック票等、元気度のチェックを通いの場等で実施してもらうよう努めることが明記されている。横須賀市では、フレイルチェック教室がボランティアによって年に数回程度開催されている。しかし、これらは講師を務めるボランティアの不足や能力差が課題となっている。本プロジェクトでは、ボランティアが行う教室管理業務、フレイルチェックを支援するため、Djangoや音声認識を用いたWebシステムを開発し、課題の解決を図った。",
-    "想定クライアント": "神奈川県横須賀市 民生局健康部健康増進課",
-    "目的": "フレイルチェック教室におけるフレイルチェックの支援",
-    "目標": "業務フロー図からスタッフの業務を5項目削減"
-  },
-  "links": {
-    "プロジェクト演習2024": "https://open.shonan.bunkyo.ac.jp/proen/2024_prode/2024_a16-%e9%ab%98%e9%bd%a2%e8%80%85%e3%81%ab%e5%90%91%e3%81%91%e3%81%9f%e3%83%95%e3%83%ac%e3%82%a4%e3%83%ab%e3%83%81%e3%82%a7%e3%83%83%e3%82%af%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a0%e9%96%8b%e7%99%ba"
-  },
-  "english": {
-    "thumbnail": "./public/Fcs.png",
-    "title": "Development Project of Frailty Check System for Elderly People",
-    "date": "January 2024 ~ December 2024",
-    "description": "Developed a web system using Django and speech recognition to support frailty checks for the elderly.",
-    "content": {
+    "ja": {
+      "概要": "高齢期になり心身の機能や活力が衰え、虚弱になった状態を「フレイル」と呼ぶ。要介護予備群、または健康寿命延伸のカギとして注目されている。高齢者の特性を踏まえた保健事業ガイドラインによって、自治体には住民主体の運営によって市町村独自のフレイルチェック票等、元気度のチェックを通いの場等で実施してもらうよう努めることが明記されている。横須賀市では、フレイルチェック教室がボランティアによって年に数回程度開催されている。しかし、これらは講師を務めるボランティアの不足や能力差が課題となっている。本プロジェクトでは、ボランティアが行う教室管理業務、フレイルチェックを支援するため、Djangoや音声認識を用いたWebシステムを開発し、課題の解決を図った。",
+      "想定クライアント": "神奈川県横須賀市 民生局健康部健康増進課",
+      "目的": "フレイルチェック教室におけるフレイルチェックの支援",
+      "目標": "業務フロー図からスタッフの業務を5項目削減"
+    },
+    "en": {
       "Overview": "The state of physical and mental function and vitality declining in old age, leading to frailty, is called 'frailty'. It is attracting attention as a key to extending healthy life expectancy or as a pre-care group. According to the health business guidelines that take into account the characteristics of the elderly, municipalities are required to make efforts to implement frailty checks and vitality checks at community centers, etc., using their own frailty check sheets, operated by residents. In Yokosuka City, frailty check classes are held several times a year by volunteers. However, the shortage of volunteers serving as instructors and the difference in their abilities are challenges. In this project, we developed a web system using Django and speech recognition to support classroom management tasks and frailty checks conducted by volunteers, aiming to solve these issues.",
       "Expected Client": "Health Promotion Division, Health Department, Yokosuka City, Kanagawa Prefecture",
       "Purpose": "Support for frailty checks in frailty check classes",
       "Goal": "Reduce staff tasks by 5 items from the workflow diagram"
+    }
+  },
+  "links": {
+    "ja": {
+      "プロジェクト演習2024": "https://open.shonan.bunkyo.ac.jp/proen/2024_prode/2024_a16-%e9%ab%98%e9%bd%a2%e8%80%85%e3%81%ab%e5%90%91%e3%81%91%e3%81%9f%e3%83%95%e3%83%ac%e3%82%a4%e3%83%ab%e3%83%81%e3%82%a7%e3%83%83%e3%82%af%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a0%e9%96%8b%e7%99%ba"
     },
-    "links": {
+    "en": {
       "Project Exercise 2024": "https://open.shonan.bunkyo.ac.jp/proen/2024_prode/2024_a16-%e9%ab%98%e9%bd%a2%e8%80%85%e3%81%ab%e5%90%91%e3%81%91%e3%81%9f%e3%83%95%e3%83%ac%e3%82%a4%e3%83%ab%e3%83%81%e3%82%a7%e3%83%83%e3%82%af%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a0%e9%96%8b%e7%99%ba"
+    }
+  },
+  "code": {
+    "smfCode": {
+      "title": {
+        "ja": "滑舌測定機能",
+        "en": "Smoothness measurement function"
+      },
+      "description": {
+        "ja": "滑舌測定機能で使用している音声認識のコード",
+        "en": "This is the speech recognition code used in the glottometry function."
+      },
+      "filename": "web_speech_api.js",
+      "language": "javascript",
+      "code": "const startBtn = document.querySelector('#start-btn');\nconst stopBtn = document.querySelector('#stop-btn');\nconst timerDisplay = document.querySelector('#timer');\n\nlet recognition = new (window.webkitSpeechRecognition || window.SpeechRecognition)();\nrecognition.lang = 'ja-JP';\nrecognition.interimResults = true;\nrecognition.continuous = false;\n\nlet step = 0;\nlet timer;\nlet currentCount = 0;\nlet countdownInterval;\nconst steps = [ 'ぱ', 'た', 'か' ];\n\nfunction startRecognition() {\n  if (step >= steps.length) return;\n  currentCount = 0;\n  recognition.start();\n\n  clearInterval(countdownInterval);\n  let timeLeft = 5;\n  timerDisplay.textContent = timeLeft;\n\n  countdownInterval = setInterval(() => {\n    timeLeft--;\n    timerDisplay.textContent = timeLeft;\n    if (timeLeft <= 0) clearInterval(countdownInterval);\n  }, 1000);\n\n  timer = setTimeout(() => recognition.stop(), 5000);\n}\n\nif (window.SpeechRecognition || window.webkitSpeechRecognition) {\n  recognition.onresult = (event) => {\n    for (let i = event.resultIndex; i < event.results.length; i++) {\n      let transcript = event.results[i][0].transcript;\n      if (event.results[i].isFinal && transcript.includes(steps[step])) {\n        currentCount += checker(transcript, steps[step]);\n      }\n    }\n  };\n\n  recognition.onend = () => {\n    step++;\n    if (step < steps.length) startRecognition();\n  };\n\n  startBtn.addEventListener('click', startRecognition);\n  stopBtn.addEventListener('click', () => {\n    recognition.stop();\n    clearTimeout(timer);\n    clearInterval(countdownInterval);\n  });\n} else {\n  alert('このブラウザは音声認識に対応していません。');\n}\n\nfunction checker(str, target) {\n  return str.split(target).length - 1;\n}"
     }
   }
 }

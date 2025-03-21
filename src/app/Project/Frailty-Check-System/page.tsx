@@ -9,74 +9,12 @@ import { AccordionCodeBlock } from "@/components/accordion-code-block";
 import { ChevronLeft } from "lucide-react";
 import Link from "next/link";
 
-const Code = `
-const startBtn = document.querySelector('#start-btn');
-const stopBtn = document.querySelector('#stop-btn');
-const timerDisplay = document.querySelector('#timer');
-
-let recognition = new (window.webkitSpeechRecognition || window.SpeechRecognition)();
-recognition.lang = 'ja-JP';
-recognition.interimResults = true;
-recognition.continuous = false;
-
-let step = 0;
-let timer;
-let currentCount = 0;
-let countdownInterval;
-const steps = [ 'ぱ', 'た', 'か' ];
-
-function startRecognition() {
-  if (step >= steps.length) return;
-  currentCount = 0;
-  recognition.start();
-
-  clearInterval(countdownInterval);
-  let timeLeft = 5;
-  timerDisplay.textContent = timeLeft;
-
-  countdownInterval = setInterval(() => {
-    timeLeft--;
-    timerDisplay.textContent = timeLeft;
-    if (timeLeft <= 0) clearInterval(countdownInterval);
-  }, 1000);
-
-  timer = setTimeout(() => recognition.stop(), 5000);
-}
-
-if (window.SpeechRecognition || window.webkitSpeechRecognition) {
-  recognition.onresult = (event) => {
-    for (let i = event.resultIndex; i < event.results.length; i++) {
-      let transcript = event.results[i][0].transcript;
-      if (event.results[i].isFinal && transcript.includes(steps[step])) {
-        currentCount += checker(transcript, steps[step]);
-      }
-    }
-  };
-
-  recognition.onend = () => {
-    step++;
-    if (step < steps.length) startRecognition();
-  };
-
-  startBtn.addEventListener('click', startRecognition);
-  stopBtn.addEventListener('click', () => {
-    recognition.stop();
-    clearTimeout(timer);
-    clearInterval(countdownInterval);
-  });
-} else {
-  alert('このブラウザは音声認識に対応していません。');
-}
-
-function checker(str, target) {
-  return str.split(target).length - 1;
-}
-`.trim();
-
 export default function ProjectPage() {
   const [isEnglish, setIsEnglish] = useState(false);
 
-  const data = isEnglish ? articleData.english : articleData;
+  const data = isEnglish ? articleData.content.en : articleData.content.ja;
+  const links = isEnglish ? articleData.links.en : articleData.links.ja;
+
   return (
     <div className="w-full max-w-5xl max-h-5xl justify-center mx-auto">
       <div className="flex flex-row items-center justify-between lg:px-0 px-4 py-4">
@@ -88,39 +26,29 @@ export default function ProjectPage() {
       </div>
       <Image
         className="lg:rounded-lg"
-        src="/fcs.webp"
-        alt="Frailty-Check-System"
+        src={articleData.thumbnail}
+        alt={articleData.systemname}
         width={1920}
         height={1080}
       />
       <div className="px-5">
         <p className="text-xs font-semibold text-zinc-600 text-center py-1">
-          Frailty Check System
+          {articleData.systemname}
         </p>
         <div className="py-4 lg:py-7 text-center">
-          <p className="text-4xl font-semibold py-4 lg:py-7">{data.title}</p>
-          {/* Profile Image with enchanted border 
-          <time className="text-center text-gray-500">null</time>
-          <div className="relative h-24 w-24 overflow-hidden rounded-full border-2 border-zinc-700">
-            <Image
-              src="/hamaryo.jpg"
-              alt="Profile"
-              width={96}
-              height={96}
-              className="object-cover"
-            />
-          </div>
-          */}
+          <p className="text-4xl font-semibold py-4 lg:py-7">
+            {isEnglish ? articleData.title.en : articleData.title.ja}
+          </p>
           <Button
             onClick={() => setIsEnglish(!isEnglish)}
             className="gap-0 ml-auto"
             variant="ghost"
           >
-            <span>{isEnglish}</span>
+            <span></span>
             <Languages width={25} />
           </Button>
         </div>
-        {Object.entries(data.content).map(([sectionTitle, sectionContent]) => (
+        {Object.entries(data).map(([sectionTitle, sectionContent]) => (
           <article key={sectionTitle} className="py-4">
             <p className="font-bold text-3xl mt-4 mb-5">{sectionTitle}</p>
             <div className="leading-7 text-zinc-400">{sectionContent}</div>
@@ -133,15 +61,19 @@ export default function ProjectPage() {
 
           <div className="max-w-full space-y-4">
             <AccordionCodeBlock
-              title={isEnglish ? "Smoothness measurement function" : "滑舌測定"}
+              title={
+                isEnglish
+                  ? articleData.code.smfCode.title.en
+                  : articleData.code.smfCode.title.ja
+              }
               description={
                 isEnglish
-                  ? "This is the speech recognition code used in the glottometry function."
-                  : "滑舌測定機能で使用している音声認識のコードです。"
+                  ? articleData.code.smfCode.description.en
+                  : articleData.code.smfCode.description.ja
               }
-              code={Code}
-              language="javascript"
-              codeTitle="web_speech_api.js"
+              code={articleData.code.smfCode.code}
+              language={articleData.code.smfCode.language}
+              codeTitle={articleData.code.smfCode.filename}
             />
           </div>
         </article>
@@ -152,7 +84,7 @@ export default function ProjectPage() {
           </h3>
 
           <ul className="leading-8">
-            {Object.entries(data.links).map(([text, url]) => (
+            {Object.entries(links).map(([text, url]) => (
               <li key={url}>
                 <a
                   className="font-mono text-indigo-300 font-bold after:content-['_↗'] hover:underline decoration-indigo-300"

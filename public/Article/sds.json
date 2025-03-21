@@ -1,36 +1,84 @@
 {
-  "thumbnail": "../TheLost.png",
-  "title": "聴覚障碍者に向けたノートテイクシステム開発プロジェクト",
-  "date": "2023年8月 ~ 2023年12月",
-  "description": "聴覚障碍者の支援内容をシステムで代替するため、講義動画から音声、スライドを抽出し、ノートテイク資料を作成するシステムを開発。",
+  "thumbnail": "/sds.webp",
+  "title": {
+    "ja": "聴覚障碍者に向けたノートテイクシステム開発プロジェクト",
+    "en": "Note-taking System Development Project for Hearing Impaired"
+  },
+  "systemname": "Supplemental-Documentation-System",
+  "date": {
+    "ja": "2023年8月 ~ 2023年12月",
+    "en": "August 2023 ~ December 2023"
+  },
+  "description": {
+    "ja": "聴覚障碍者の支援内容をシステムで代替するため、講義動画から音声、スライドを抽出し、ノートテイク資料を作成するシステムを開発。",
+    "en": "Developed a system to create note-taking materials by extracting audio and slides from lecture videos to support hearing-impaired individuals."
+  },
   "content": {
-    "概要": "障害者差別解消法によって、大学には障碍者への合理的配慮義務が課せられている。東京大学バリアフリー支援室1)によると、聴覚障碍のある学生への支援としてパソコンテイク、ノートテイク、ノート作成、字幕挿入の4つが挙げられている。しかし、これらは支援を行う情報保障者の不足や能力差が課題となっている。実際に、規模の小さい大学では人員的余裕がなくノートテイクの補助ができなかった事例や、希望された理工系の情報保障者を割り当てられなかった事例などがJASSOに報告されている2)3)。 本プロジェクトでは、聴覚障碍者に向けて情報保障者が行う支援内容をシステムで代替するため、講義動画から音声、スライドを抽出し、ノートテイクされた資料を作成するシステムを開発し、課題の解決を図った。",
-    "目的": "講義資料から聴覚障碍者への合理的配慮のある補足資料を作る。"
-  },
-  "references": {
-    "東京大学バリアフリー支援室．”支援の例”": "https://ds.adm.u-tokyo.ac.jp/receive-support/student02.html",
-    "独立行政法人日本学生支援機構．”事例No.194(難聴)授業時のノートテイク補助の申し出について | JASSO”": "https://www.jasso.go.jp/statistics/gakusei_shogai_kaiketsu/case_aud/194.html",
-    "独立行政法人日本学生支援機構．”事例No.18(聾)情報保障者に専攻（理工系）を理解できる学生を申し出 | JASSO”": "https://www.jasso.go.jp/statistics/gakusei_shogai_kaiketsu/case_aud/18.html"
-  },
-  "links": {
-    "プロジェクト演習2023": "https://open.shonan.bunkyo.ac.jp/proen/2023_pro-bc/2023_b08-%e8%81%b4%e8%a6%9a%e9%9a%9c%e7%a2%8d%e8%80%85%e3%81%ab%e5%90%91%e3%81%91%e3%81%9f%e3%83%8e%e3%83%bc%e3%83%88%e3%83%86%e3%82%a4%e3%82%af%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a0%e9%96%8b%e7%99%ba"
-  },
-  "english": {
-    "thumbnail": "../TheLost.png",
-    "title": "Note-taking System Development Project for Hearing Impaired",
-    "date": "August 2023 ~ December 2023",
-    "description": "Developed a system to create note-taking materials by extracting audio and slides from lecture videos to support hearing-impaired individuals.",
-    "content": {
+    "ja": {
+      "概要": "障害者差別解消法によって、大学には障碍者への合理的配慮義務が課せられている。東京大学バリアフリー支援室1)によると、聴覚障碍のある学生への支援としてパソコンテイク、ノートテイク、ノート作成、字幕挿入の4つが挙げられている。しかし、これらは支援を行う情報保障者の不足や能力差が課題となっている。実際に、規模の小さい大学では人員的余裕がなくノートテイクの補助ができなかった事例や、希望された理工系の情報保障者を割り当てられなかった事例などがJASSOに報告されている2)3)。 本プロジェクトでは、聴覚障碍者に向けて情報保障者が行う支援内容をシステムで代替するため、講義動画から音声、スライドを抽出し、ノートテイクされた資料を作成するシステムを開発し、課題の解決を図った。",
+      "目的": "講義資料から聴覚障碍者への合理的配慮のある補足資料を作る。"
+    },
+    "en": {
       "Overview": "According to the Act on the Elimination of Discrimination against Persons with Disabilities, universities are required to provide reasonable accommodations for students with disabilities. According to the University of Tokyo Barrier-Free Support Office, there are four types of support for students with hearing impairments: PC take, note-taking, note creation, and subtitle insertion. However, there are issues such as a shortage of information support personnel and differences in their abilities. In fact, there have been cases reported to JASSO where small universities could not provide note-taking assistance due to lack of personnel, or where students could not be assigned information support personnel with the desired expertise in science and engineering. This project aimed to solve these issues by developing a system that creates note-taking materials by extracting audio and slides from lecture videos to replace the support provided by information support personnel for hearing-impaired individuals.",
       "Purpose": "To create supplementary materials with reasonable accommodations for hearing-impaired individuals from lecture materials."
+    }
+  },
+  "references": {
+    "ja": {
+      "東京大学バリアフリー支援室．”支援の例”": "https://ds.adm.u-tokyo.ac.jp/receive-support/student02.html",
+      "独立行政法人日本学生支援機構．”事例No.194(難聴)授業時のノートテイク補助の申し出について | JASSO”": "https://www.jasso.go.jp/statistics/gakusei_shogai_kaiketsu/case_aud/194.html",
+      "独立行政法人日本学生支援機構．”事例No.18(聾)情報保障者に専攻（理工系）を理解できる学生を申し出 | JASSO”": "https://www.jasso.go.jp/statistics/gakusei_shogai_kaiketsu/case_aud/18.html"
     },
-    "references": {
+    "en": {
       "University of Tokyo Barrier-Free Support Office. 'Examples of Support'": "https://ds.adm.u-tokyo.ac.jp/receive-support/student02.html",
       "Japan Student Services Organization. 'Case No.194 (Hearing Impairment) Regarding the Offer of Note-taking Assistance during Classes | JASSO'": "https://www.jasso.go.jp/statistics/gakusei_shogai_kaiketsu/case_aud/194.html",
       "Japan Student Services Organization. 'Case No.18 (Deaf) Request for a Student Information Supporter with an Understanding of Science and Engineering | JASSO'": "https://www.jasso.go.jp/statistics/gakusei_shogai_kaiketsu/case_aud/18.html"
+    }
+  },
+  "links": {
+    "ja": {
+      "プロジェクト演習2023": "https://open.shonan.bunkyo.ac.jp/proen/2023_pro-bc/2023_b08-%e8%81%b4%e8%a6%9a%e9%9a%9c%e7%a2%8d%e8%80%85%e3%81%ab%e5%90%91%e3%81%91%e3%81%9f%e3%83%8e%e3%83%bc%e3%83%88%e3%83%86%e3%82%a4%e3%82%af%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a0%e9%96%8b%e7%99%ba"
     },
-    "links": {
+    "en": {
       "Project Exercise 2023": "https://open.shonan.bunkyo.ac.jp/proen/2023_pro-bc/2023_b08-%e8%81%b4%e8%a6%9a%e9%9a%9c%e7%a2%8d%e8%80%85%e3%81%ab%e5%90%91%e3%81%91%e3%81%9f%e3%83%8e%e3%83%bc%e3%83%88%e3%83%86%e3%82%a4%e3%82%af%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a0%e9%96%8b%e7%99%ba"
+    }
+  },
+  "code": {
+    "saveframesCode": {
+      "title": {
+        "ja": "01 - 連番画像出力",
+        "en": "01 - sequential number image"
+      },
+      "description": {
+        "ja": "入力された動画ファイル(パス)からopencvを使って連番画像を出力する",
+        "en": "Output sequentially numbered images from an input video file (path) using opencv"
+      },
+      "filename": "saveframes.py",
+      "language": "python",
+      "code": "import sys\nimport os\nimport cv2\n\ndef save_frames(video_path, dir_path, basename, ext='jpg', output_interval=3):\n    cap = cv2.VideoCapture(video_path)\n\n    if not cap.isOpened():\n        print(\"動画ファイルが見つかりませんでした。\\n\")\n        return\n\n    os.makedirs(dir_path, exist_ok=True)\n    base_path = os.path.join(dir_path, basename)\n\n    frame_rate = int(cap.get(cv2.CAP_PROP_FPS))\n    output_interval_frames = frame_rate * output_interval\n    digit = len(str(int(cap.get(cv2.CAP_PROP_FRAME_COUNT))))\n\n    n = 0\n    frame_count = 0\n\n    while True:\n        ret, frame = cap.read()\n        if ret:\n            frame_count += 1\n            if frame_count % output_interval_frames == 0:\n                fname = '{}_{}.{}'.format(base_path, str(n).zfill(digit), ext)\n                cv2.imwrite(fname, frame)\n                n += 1\n                print(\"Saved frame:\", fname)\n        else:\n            break\n    cap.release()\n\nsave_frames(video_str, dir_path + \"/uploads/\" + video_id + \"/\", 'img', output_interval=1)"
+    },
+    "removeCode": {
+      "title": {
+        "ja": "02 - 重複画像削除",
+        "en": "02 - Remove Duplicate Images"
+      },
+      "description": {
+        "ja": "連番画像から重複した画像をdiffを使って削除する",
+        "en": "Remove duplicate images from sequentially numbered images using diff"
+      },
+      "filename": "remove.py",
+      "language": "python",
+      "code": "import sys\nimport os\nimport hashlib\nfrom difflib import SequenceMatcher\n\ndef remove_images(dir_path, threshold=0.4):\n    file_list = os.listdir(dir_path)\n    hashes = {}\n\n    for filename in file_list:\n        filepath = os.path.join(dir_path, filename)\n\n        with open(filepath, 'rb') as f:\n            filehash = hashlib.md5(f.read()).hexdigest()\n\n        is_duplicate = False\n\n        for hash_value, existing_path in hashes.items():\n            similarity = SequenceMatcher(None, filehash, hash_value).ratio()\n            if similarity >= threshold:\n                is_duplicate = True\n                os.remove(filepath)\n                #print(\"Remove:\", filepath)\n                break\n\n        if not is_duplicate:\n            hashes[filehash] = filepath\n\nremove_images(dir_path + \"/\" + input_str, threshold=0.39)"
+    },
+    "ocrCode": {
+      "title": { "ja": "03 - テキスト認識", "en": "03 - Text Recognition" },
+      "description": {
+        "ja": "tesseract-ocrを使って画像からテキストを認識する",
+        "en": "Recognizing text from images using tesseract-ocr"
+      },
+      "filename": "ocr.py",
+      "language": "python",
+      "code": "import sys\nimport os\nimport pyocr\nfrom PIL import Image, ImageEnhance\nimport glob\n\ndef img_to_txt(img_folder_path):\n    ocr_path = dir_path + '/py/tessract-ocr/'  # OCRエンジンのパス\n    tessdata_path = dir_path + '/py/tessract-ocr/tessdata/'  # 日本語の学習データのパス\n    img_files = glob.glob(os.path.join(img_folder_path, '*.jpg'))\n\n    os.environ[\"PATH\"] += os.pathsep + ocr_path\n    os.environ[\"TESSDATA_PREFIX\"] = tessdata_path\n\n    # OCRエンジン取得\n    tools = pyocr.get_available_tools()\n    tool = tools[0]\n\n    # OCRの設定 ※tesseract_layout=6が精度には重要。デフォルトは3\n    builder = pyocr.builders.TextBuilder(tesseract_layout=6)\n    f = open(img_folder_path + video_id + '.txt', 'w', encoding='utf-8')\n    for img_file in img_files:\n\n        # 解析画像読み込み\n        img = Image.open(img_file)\n\n        # 適当に画像処理(何もしないと結構制度悪いです・・)\n        img_g = img.convert('L')  # Gray変換\n        enhancer = ImageEnhance.Contrast(img_g)  # コントラストを上げる\n        img_con = enhancer.enhance(2.0)  # コントラストを上げる\n\n        # 画像からOCRで日本語を読んで、文字列として取り出す\n        txt_pyocr = tool.image_to_string(img_con, lang='jpn', builder=builder)\n\n        # 半角スペースを消す ※読みやすくするため\n        txt_pyocr = txt_pyocr.replace(' ', '')\n        txt_pyocr = txt_pyocr.replace('|', '')\n        txt_pyocr = txt_pyocr.replace('mm', '')\n        txt_pyocr = txt_pyocr.replace('=', '')\n        txt_pyocr = txt_pyocr.replace('~', '')\n        f.write(txt_pyocr + '￥n' + '￥n')\n        print(txt_pyocr)\n    f.close()\n    \nimg_to_txt(dir_path + \"/\" + input_str)  # OCRするフォルダパス"
     }
   }
 }
