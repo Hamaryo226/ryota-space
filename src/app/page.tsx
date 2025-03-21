@@ -206,18 +206,11 @@ export default function Home() {
         </h2>
         <p className="text-zinc-300"></p>
         {itemsSample.map((item, index) => (
-          <motion.div
-            key={index}
-            className=""
-            initial={{ opacity: 0, y: -50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.35, delay: index * 0.2 }}
-          >
+          <div key={index}>
             <Link href={item.link} passHref>
               <BentoGrid items={[item]} />
             </Link>
-          </motion.div>
+          </div>
         ))}
       </div>
     </div>
