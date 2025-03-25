@@ -4,8 +4,16 @@ import { useState } from "react";
 import Image from "next/image";
 import articleData from "public/Article/fcs.json";
 import { Button } from "@/components/ui/button";
-import { Languages } from "lucide-react";
+import { Languages, Share, Info, Ellipsis } from "lucide-react";
 import { AccordionCodeBlock } from "@/components/accordion-code-block";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuShortcut,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export default function ProjectPage() {
   const [isEnglish, setIsEnglish] = useState(false);
@@ -22,22 +30,41 @@ export default function ProjectPage() {
         width={1920}
         height={1080}
       />
+
+      <div className="flex items-center justify-between gap-2 px-3 py-4">
+        <Button variant="ghost">
+          <Info />
+        </Button>
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="ghost">
+              <Ellipsis />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="w-56">
+            <DropdownMenuGroup>
+              <DropdownMenuItem onClick={() => setIsEnglish(!isEnglish)}>
+                <Languages />
+                翻訳
+                <DropdownMenuShortcut>⇧T</DropdownMenuShortcut>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Share />
+                共有
+                <DropdownMenuShortcut>⇧S</DropdownMenuShortcut>
+              </DropdownMenuItem>
+            </DropdownMenuGroup>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
+
       <div className="px-5">
-        <p className="text-xs font-semibold text-zinc-600 text-center py-1">
-          {articleData.systemname}
-        </p>
-        <div className="py-4 lg:py-7 text-center">
-          <p className="text-4xl font-semibold py-4 lg:py-7">
-            {isEnglish ? articleData.title.en : articleData.title.ja}
+        <div className="py-2 lg:py-4 text-center">
+          <p className="text-4xl font-semibold py-2 lg:py-4">
+            <span className={isEnglish ? "text-3xl" : "text-4xl"}>
+              {isEnglish ? articleData.title.en : articleData.title.ja}
+            </span>
           </p>
-          <Button
-            onClick={() => setIsEnglish(!isEnglish)}
-            className="gap-0 ml-auto"
-            variant="ghost"
-          >
-            <span></span>
-            <Languages width={25} />
-          </Button>
         </div>
         {Object.entries(data).map(([sectionTitle, sectionContent]) => (
           <article key={sectionTitle} className="py-4">
