@@ -37,9 +37,17 @@ export const metadata: Metadata = {
     type: "website",
   },
   icons: {
-    icon: "/icon/favicon.ico",
-    shortcut: "/icon/favicon-16x16.png",
-    apple: "/icon/apple-touch-icon.png",
+    icon: [
+      { url: "/icon/favicon.ico", sizes: "any" },
+      { url: "/icon/favicon-16x16.png", sizes: "16x16" },
+      {
+        url: "/icon/dark-mode-icon.png",
+        sizes: "any",
+        media: "(prefers-color-scheme: dark)",
+      },
+    ],
+    shortcut: { url: "/icon/favicon-16x16.png" },
+    apple: { url: "/icon/apple-touch-icon.png" },
   },
 };
 

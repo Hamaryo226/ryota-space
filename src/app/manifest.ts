@@ -31,6 +31,12 @@ export default function manifest(): MetadataRoute.Manifest {
         sizes: "any",
         type: "image/shorcut icon",
       },
+      {
+        src: "/icon/dark-mode-icon.png",
+        sizes: "any",
+        type: "image/png",
+        purpose: "maskable",
+      },
     ],
   };
 }
