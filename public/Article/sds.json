@@ -47,7 +47,7 @@
     "saveframesCode": {
       "title": {
         "ja": "01 - 連番画像出力",
-        "en": "01 - sequential number image"
+        "en": "01 - Sequential Number Image"
       },
       "description": {
         "ja": "入力された動画ファイル(パス)からopencvを使って連番画像を出力する",
