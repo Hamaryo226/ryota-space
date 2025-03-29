@@ -1,12 +1,32 @@
 {
-  "thumbnail": "../NotFound.png",
-  "title": "Taiko-Re-Strap",
-  "date": "2022年5月 ~ 2024年6月",
-  "description": "",
+  "thumbnail": "/Taiko-Re-Strap.webp",
+  "title": {
+    "ja": "Taiko-Re-Strap",
+    "en": "Taiko-Re-Strap"
+  },
+  "systemname": "Taiko-Re-Strap",
+  "date": {
+    "ja": "2022年5月 ~ 2024年6月",
+    "en": "May 2022 ~ June 2024"
+  },
+  "description": {
+    "ja": "某音楽ゲームのアーケード版をPCで再現したソフトウェア「Taiko-Re-Strap」を開発。",
+    "en": "Developed a software that reproduces the arcade version of a certain music game on PC as 「Taiko-Re-Strap」."
+  },
   "content": {
-    "概要": "某音楽ゲームのアーケード版をPCで再現したソフトウェア「Taiko-Re-Strap」を開発。"
+    "ja": {
+      "概要": "某音楽ゲームのアーケード版をPCで再現したソフトウェア「Taiko-Re-Strap」を開発。"
+    },
+    "en": {
+      "Overview": "Developed a software that reproduces the arcade version of a certain music game on PC as 「Taiko-Re-Strap」."
+    }
   },
   "links": {
-    "repo": "https://github.com/HamaguchiRyota/Taiko-Re-Strap"
+    "ja": {
+      "リポジトリ": "https://github.com/HamaguchiRyota/Taiko-Re-Strap"
+    },
+    "en": {
+      "Repository": "https://github.com/HamaguchiRyota/Taiko-Re-Strap"
+    }
   }
 }

@@ -1,69 +1,81 @@
-import articleData from "public/Article/trs.json";
-import type { Metadata } from "next";
-import { CalendarDays } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { ImageWithAlt } from "@/components/image-with-alt";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Taiko-Re-Strap｜ryota-space",
-  description: "Taiko-Re-Strapの概要ページ",
-  appleWebApp: true,
-};
+import { useState } from "react";
+import Image from "next/image";
+import articleData from "public/Article/trs.json";
+import { Button } from "@/components/ui/button";
+import { Languages, Share, Info, Ellipsis } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuShortcut,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export default function ProjectPage() {
+  const [isEnglish, setIsEnglish] = useState(false);
+
+  const data = isEnglish ? articleData.content.en : articleData.content.ja;
+  const links = isEnglish ? articleData.links.en : articleData.links.ja;
+
   return (
-    <div className="px-5 py-8">
-      <div className="w-full max-w-5xl justify-center mx-auto">
-        <ImageWithAlt
-          className="rounded-2xl w-full"
-          src="/Taiko-Re-Strap.webp"
-          alt="Taiko-Re-Strap"
-          width={1920}
-          height={1080}
-        />
-        <article className="mt-7 mb-7 pb-2 border-b-2 border-slate-500/30">
-          <h1 className="font-bold sm:text-4xl sd:text-3xl text-2xl">
-            {articleData.title}
-          </h1>
+    <div className="w-full max-w-5xl max-h-5xl justify-center mx-auto">
+      <Image
+        className="lg:rounded-lg"
+        src={articleData.thumbnail}
+        alt={articleData.systemname}
+        width={1920}
+        height={1080}
+      />
 
-          <div className="flex flex-row mt-1 gap-1 leading-7 text-gray-500">
-            <CalendarDays width={20} hanging={20} />
-            <p>{articleData.date}</p>
-          </div>
+      <div className="flex items-center justify-between gap-2 px-3 py-4">
+        <Button variant="ghost">
+          <Info />
+        </Button>
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="ghost">
+              <Ellipsis />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="w-56">
+            <DropdownMenuGroup>
+              <DropdownMenuItem onClick={() => setIsEnglish(!isEnglish)}>
+                <Languages />
+                翻訳
+                <DropdownMenuShortcut>⇧T</DropdownMenuShortcut>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Share />
+                共有
+                <DropdownMenuShortcut>⇧S</DropdownMenuShortcut>
+              </DropdownMenuItem>
+            </DropdownMenuGroup>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
 
-          <div className="flex flex-wrap gap-2 mt-2 mb-2">
-            <Badge
-              variant="outline"
-              className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
-            >
-              C#
-            </Badge>
-            <Badge
-              variant="outline"
-              className="bg-zinc-200 text-zinc-600 hover:bg-zinc-300 dark:bg-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-600 shadow-sm"
-            >
-              .NET Framework
-            </Badge>
-          </div>
-        </article>
+      <div className="px-5">
+        <div className="py-2 lg:py-4 text-center">
+          <p className="text-4xl font-semibold py-2 lg:py-4">
+            <span className={isEnglish ? "text-3xl" : "text-4xl"}>
+              {isEnglish ? articleData.title.en : articleData.title.ja}
+            </span>
+          </p>
+        </div>
+        {Object.entries(data).map(([sectionTitle, sectionContent]) => (
+          <article key={sectionTitle} className="py-4">
+            <p className="font-bold text-3xl mt-4 mb-5">{sectionTitle}</p>
+            <div className="leading-7 text-zinc-400">{sectionContent}</div>
+          </article>
+        ))}
 
-        {Object.entries(articleData.content).map(
-          ([sectionTitle, sectionContent]) => (
-            <article key={sectionTitle}>
-              <div className="border-l-4 border-indigo-500">
-                <h3 className="font-bold text-2xl mt-5 mb-5 ps-2">
-                  {sectionTitle}
-                </h3>
-              </div>
-              <p className="leading-7">{sectionContent}</p>
-            </article>
-          )
-        )}
-
-        <article>
-          <div className="border-l-4 border-indigo-500">
-            <h3 className="font-bold text-2xl mt-5 mb-5 ps-2">デモ動画</h3>
-          </div>
+        <article className="py-4">
+          <h3 className="font-bold text-3xl mt-5 mb-5">
+            {isEnglish ? "Demo Video" : "デモ動画"}
+          </h3>
           <div className="px-5">
             <iframe
               className="aspect-video w-full rounded-2xl"
@@ -72,15 +84,16 @@ export default function ProjectPage() {
           </div>
         </article>
 
-        <article>
-          <div className="border-l-4 border-indigo-500">
-            <h3 className="font-bold text-2xl mt-5 mb-5 ps-2">参考リンク</h3>
-          </div>
+        <article className="py-4">
+          <h3 className="font-bold text-3xl mt-5 mb-5">
+            {isEnglish ? "Reference Links" : "参考リンク"}
+          </h3>
+
           <ul className="leading-8">
-            {Object.entries(articleData.links).map(([text, url]) => (
+            {Object.entries(links).map(([text, url]) => (
               <li key={url}>
                 <a
-                  className="font-mono text-indigo-400 font-bold after:content-['_↗'] hover:underline decoration-indigo-500"
+                  className="font-mono text-indigo-300 font-bold after:content-['_↗'] hover:underline decoration-indigo-300"
                   href={url}
                   target="_blank"
                   rel="noreferrer"
