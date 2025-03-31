@@ -1,27 +1,12 @@
 import type { Metadata } from "next";
 import { Header } from "@/components/header";
+import { createPageMetadata } from "@/config/metadata";
 
-export const metadata: Metadata = {
-  title: "Taiko-Re-Strap｜ryota-space",
-  description: "",
-  appleWebApp: true,
-  openGraph: {
-    title: "Taiko-Re-Strap｜ryota-space",
-    description: "",
-    url: "https://ryota-space.vercel.app/Private/Taiko-Re-Strap",
-    siteName: "ryota-space",
-    images: [
-      {
-        url: "/Taiko-Re-Strap.webp",
-        width: 1920,
-        height: 1080,
-        alt: "Taiko-Re-Strap",
-      },
-    ],
-    locale: "ja_JP",
-    type: "website",
-  },
-};
+export const metadata: Metadata = createPageMetadata(
+  "Taiko-Re-Strap",
+  "A .tja file player (feat. DTXMania & TJAPlayer2 forPC)",
+  "/Taiko-Re-Strap.webp"
+);
 
 export default function RootLayout({
   children,
