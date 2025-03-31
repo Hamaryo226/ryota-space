@@ -1,71 +1,75 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import {
-  ChevronDown,
-  Twitter,
-  Instagram,
-  Github,
-  Youtube,
-  ScanSearch,
-  Speech,
-  Joystick,
-} from "lucide-react";
+import { ChevronDown, Twitter, Instagram, Github, Youtube } from "lucide-react";
 import Link from "next/link";
-import { BentoGrid, type BentoItem } from "@/components/Bento";
+import { BentoGrid } from "@/components/Bento";
 import { motion } from "framer-motion";
+import { projects } from "@/data/projects";
 
-const itemsSample: BentoItem[] = [
-  {
-    title: "Frailty-Check-System",
-    meta: "From classroom management to measurement",
-    description:
-      "Developed a web system using Django and speech recognition to support frailty checks for the elderly.",
-    icon: <Speech className="w-4 h-4 text-blue-500" />,
-    status: "Closed",
-    tags: ["Python", "Django", "JavaScript"],
-    colSpan: 2,
-    link: "/Project/Frailty-Check-System", // 追加
-  },
-  {
-    title: "Supplemental-Documentation-System",
-    meta: "Video to Documentation",
-    description:
-      "Developed a system to create note-taking materials by extracting audio and slides from lecture videos to support hearing-impaired individuals.",
-    icon: <ScanSearch className="w-4 h-4 text-emerald-500" />,
-    status: "Closed",
-    tags: ["PHP", "Python"],
-    colSpan: 2,
-    link: "/Project/Supplemental-Documentation-System", // 追加
-  },
-  {
-    title: "Taiko-Re-Strap-Next",
-    meta: "FullHD image quality support",
-    description: "A .tja file player.",
-    icon: <Joystick className="w-4 h-4 text-purple-500" />,
-    tags: ["C Sharp", "DxLib"],
-    status: "In Progress",
-    colSpan: 2,
-    link: "/Private/Taiko-Re-Strap-Next", // 追加
-  },
-  {
-    title: "Taiko-Re-Strap",
-    meta: "TJAPlayer3 Derivative Software",
-    description: "A .tja file player.(feat. DTXMania & TJAPlayer2 forPC)",
-    icon: <Joystick className="w-4 h-4 text-sky-500" />,
-    status: "Closed",
-    tags: ["C Sharp", ".NET Framework"],
-    colSpan: 2,
-    link: "/Private/Taiko-Re-Strap", // 追加
-  },
-];
+const SocialButton = ({
+  href,
+  icon: Icon,
+  label,
+}: {
+  href: string;
+  icon: React.ElementType;
+  label: string;
+}) => (
+  <Link href={href} passHref target="_blank" rel="noreferrer">
+    <Button
+      variant="outline"
+      size="icon"
+      className="group border-zinc-800/50 bg-zinc-900/30 text-zinc-400 backdrop-blur-sm transition-all hover:border-zinc-500 hover:bg-zinc-800/40 hover:text-zinc-200"
+    >
+      <Icon className="h-5 w-5 transition-transform group-hover:scale-110" />
+      <span className="sr-only">{label}</span>
+    </Button>
+  </Link>
+);
+
+const ProfileSection = () => (
+  <div className="space-y-2">
+    <motion.div
+      transition={{ duration: 0.2 }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+    >
+      <h1 className="bg-gradient-to-r from-zinc-300 via-zinc-200/90 to-zinc-300 bg-clip-text text-4xl font-bold tracking-tighter text-transparent sm:text-5xl">
+        Hamaguchi Ryota
+      </h1>
+    </motion.div>
+    <motion.div
+      transition={{ duration: 0.2, delay: 0.1 }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+    >
+      <p className="text-xl text-zinc-400">System Engineer, Programmer</p>
+    </motion.div>
+  </div>
+);
+
+const ProjectsSection = () => (
+  <div className="container max-w-3xl mx-auto mt-8">
+    <h2 className="sm:text-3xl text-2xl font-bold text-zinc-200 text-center">
+      Projects
+    </h2>
+    <p className="text-zinc-300"></p>
+    {projects.map((item, index) => (
+      <div key={index}>
+        <Link href={item.link} passHref>
+          <BentoGrid items={[item]} />
+        </Link>
+      </div>
+    ))}
+  </div>
+);
 
 export default function Home() {
   return (
     <div>
       <div className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden text-zinc-50">
         <div className="container relative flex max-w-3xl flex-col items-center justify-center gap-8 px-4 text-center">
-          {/* Profile Image with enchanted border */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -85,26 +89,7 @@ export default function Home() {
             </div>
           </motion.div>
 
-          <div className="space-y-2">
-            <motion.div
-              transition={{ duration: 0.2 }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-            >
-              <h1 className="bg-gradient-to-r from-zinc-300 via-zinc-200/90 to-zinc-300 bg-clip-text text-4xl font-bold tracking-tighter text-transparent sm:text-5xl">
-                Hamaguchi Ryota
-              </h1>
-            </motion.div>
-            <motion.div
-              transition={{ duration: 0.2, delay: 0.1 }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-            >
-              <p className="text-xl text-zinc-400">
-                System Engineer, Programmer
-              </p>
-            </motion.div>
-          </div>
+          <ProfileSection />
 
           <motion.div
             transition={{ duration: 0.2, delay: 0.2 }}
@@ -122,67 +107,26 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
           >
             <div className="flex flex-wrap justify-center gap-4">
-              {/* Nature-themed magical buttons */}
-              <Link
+              <SocialButton
                 href="https://twitter.com/_hamaryo"
-                passHref
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Button
-                  variant="outline"
-                  size="icon"
-                  className="group border-zinc-800/50 bg-zinc-900/30 text-zinc-400 backdrop-blur-sm transition-all hover:border-zinc-500 hover:bg-zinc-800/40 hover:text-zinc-200"
-                >
-                  <Twitter className="h-5 w-5 transition-transform group-hover:scale-110" />
-                  <span className="sr-only">X</span>
-                </Button>
-              </Link>
-              <Link
+                icon={Twitter}
+                label="X"
+              />
+              <SocialButton
                 href="https://www.instagram.com/hamaryo_2"
-                passHref
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Button
-                  variant="outline"
-                  size="icon"
-                  className="group border-zinc-800/50 bg-zinc-900/30 text-zinc-400 backdrop-blur-sm transition-all hover:border-zinc-500 hover:bg-zinc-800/40 hover:text-zinc-200"
-                >
-                  <Instagram className="h-5 w-5 transition-transform group-hover:scale-110" />
-                  <span className="sr-only">Instagram</span>
-                </Button>
-              </Link>
-              <Link
+                icon={Instagram}
+                label="Instagram"
+              />
+              <SocialButton
                 href="https://github.com/HamaguchiRyota"
-                passHref
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Button
-                  variant="outline"
-                  size="icon"
-                  className="group border-zinc-800/50 bg-zinc-900/30 text-zinc-400 backdrop-blur-sm transition-all hover:border-zinc-500 hover:bg-zinc-800/40 hover:text-zinc-200"
-                >
-                  <Github className="h-5 w-5 transition-transform group-hover:scale-110" />
-                  <span className="sr-only">GitHub</span>
-                </Button>
-              </Link>
-              <Link
+                icon={Github}
+                label="GitHub"
+              />
+              <SocialButton
                 href="https://www.youtube.com/@Fumolat"
-                passHref
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Button
-                  variant="outline"
-                  size="icon"
-                  className="group border-zinc-800/50 bg-zinc-900/30 text-zinc-400 backdrop-blur-sm transition-all hover:border-zinc-500 hover:bg-zinc-800/40 hover:text-zinc-200"
-                >
-                  <Youtube className="h-5 w-5 transition-transform group-hover:scale-110" />
-                  <span className="sr-only">YouTube</span>
-                </Button>
-              </Link>
+                icon={Youtube}
+                label="YouTube"
+              />
             </div>
           </motion.div>
         </div>
@@ -200,19 +144,7 @@ export default function Home() {
           <ChevronDown className="absolute bottom-6 animate-bounce h-8 w-8 text-zinc-400" />
         </motion.div>
       </div>
-      <div className="container max-w-3xl mx-auto mt-8">
-        <h2 className="sm:text-3xl text-2xl font-bold text-zinc-200 text-center">
-          Projects
-        </h2>
-        <p className="text-zinc-300"></p>
-        {itemsSample.map((item, index) => (
-          <div key={index}>
-            <Link href={item.link} passHref>
-              <BentoGrid items={[item]} />
-            </Link>
-          </div>
-        ))}
-      </div>
+      <ProjectsSection />
     </div>
   );
 }
