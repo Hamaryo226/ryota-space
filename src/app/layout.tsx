@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="ja" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-zinc-900`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-zinc-900 flex flex-col min-h-screen`}
       >
         <ThemeProvider
           attribute="class"
@@ -34,7 +34,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <div className="flex-1">{children}</div>
           <GoogleAnalytics gaId="G-0GZDYB8RRC" />
           <Footer />
         </ThemeProvider>
