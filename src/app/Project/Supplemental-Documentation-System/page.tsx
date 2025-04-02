@@ -508,7 +508,7 @@ export default function Frame() {
             src={articleData.thumbnail}
             alt={articleData.systemname}
             width={1920}
-            height={1080}
+            height={884}
           />
           <div className="p-6 text-center">
             <p className="text-3xl font-semibold py-2 lg:py-4">

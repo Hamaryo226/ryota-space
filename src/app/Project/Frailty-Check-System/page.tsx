@@ -431,8 +431,8 @@ export default function Frame() {
             className="lg:rounded-lg"
             src={articleData.thumbnail}
             alt={articleData.systemname}
-            width={1920}
-            height={1080}
+            width={1366}
+            height={567}
           />
           <div className="p-6 text-center">
             <p className="text-3xl font-semibold py-2 lg:py-4">
