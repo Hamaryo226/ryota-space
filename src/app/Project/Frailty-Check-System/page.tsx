@@ -443,10 +443,10 @@ export default function Frame() {
           </div>
           {/* Tab Container */}
           <CardContent className="p-6">
-            <div className="relative">
+            <div className="relative flex flex-col items-center">
               {/* Hover Highlight */}
               <div
-                className="absolute h-[30px] transition-all duration-300 ease-out bg-zinc-800 rounded-[6px] flex items-center"
+                className="absolute h-[30px] transition-all duration-300 ease-out bg-zinc-800 rounded-[6px] flex items-center justify-center"
                 style={{
                   ...hoverStyle,
                   opacity: hoveredIndex !== null ? 1 : 0,
@@ -463,7 +463,7 @@ export default function Frame() {
               />
 
               {/* Tabs */}
-              <div className="relative flex space-x-[6px] items-center">
+              <div className="relative flex space-x-[6px] items-center justify-center w-full">
                 {tabs.map((tab, index) => (
                   <motion.div
                     key={index}
