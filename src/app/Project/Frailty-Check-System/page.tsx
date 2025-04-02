@@ -12,6 +12,7 @@ import {
   Users,
   Target,
   ListChecks,
+  X,
 } from "lucide-react";
 import articleData from "public/Article/fcs.json";
 import { AccordionCodeBlock } from "@/components/accordion-code-block";
@@ -230,8 +231,9 @@ export default function Frame() {
                   initial={{ x: -20, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.3, duration: 0.4 }}
+                  className="flex"
                 >
-                  <Card className="p-4 dark:bg-zinc-800 border-zinc-700">
+                  <Card className="p-4 dark:bg-zinc-800 border-zinc-700 flex-1">
                     <h3 className="text-zinc-200 text-lg font-medium mb-3">
                       {isEnglish ? "Technical Features" : "技術的特徴"}
                     </h3>
@@ -267,8 +269,9 @@ export default function Frame() {
                   initial={{ x: 20, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.4, duration: 0.4 }}
+                  className="flex"
                 >
-                  <Card className="p-4 dark:bg-zinc-800 border-zinc-700">
+                  <Card className="p-4 dark:bg-zinc-800 border-zinc-700 flex-1">
                     <h3 className="text-zinc-200 text-lg font-medium mb-3">
                       {isEnglish ? "Implementation Process" : "実装プロセス"}
                     </h3>
@@ -288,7 +291,7 @@ export default function Frame() {
                         </span>
                       </li>
                       <li className="flex items-start">
-                        <CheckCircle2 className="h-4 w-4 text-primary mr-2 mt-1 flex-shrink-0" />
+                        <X className="h-4 w-4 text-primary mr-2 mt-1 flex-shrink-0" />
                         <span>
                           {isEnglish
                             ? "User testing with elderly participants"
@@ -408,7 +411,7 @@ export default function Frame() {
                       {label}
                     </p>
                     <p className="text-xs text-zinc-400 truncate max-w-md">
-                      {url as string}
+                      <span className="break-all">{url as string}</span>
                     </p>
                   </div>
                 </motion.a>
