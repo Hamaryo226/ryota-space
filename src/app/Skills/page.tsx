@@ -5,7 +5,6 @@ import { useState } from "react";
 import { GradientBorder } from "@/components/gradient-border";
 import { Badge } from "@/components/ui/badge";
 import { PageTitle } from "@/components/PageTitle";
-import { Footer } from "@/components/footer";
 
 // スキルカテゴリー定義
 const skillCategories = [
@@ -51,26 +50,12 @@ const skillCategories = [
         level: 80,
         description: "サーバーサイドJavaScriptランタイム",
       },
-      { name: "Express", level: 75, description: "APIエンドポイント構築" },
-      {
-        name: "Firebase",
-        level: 80,
-        description: "認証・データベース・ホスティング",
-      },
-      {
-        name: "PostgreSQL",
-        level: 70,
-        description: "リレーショナルデータベース",
-      },
-      { name: "MongoDB", level: 65, description: "NoSQLデータベース" },
-      { name: "GraphQL", level: 60, description: "効率的なデータフェッチング" },
     ],
   },
   {
     name: "開発ツール",
     icon: "🔧",
     skills: [
-      { name: "Git", level: 85, description: "バージョン管理システム" },
       { name: "GitHub", level: 85, description: "コード共有・CI/CD" },
       {
         name: "Docker",
@@ -78,9 +63,6 @@ const skillCategories = [
         description: "コンテナ化されたアプリケーション開発",
       },
       { name: "VS Code", level: 95, description: "主要開発環境" },
-      { name: "Figma", level: 75, description: "デザイン・プロトタイピング" },
-      { name: "Jest", level: 70, description: "単体テスト・統合テスト" },
-      { name: "Cypress", level: 65, description: "E2Eテスト" },
     ],
   },
   {
@@ -95,8 +77,6 @@ const skillCategories = [
       },
       { name: "SEO", level: 70, description: "検索エンジン最適化" },
       { name: "Accessibility", level: 80, description: "アクセシブルなUI構築" },
-      { name: "API連携", level: 85, description: "外部サービスとの統合" },
-      { name: "Jamstack", level: 80, description: "モダンWebアーキテクチャ" },
     ],
   },
 ];
@@ -219,18 +199,7 @@ export default function SkillsPage() {
         <div className="bg-zinc-900/30 rounded-xl p-6 border border-zinc-800/50 mb-16">
           <h2 className="text-xl font-semibold mb-4">学習中/興味のある技術</h2>
           <div className="flex flex-wrap gap-2">
-            {[
-              "Three.js",
-              "WebGL",
-              "Rust",
-              "WebAssembly",
-              "Svelte",
-              "Go",
-              "AWS",
-              "機械学習基礎",
-              "Kubernetes",
-              "微分子服務",
-            ].map((tech) => (
+            {["Three.js", "zug"].map((tech) => (
               <span
                 key={tech}
                 className="px-3 py-1.5 bg-zinc-800 rounded-lg text-sm text-zinc-300 border border-zinc-700/50"
@@ -240,8 +209,6 @@ export default function SkillsPage() {
             ))}
           </div>
         </div>
-
-        <Footer />
       </div>
     </div>
   );

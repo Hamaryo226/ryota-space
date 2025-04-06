@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 //import Image from "next/image";
 import { PageTitle } from "@/components/PageTitle";
-import { Footer } from "@/components/footer";
 import { Badge } from "@/components/ui/badge";
 import {
   Search,
@@ -451,8 +450,6 @@ export default function BlogPage() {
             </p>
           </div>
         )}
-
-        <Footer />
       </div>
     </div>
   );

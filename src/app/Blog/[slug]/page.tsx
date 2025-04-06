@@ -12,7 +12,6 @@ import {
   Bookmark,
   BookmarkCheck,
 } from "lucide-react";
-import { Footer } from "@/components/footer";
 import { Badge } from "@/components/ui/badge";
 
 // ブログ記事のタイプ定義
@@ -484,10 +483,6 @@ export default function BlogPostPage() {
               </button>
             </div>
           </div>
-        </div>
-
-        <div className="mt-16">
-          <Footer />
         </div>
       </div>
     </div>
