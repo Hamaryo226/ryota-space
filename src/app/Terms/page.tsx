@@ -2,9 +2,7 @@
 
 import { useRef, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
-import Link from "next/link";
 import {
-  ChevronLeft,
   Scale,
   BookOpen,
   Target,
@@ -14,7 +12,6 @@ import {
   RefreshCw,
   Gavel,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
 const sectionVariants = {
@@ -65,14 +62,6 @@ export default function TermsOfUse() {
 
   return (
     <div className="container max-w-4xl mx-auto py-12 px-4">
-      <div className="flex flex-row items-center justify-between mb-8">
-        <Link href="/">
-          <Button variant="outline" size="icon">
-            <ChevronLeft className="h-4 w-4" />
-          </Button>
-        </Link>
-      </div>
-
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -91,7 +80,7 @@ export default function TermsOfUse() {
 
         <Separator className="my-6" />
 
-        <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 text-center">
+        <div className="grid grid-cols-4 sm:grid-cols-4 gap-4 text-center">
           <div className="p-3">
             <Scale className="h-7 w-7 mx-auto mb-2 text-primary/70" />
             <p className="text-xs">公正な利用</p>
