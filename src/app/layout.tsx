@@ -34,7 +34,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex-1">{children}</div>
+          <div className="flex-1 bg-zinc-950">{children}</div>
           <GoogleAnalytics gaId="G-0GZDYB8RRC" />
           <Footer />
         </ThemeProvider>

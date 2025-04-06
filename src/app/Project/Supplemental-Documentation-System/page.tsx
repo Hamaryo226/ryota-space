@@ -500,9 +500,9 @@ export default function Frame() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center w-full">
-      <Card className="w-full max-w-[1200px] border-none shadow-none relative bg-transparent overflow-hidden">
-        <div className="bg-zinc-900">
+    <div className="flex flex-col justify-center items-center w-full bg-zinc-950">
+      <Card className=" w-full max-w-[1200px] border-none shadow-none relative bg-transparent overflow-hidden">
+        <div className="bg-zinc-950">
           <Image
             className="lg:rounded-lg"
             src={articleData.thumbnail}
@@ -518,7 +518,7 @@ export default function Frame() {
             </p>
           </div>
           {/* Tab Container */}
-          <CardContent className="p-6">
+          <CardContent className="p-6 bg-zinc-950">
             <div className="relative flex flex-col items-center">
               {/* Hover Highlight */}
               <div
