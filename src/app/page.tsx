@@ -15,8 +15,8 @@ const NavLinks = () => (
     className="flex flex-wrap justify-center gap-3 my-4"
   >
     {[
-      { name: "Blog", path: "/Blog" },
-      { name: "Skills", path: "/Skills" },
+      //{ name: "Blog", path: "/Blog" },
+      //{ name: "Skills", path: "/Skills" },
       { name: "About", path: "/About" },
       { name: "Privacy", path: "/Privacy" },
       { name: "Terms", path: "/Terms" },
