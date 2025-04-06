@@ -4,7 +4,6 @@ import { useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Separator } from "@/components/ui/separator";
 import {
-  ChevronLeft,
   Shield,
   Eye,
   Target,
@@ -14,8 +13,6 @@ import {
   FileText,
   MessageCircle,
 } from "lucide-react";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -63,23 +60,17 @@ export default function PrivacyPolicy() {
 
   return (
     <div className="container max-w-4xl mx-auto py-12 px-4">
-      <div className="flex flex-row items-center justify-between mb-8">
-        <Link href="/">
-          <Button variant="outline" size="icon">
-            <ChevronLeft className="h-4 w-4" />
-          </Button>
-        </Link>
-      </div>
-
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         className="bg-card/50 backdrop-blur-sm rounded-xl shadow-lg p-8 mb-12"
       >
-        <div className="flex items-center justify-center mb-6">
-          <Shield className="h-12 w-12 text-primary mr-4" />
-          <h1 className="text-4xl font-bold">プライバシーポリシー</h1>
+        <div className="flex flex-col sm:flex-row items-center justify-center mb-6 text-center sm:text-left">
+          <Shield className="h-12 w-12 text-primary mb-2 sm:mb-0 sm:mr-4" />
+          <h1 className="text-3xl sm:text-4xl font-bold">
+            プライバシーポリシー
+          </h1>
         </div>
 
         <p className="text-lg text-center text-muted-foreground mb-6">
@@ -89,18 +80,18 @@ export default function PrivacyPolicy() {
 
         <Separator className="my-6" />
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+        <div className="grid grid-cols-3 sm:grid-cols-3 gap-4 text-center">
           <div className="p-4">
             <Eye className="h-8 w-8 mx-auto mb-2 text-primary/70" />
-            <p className="text-sm">透明性を大切に</p>
+            <p className="text-sm">透明性</p>
           </div>
           <div className="p-4">
             <Lock className="h-8 w-8 mx-auto mb-2 text-primary/70" />
-            <p className="text-sm">データの安全を確保</p>
+            <p className="text-sm">データの安全</p>
           </div>
           <div className="p-4">
             <Shield className="h-8 w-8 mx-auto mb-2 text-primary/70" />
-            <p className="text-sm">プライバシーを尊重</p>
+            <p className="text-sm">プライバシー</p>
           </div>
         </div>
       </motion.div>
