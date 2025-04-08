@@ -71,8 +71,7 @@ const ProfileSection = () => (
       animate={{ opacity: 1, y: 0 }}
     >
       <p className="text-xl text-zinc-400 tracking-wide">
-        <span className="text-zinc-300">System Engineer</span> &{" "}
-        <span className="text-zinc-300">Programmer</span>
+        <span className="text-zinc-400">System Engineer & Programmer</span>
       </p>
     </motion.div>
   </div>
