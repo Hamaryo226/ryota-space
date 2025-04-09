@@ -406,12 +406,12 @@ export default function Frame() {
                   <div className="p-2 rounded-full bg-zinc-700 mr-3">
                     <LinkIcon className="h-4 w-4 text-primary" />
                   </div>
-                  <div>
-                    <p className="text-zinc-200 group-hover:text-white transition-colors">
+                  <div className="flex-1 min-w-0">
+                    <p className="text-zinc-200 group-hover:text-white transition-colors text-sm font-medium truncate">
                       {label}
                     </p>
-                    <p className="text-xs text-zinc-400 truncate max-w-md">
-                      <span className="break-all">{url as string}</span>
+                    <p className="text-xs text-zinc-400 truncate">
+                      {url as string}
                     </p>
                   </div>
                 </motion.a>
