@@ -28,12 +28,6 @@ const TechCard = ({
     whileInView={{ opacity: 1 }}
     transition={{ duration: 0.5, delay: index * 0.1 }}
     viewport={{ once: true }}
-    whileHover={{
-      y: -8,
-      boxShadow:
-        "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-      transition: { duration: 0.2 },
-    }}
     className="glassmorphism relative overflow-hidden rounded-2xl border border-zinc-800/50 hover:border-zinc-700/50 transition-all duration-300"
   >
     <div className="absolute inset-0 bg-gradient-to-br from-zinc-800/30 via-zinc-900/40 to-black/50 z-0"></div>
@@ -81,9 +75,9 @@ const FeatureItem = ({
   index: number;
 }) => (
   <motion.div
-    initial={{ opacity: 0, x: -20 }}
-    whileInView={{ opacity: 1, x: 0 }}
-    transition={{ duration: 0.4, delay: index * 0.1 }}
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{ duration: 0.5, delay: index * 0.1 }}
     viewport={{ once: true }}
     className="group flex items-start gap-6 p-6 rounded-xl hover:bg-zinc-800/10 transition-all duration-300"
   >

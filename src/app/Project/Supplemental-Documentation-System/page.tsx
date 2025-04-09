@@ -504,6 +504,7 @@ export default function Frame() {
       <Card className=" w-full max-w-[1200px] border-none shadow-none relative bg-transparent overflow-hidden">
         <div className="bg-zinc-950">
           <Image
+            priority
             className="lg:rounded-lg"
             src={articleData.thumbnail}
             alt={articleData.systemname}

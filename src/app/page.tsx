@@ -79,32 +79,20 @@ const ProfileSection = () => (
 
 const ProjectsSection = () => (
   <div className="container max-w-4xl mx-auto mt-16 px-4 pb-24 bg-zinc-950">
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      viewport={{ once: true, margin: "-100px" }}
-      className="mb-12"
-    >
+    <div className="mb-12">
       <h2 className="sm:text-4xl text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-zinc-200 to-zinc-400 text-center mb-3">
         Projects
       </h2>
       <div className="w-16 h-1 bg-gradient-to-r from-zinc-600 to-zinc-800 mx-auto rounded-full"></div>
-    </motion.div>
+    </div>
 
     <div className="space-y-8">
       {projects.map((item, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: index * 0.1 }}
-          viewport={{ once: true, margin: "-100px" }}
-        >
+        <div key={index}>
           <Link href={item.link} passHref>
             <BentoGrid items={[item]} />
           </Link>
-        </motion.div>
+        </div>
       ))}
     </div>
   </div>
