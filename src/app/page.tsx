@@ -4,16 +4,10 @@ import Image from "next/image";
 import { ChevronDown, Twitter, Instagram, Github, Youtube } from "lucide-react";
 import Link from "next/link";
 import { BentoGrid } from "@/components/Bento";
-import { motion } from "framer-motion";
 import { projects } from "@/data/projects";
 
 const NavLinks = () => (
-  <motion.div
-    initial={{ opacity: 0, y: 10 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.4, delay: 0.15 }}
-    className="flex flex-wrap justify-center gap-3 my-4"
-  >
+  <div className="flex flex-wrap justify-center gap-3 my-4">
     {[
       //{ name: "Blog", path: "/Blog" },
       //{ name: "Skills", path: "/Skills" },
@@ -29,7 +23,7 @@ const NavLinks = () => (
         </span>
       </Link>
     ))}
-  </motion.div>
+  </div>
 );
 
 const SocialButton = ({
@@ -56,24 +50,16 @@ const SocialButton = ({
 
 const ProfileSection = () => (
   <div className="space-y-3">
-    <motion.div
-      transition={{ duration: 0.3 }}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-    >
+    <div>
       <h1 className="bg-gradient-to-r from-zinc-200 via-zinc-100 to-zinc-300 bg-clip-text text-5xl font-bold tracking-tighter text-transparent sm:text-6xl drop-shadow-sm">
         Hamaguchi Ryota
       </h1>
-    </motion.div>
-    <motion.div
-      transition={{ duration: 0.3, delay: 0.1 }}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-    >
+    </div>
+    <div>
       <p className="text-xl text-zinc-400 tracking-wide">
         <span className="text-zinc-400">System Engineer & Programmer</span>
       </p>
-    </motion.div>
+    </div>
   </div>
 );
 
@@ -109,11 +95,7 @@ export default function Home() {
         </div>
 
         <div className="container relative flex max-w-3xl flex-col items-center justify-center gap-10 px-4 text-center z-10">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-          >
+          <div>
             <div className="relative">
               <div className="absolute -inset-1.5 rounded-full bg-gradient-to-r from-zinc-700 via-zinc-600 to-zinc-700 opacity-75 blur-md" />
               <div
@@ -130,25 +112,17 @@ export default function Home() {
                 />
               </div>
             </div>
-          </motion.div>
+          </div>
 
           <ProfileSection />
 
-          <motion.div
-            transition={{ duration: 0.3, delay: 0.2 }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-          >
+          <div>
             <p className="italic max-w-[600px] text-zinc-400/90 md:text-lg font-light leading-relaxed">
               &ldquo;PC turns off the power.&rdquo;
             </p>
-          </motion.div>
+          </div>
 
-          <motion.div
-            transition={{ duration: 0.3, delay: 0.3 }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-          >
+          <div>
             <div className="flex flex-wrap justify-center gap-5">
               <SocialButton
                 href="https://twitter.com/_hamaryo"
@@ -171,21 +145,12 @@ export default function Home() {
                 label="YouTube"
               />
             </div>
-          </motion.div>
+          </div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{
-            delay: 1,
-            duration: 0.8,
-            ease: "easeInOut",
-          }}
-          className="flex justify-center items-center"
-        >
+        <div className="flex justify-center items-center">
           <ChevronDown className="absolute bottom-8 animate-bounce h-8 w-8 text-zinc-400 cursor-pointer hover:text-zinc-200 transition-colors" />
-        </motion.div>
+        </div>
       </div>
       <ProjectsSection />
       <NavLinks />

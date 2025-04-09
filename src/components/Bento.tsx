@@ -2,7 +2,6 @@
 
 import { cn } from "@/lib/utils";
 import { CheckCircle, TrendingUp, Video, Globe } from "lucide-react";
-import { motion } from "framer-motion";
 
 export interface BentoItem {
   title: string;
@@ -69,12 +68,8 @@ function BentoGrid({ items = itemsSample }: BentoGridProps) {
   return (
     <div className="grid grid-cols-1 gap-4 p-4 max-w-7xl mx-auto">
       {items.map((item, index) => (
-        <motion.div
+        <div
           key={index}
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: index * 0.1 }}
-          viewport={{ once: true, margin: "-50px" }}
           className={cn(
             "group relative p-5 rounded-2xl overflow-hidden transition-all duration-300",
             "border border-zinc-800/50 bg-zinc-900/40 backdrop-blur-sm",
@@ -160,7 +155,7 @@ function BentoGrid({ items = itemsSample }: BentoGridProps) {
 
           {/* 下部ハイライト */}
           <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-zinc-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-        </motion.div>
+        </div>
       ))}
     </div>
   );
