@@ -74,13 +74,7 @@ const FeatureItem = ({
   description: string;
   index: number;
 }) => (
-  <motion.div
-    initial={{ opacity: 0 }}
-    whileInView={{ opacity: 1 }}
-    transition={{ duration: 0.5 }}
-    viewport={{ once: true }}
-    className="group flex items-start gap-6 p-6 rounded-xl hover:bg-zinc-800/10 transition-all duration-300"
-  >
+  <div className="group flex items-start gap-6 p-6 rounded-xl hover:bg-zinc-800/10 transition-all duration-300">
     <div className="relative">
       <div className="absolute -inset-2 bg-gradient-to-r from-zinc-700/20 to-zinc-600/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       <div className="h-14 w-14 rounded-full bg-gradient-to-br from-zinc-800 via-zinc-700 to-zinc-800 flex items-center justify-center relative">
@@ -95,7 +89,7 @@ const FeatureItem = ({
         {description}
       </p>
     </div>
-  </motion.div>
+  </div>
 );
 
 export default function About() {
