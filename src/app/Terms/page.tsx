@@ -43,8 +43,8 @@ export default function TermsOfUse() {
   }, []);
 
   return (
-    <div className="container max-w-4xl mx-auto py-12 px-4">
-      <div className="rounded-xl border-none border-border/40 p-8 mb-12">
+    <div className="container max-w-4xl mx-auto p-4">
+      <div className="rounded-xl border-none border-border/40 p-4 mb-6">
         <div className="flex items-center justify-center mb-6">
           <BookOpen className="h-12 w-12 text-primary mr-4" />
           <h1 className="text-4xl font-bold">利用規約</h1>

@@ -6,6 +6,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import Link from "next/link";
+import { ExternalLink } from "lucide-react";
 
 // コンポーネントの宣言はエクスポート前に行う
 const TechCard = ({
@@ -47,7 +48,10 @@ const TechCard = ({
               <p className="text-zinc-400 text-sm">{description}</p>
             </TooltipTrigger>
             <TooltipContent>
-              <p>{title}の公式サイトを開く</p>
+              <p className="flex items-center gap-2">
+                {title}
+                <ExternalLink size={16} />
+              </p>
             </TooltipContent>
           </Link>
         </Tooltip>
@@ -85,7 +89,7 @@ const FeatureItem = ({
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-800/20 via-zinc-900 to-zinc-950 text-zinc-200">
+    <div className="min-h-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] text-zinc-200 bg-zinc-950">
       <div className="container mx-auto px-4 py-16">
         {/* ヒーローセクション */}
         <div className="relative mb-24 overflow-hidden rounded-3xl">
@@ -143,7 +147,7 @@ export default function About() {
               />
               <TechCard
                 title="shadcn/ui"
-                description="美しく再利用可能なコンポーネントライブラリ"
+                description="再利用可能なコンポーネントライブラリ"
                 icon="/shadcn-ui-seeklogo.svg"
                 link="https://ui.shadcn.com/"
                 index={1}
