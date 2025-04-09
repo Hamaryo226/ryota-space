@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import {
   Tooltip,
@@ -7,7 +6,6 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 // コンポーネントの宣言はエクスポート前に行う
 const TechCard = ({
@@ -15,7 +13,6 @@ const TechCard = ({
   description,
   icon,
   link,
-  index,
 }: {
   title: string;
   description: string;
@@ -23,13 +20,7 @@ const TechCard = ({
   link: string;
   index: number;
 }) => (
-  <motion.div
-    initial={{ opacity: 0 }}
-    whileInView={{ opacity: 1 }}
-    transition={{ duration: 0.5, delay: index * 0.1 }}
-    viewport={{ once: true }}
-    className="glassmorphism relative overflow-hidden rounded-2xl border border-zinc-800/50 hover:border-zinc-700/50 transition-all duration-300"
-  >
+  <div className="glassmorphism relative overflow-hidden rounded-2xl border border-zinc-800/50 hover:border-zinc-700/50 transition-all duration-300">
     <div className="absolute inset-0 bg-gradient-to-br from-zinc-800/30 via-zinc-900/40 to-black/50 z-0"></div>
     <div className="absolute -inset-1/2 bg-gradient-conic from-transparent via-zinc-700/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
     <div className="p-6 z-10 relative">
@@ -62,7 +53,7 @@ const TechCard = ({
         </Tooltip>
       </TooltipProvider>
     </div>
-  </motion.div>
+  </div>
 );
 
 const FeatureItem = ({
@@ -96,31 +87,20 @@ export default function About() {
   return (
     <div className="min-h-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-800/20 via-zinc-900 to-zinc-950 text-zinc-200">
       <div className="container mx-auto px-4 py-16">
-        {/* 3Dエフェクト付きヒーローセクション */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="relative mb-24 overflow-hidden rounded-3xl"
-        >
+        {/* ヒーローセクション */}
+        <div className="relative mb-24 overflow-hidden rounded-3xl">
           <Image
             className="lg:rounded-lg"
             src={"/base-op0.webp"}
             alt="Hero section background image"
-            width={1920}
-            height={720}
+            width={3840}
+            height={1536}
           />
-        </motion.div>
+        </div>
 
         {/* コンテンツセクション - モダンなレイアウト */}
         <div className="max-w-5xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start mb-20"
-          >
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start mb-20">
             <div className="md:col-span-1">
               <div className="sticky top-24">
                 <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-zinc-200 to-zinc-400 mb-5">
@@ -142,16 +122,10 @@ export default function About() {
                 レスポンシブデザインにより、あらゆるデバイスで最適な表示を実現しています。
               </p>
             </div>
-          </motion.div>
+          </div>
 
-          {/* 技術スタックセクション - 3D効果のあるカード */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="mb-24"
-          >
+          {/* 技術スタックセクション */}
+          <div className="mb-24">
             <div className="flex items-center justify-between mb-12">
               <h3 className="text-3xl font-semibold text-zinc-200 border-l-4 border-zinc-500 pl-4">
                 主要技術スタック
@@ -182,16 +156,10 @@ export default function About() {
                 index={2}
               />
             </div>
-          </motion.div>
+          </div>
 
           {/* 特徴セクション - カード形式 */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="mb-24"
-          >
+          <div className="mb-24">
             <div className="flex items-center justify-between mb-12">
               <h3 className="text-3xl font-semibold text-zinc-200 border-l-4 border-zinc-500 pl-4">
                 サイトの特徴
@@ -221,7 +189,7 @@ export default function About() {
                 index={3}
               />
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </div>

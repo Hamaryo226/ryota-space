@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { motion, useInView } from "framer-motion";
 import { Separator } from "@/components/ui/separator";
 import {
   Shield,
@@ -14,16 +13,10 @@ import {
   MessageCircle,
 } from "lucide-react";
 
-const sectionVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-};
-
 function PolicySection({
   title,
   children,
   icon: Icon,
-  index,
 }: {
   title: string;
   children: React.ReactNode;
@@ -31,17 +24,8 @@ function PolicySection({
   index: number;
 }) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   return (
-    <motion.section
-      ref={ref}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      variants={sectionVariants}
-      transition={{ delay: index * 0.1 }}
-      className="mb-12"
-    >
+    <section ref={ref} className="mb-12">
       <div className="flex items-center gap-3 mb-4">
         <div className="bg-primary/10 p-2 rounded-full">
           <Icon className="h-6 w-6 text-primary" />
@@ -49,7 +33,7 @@ function PolicySection({
         <h2 className="text-xl font-bold">{title}</h2>
       </div>
       <div className="ml-12 pl-6 border-l border-primary/20">{children}</div>
-    </motion.section>
+    </section>
   );
 }
 
@@ -60,12 +44,7 @@ export default function PrivacyPolicy() {
 
   return (
     <div className="container max-w-4xl mx-auto py-12 px-4">
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="bg-card/50 backdrop-blur-sm rounded-xl shadow-lg p-8 mb-12"
-      >
+      <div className="bg-card/50 backdrop-blur-sm rounded-xl shadow-lg p-8 mb-12">
         <div className="flex flex-col sm:flex-row items-center justify-center mb-6 text-center sm:text-left">
           <Shield className="h-12 w-12 text-primary mb-2 sm:mb-0 sm:mr-4" />
           <h1 className="text-3xl sm:text-4xl font-bold">
@@ -94,7 +73,7 @@ export default function PrivacyPolicy() {
             <p className="text-sm">プライバシー</p>
           </div>
         </div>
-      </motion.div>
+      </div>
 
       <div className="space-y-6">
         <PolicySection title="1. 収集する情報" icon={Eye} index={0}>
@@ -157,14 +136,9 @@ export default function PrivacyPolicy() {
         </PolicySection>
       </div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 1 }}
-        className="mt-16 text-center text-sm text-muted-foreground"
-      >
+      <div className="mt-16 text-center text-sm text-muted-foreground">
         <p>最終更新日: 2025年4月1日</p>
-      </motion.div>
+      </div>
     </div>
   );
 }
