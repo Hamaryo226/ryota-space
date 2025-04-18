@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import articleData from "public/Article/fcs.json";
 import { AccordionCodeBlock } from "@/components/accordion-code-block";
+import { AvatarGroup } from "@/components/avatar-group";
 
 const tabs = [
   { name: "概要", icon: <FileText className="h-4 w-4 mr-2" /> },
@@ -23,6 +24,29 @@ const tabs = [
   { name: "コード", icon: <Code className="h-4 w-4 mr-2" /> },
   { name: "リンク", icon: <LinkIcon className="h-4 w-4 mr-2" /> },
 ];
+
+const PJAvatarGroup = () => {
+  // Sample user data
+  const users = [
+    {
+      id: "1",
+      username: "Hamaryo",
+      avatarUrl: "https://avatars.githubusercontent.com/u/52881627?v=1",
+    },
+    {
+      id: "2",
+      username: "+5",
+      avatarUrl: "/placeholder.svg?height=40&width=401",
+    },
+  ];
+
+  return (
+    <div className="flex justify-center items-center">
+      {/* Avatar group */}
+      <AvatarGroup users={users} />
+    </div>
+  );
+};
 
 export default function Frame() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -435,11 +459,14 @@ export default function Frame() {
             width={1366}
             height={567}
           />
-          <div className="p-6 text-center">
-            <p className="text-3xl font-semibold py-2 lg:py-4">
-              <span className={isEnglish ? "text-2xl" : "text-3xl"}>
+          <div className="pt-6 px-6 text-center">
+            <p className="font-semibold py-2 lg:py-4">
+              <span className={isEnglish ? "text-2xl" : "sm:text-3xl text-2xl"}>
                 {isEnglish ? articleData.title.en : articleData.title.ja}
               </span>
+            </p>
+            <p className="pt-2">
+              <PJAvatarGroup />
             </p>
           </div>
           {/* Tab Container */}
