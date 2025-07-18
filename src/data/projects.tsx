@@ -1,5 +1,5 @@
 import React from "react";
-import { Speech, ScanSearch, Joystick } from "lucide-react";
+import { Speech, ScanSearch /*, Joystick */ } from "lucide-react";
 import { BentoItem } from "@/components/Bento";
 
 export const projects: BentoItem[] = [
@@ -25,6 +25,7 @@ export const projects: BentoItem[] = [
     colSpan: 2,
     link: "/Project/Supplemental-Documentation-System",
   },
+  /*
   {
     title: "Taiko-Re-Strap-Next",
     meta: "FullHD image quality support",
@@ -45,4 +46,5 @@ export const projects: BentoItem[] = [
     colSpan: 2,
     link: "/Private/Taiko-Re-Strap",
   },
+  */
 ];
