@@ -11,9 +11,9 @@ const NavLinks = () => (
     {[
       //{ name: "Blog", path: "/Blog" },
       //{ name: "Skills", path: "/Skills" },
-      { name: "About", path: "/About" },
-      { name: "Privacy", path: "/Privacy" },
-      { name: "Terms", path: "/Terms" },
+      { name: "About", path: "/" },
+      //{ name: "Privacy", path: "/Privacy" },
+      //{ name: "Terms", path: "/Terms" },
     ].map((link, index) => (
       <Link href={link.path} key={index}>
         <span className="relative inline-block px-4 py-2 text-zinc-400 hover:text-zinc-200 transition-colors duration-300 group">
@@ -35,17 +35,18 @@ const SocialButton = ({
   icon: React.ElementType;
   label: string;
 }) => (
-  <Link href={href} passHref target="_blank" rel="noreferrer">
-    <Button
-      variant="outline"
-      size="icon"
-      className="group relative border-zinc-800/50 bg-zinc-900/30 text-zinc-400 backdrop-blur-sm transition-all hover:border-zinc-500 hover:bg-zinc-800/40 hover:text-zinc-200"
-    >
+  <Button
+    disabled
+    variant="outline"
+    size="icon"
+    className="group relative border-zinc-800/50 bg-zinc-900/30 text-zinc-400 backdrop-blur-sm transition-all hover:border-zinc-500 hover:bg-zinc-800/40 hover:text-zinc-200"
+  >
+    <Link href={href} passHref target="_blank" rel="noreferrer">
       <span className="absolute inset-0 bg-gradient-to-tr from-zinc-900/0 to-zinc-500/20 opacity-0 transition-opacity group-hover:opacity-100 rounded-md" />
       <Icon className="h-5 w-5 transition-all duration-300 group-hover:scale-110" />
       <span className="sr-only">{label}</span>
-    </Button>
-  </Link>
+    </Link>
+  </Button>
 );
 
 const ProfileSection = () => (
@@ -125,22 +126,26 @@ export default function Home() {
           <div>
             <div className="flex flex-wrap justify-center gap-5">
               <SocialButton
-                href="https://twitter.com/_hamaryo"
+                //https://twitter.com/_hamaryo
+                href=""
                 icon={Twitter}
                 label="X"
               />
               <SocialButton
-                href="https://www.instagram.com/hamaryo_2"
+                //https://www.instagram.com/hamaryo_2
+                href=""
                 icon={Instagram}
                 label="Instagram"
               />
               <SocialButton
-                href="https://github.com/HamaguchiRyota"
+                //https://github.com/HamaguchiRyota
+                href=""
                 icon={Github}
                 label="GitHub"
               />
               <SocialButton
-                href="https://www.youtube.com/@Fumolat"
+                //https://www.youtube.com/@Fumolat
+                href=""
                 icon={Youtube}
                 label="YouTube"
               />
