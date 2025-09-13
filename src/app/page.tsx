@@ -1,164 +1,44 @@
-"use client";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { ChevronDown, Twitter, Instagram, Github, Youtube } from "lucide-react";
-import Link from "next/link";
-import { BentoGrid } from "@/components/Bento";
-import { projects } from "@/data/projects";
-
-const NavLinks = () => (
-  <div className="flex flex-wrap justify-center gap-3 my-4">
-    {[
-      //{ name: "Blog", path: "/Blog" },
-      //{ name: "Skills", path: "/Skills" },
-      { name: "About", path: "/" },
-      //{ name: "Privacy", path: "/Privacy" },
-      //{ name: "Terms", path: "/Terms" },
-    ].map((link, index) => (
-      <Link href={link.path} key={index}>
-        <span className="relative inline-block px-4 py-2 text-zinc-400 hover:text-zinc-200 transition-colors duration-300 group">
-          <span className="absolute inset-0 w-full h-full bg-zinc-800/30 rounded-md -z-10 scale-75 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300"></span>
-          {link.name}
-          <span className="block h-0.5 w-0 bg-gradient-to-r from-zinc-500 to-zinc-300 group-hover:w-full transition-all duration-300"></span>
-        </span>
-      </Link>
-    ))}
-  </div>
-);
-
-const SocialButton = ({
-  href,
-  icon: Icon,
-  label,
-}: {
-  href: string;
-  icon: React.ElementType;
-  label: string;
-}) => (
-  <Button
-    disabled
-    variant="outline"
-    size="icon"
-    className="group relative border-zinc-800/50 bg-zinc-900/30 text-zinc-400 backdrop-blur-sm transition-all hover:border-zinc-500 hover:bg-zinc-800/40 hover:text-zinc-200"
-  >
-    <Link href={href} passHref target="_blank" rel="noreferrer">
-      <span className="absolute inset-0 bg-gradient-to-tr from-zinc-900/0 to-zinc-500/20 opacity-0 transition-opacity group-hover:opacity-100 rounded-md" />
-      <Icon className="h-5 w-5 transition-all duration-300 group-hover:scale-110" />
-      <span className="sr-only">{label}</span>
-    </Link>
-  </Button>
-);
-
-const ProfileSection = () => (
-  <div className="space-y-3">
-    <div>
-      <h1 className="bg-gradient-to-r from-zinc-200 via-zinc-100 to-zinc-300 bg-clip-text text-5xl font-bold tracking-tighter text-transparent sm:text-6xl drop-shadow-sm">
-        Hamaguchi Ryota
-      </h1>
-    </div>
-    <div>
-      <p className="text-xl text-zinc-400 tracking-wide">
-        <span className="text-zinc-400">System Engineer & Programmer</span>
-      </p>
-    </div>
-  </div>
-);
-
-const ProjectsSection = () => (
-  <div className="container max-w-4xl mx-auto mt-16 px-4 pb-24 bg-zinc-950">
-    <div className="mb-12">
-      <h2 className="sm:text-4xl text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-zinc-200 to-zinc-400 text-center mb-3">
-        Projects
-      </h2>
-      <div className="w-16 h-1 bg-gradient-to-r from-zinc-600 to-zinc-800 mx-auto rounded-full"></div>
-    </div>
-
-    <div className="space-y-8">
-      {projects.map((item, index) => (
-        <div key={index}>
-          <Link href={item.link} passHref>
-            <BentoGrid items={[item]} />
-          </Link>
-        </div>
-      ))}
-    </div>
-  </div>
-);
+import { TopCard } from "@/components/top-card";
 
 export default function Home() {
   return (
-    <div className="bg-zinc-950 min-h-screen">
-      <div className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden text-zinc-50">
-        {/* 背景エフェクト */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-zinc-700/20 rounded-full filter blur-3xl"></div>
-          <div className="absolute bottom-1/3 right-1/3 w-72 h-72 bg-zinc-600/20 rounded-full filter blur-3xl"></div>
-        </div>
-
-        <div className="container relative flex max-w-3xl flex-col items-center justify-center gap-10 px-4 text-center z-10">
-          <div>
-            <div className="relative">
-              <div className="absolute -inset-1.5 rounded-full bg-gradient-to-r from-zinc-700 via-zinc-600 to-zinc-700 opacity-75 blur-md" />
-              <div
-                className="absolute -inset-1 rounded-full bg-gradient-to-r from-zinc-600/40 via-zinc-500/30 to-zinc-600/40 opacity-50 animate-pulse"
-                style={{ animationDuration: "3s" }}
-              />
-              <div className="relative h-28 w-28 overflow-hidden rounded-full border-2 border-zinc-700/80 shadow-lg">
-                <Image
-                  src="/hamaryo.jpg"
-                  alt="Profile"
-                  width={112}
-                  height={112}
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
-
-          <ProfileSection />
-
-          <div>
-            <p className="italic max-w-[600px] text-zinc-400/90 md:text-lg font-light leading-relaxed">
-              &ldquo;PC turns off the power.&rdquo;
-            </p>
-          </div>
-
-          <div>
-            <div className="flex flex-wrap justify-center gap-5">
-              <SocialButton
-                //https://twitter.com/_hamaryo
-                href=""
-                icon={Twitter}
-                label="X"
-              />
-              <SocialButton
-                //https://www.instagram.com/hamaryo_2
-                href=""
-                icon={Instagram}
-                label="Instagram"
-              />
-              <SocialButton
-                //https://github.com/HamaguchiRyota
-                href=""
-                icon={Github}
-                label="GitHub"
-              />
-              <SocialButton
-                //https://www.youtube.com/@Fumolat
-                href=""
-                icon={Youtube}
-                label="YouTube"
-              />
-            </div>
-          </div>
-        </div>
-
-        <div className="flex justify-center items-center">
-          <ChevronDown className="absolute bottom-8 animate-bounce h-8 w-8 text-zinc-400 cursor-pointer hover:text-zinc-200 transition-colors" />
-        </div>
-      </div>
-      <ProjectsSection />
-      <NavLinks />
+    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-4 pb-20 gap-8 sm:p-8 sm:gap-16 md:p-20">
+      <main className="row-start-2 flex flex-col items-center gap-6 sm:gap-8 w-full max-w-4xl">
+        <TopCard />
+      </main>
+      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
+        <a
+          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+          href="./"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            aria-hidden
+            src="/file.svg"
+            alt="File icon"
+            width={16}
+            height={16}
+          />
+          Blog
+        </a>
+        <a
+          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+          href="./"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            aria-hidden
+            src="/window.svg"
+            alt="Window icon"
+            width={16}
+            height={16}
+          />
+          Project
+        </a>
+      </footer>
     </div>
   );
 }
