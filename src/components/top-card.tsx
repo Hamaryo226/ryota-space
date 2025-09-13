@@ -25,7 +25,7 @@ import { ModeToggle } from "@/components/mode-togle";
 
 export function TopCard() {
   return (
-    <Card className="w-full max-w-[350px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] mx-4 shadow-lg">
+    <Card className="w-full max-w-[350px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] shadow-lg">
       <CardHeader className="text-left">
         <div className="flex items-center mb-2 space-x-4">
           <Avatar>
