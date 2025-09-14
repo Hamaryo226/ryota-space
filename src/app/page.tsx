@@ -3,7 +3,7 @@ import { TopCard } from "@/components/top-card";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen gap-8 sm:gap-16">
+    <div className="font-sans grid items-center justify-items-center min-h-screen gap-8 sm:gap-16">
       <main className="row-start-2 flex flex-col items-center gap-6 sm:gap-8 w-full px-4 sm:px-8 md:px-20">
         <TopCard />
       </main>
