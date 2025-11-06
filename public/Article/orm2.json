@@ -1,0 +1,14 @@
+{
+  "thumbnail": "/",
+  "title": "注文管理システム",
+  "systemname": "OrderManager2",
+  "date": "2025年7月 ~ 2025年10月",
+  "description": "",
+  "content": {
+    "概要": "",
+    "技術スタック": ""
+  },
+  "links": {
+    "GitHub": "https://github.com/sakurai-lab-07/OrderManager2"
+  }
+}

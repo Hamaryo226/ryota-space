@@ -45,20 +45,38 @@ export function TopCard() {
         </CardDescription>
       </CardHeader>
       <CardContent className="px-4 sm:px-6">
-        <ScrollArea className="w-full">
-          <div className="flex gap-2 pb-4 min-w-max">
-            <Button variant="outline" size="sm" className="flex-shrink-0">
-              <Speech className="mr-2 h-4 w-4" /> Frailty-Check-System
-            </Button>
-            <Button variant="outline" size="sm" className="flex-shrink-0">
-              <ScanSearch className="mr-2 h-4 w-4" />{" "}
-              Supplemental-Documentation-System
-            </Button>
-            <Button variant="outline" size="sm" className="flex-shrink-0">
-              <Drum className="mr-2 h-4 w-4" /> TaikoDive
-            </Button>
+        <ScrollArea className="w-full h-32">
+          <div className="flex flex-col gap-2 py-2 items-start">
+            <Link href="/Project/fcs">
+              <Button
+                variant="outline"
+                size="sm"
+                className="flex-shrink-0 justify-start"
+              >
+                <Speech className="mr-2 h-4 w-4" /> Frailty-Check-System
+              </Button>
+            </Link>
+            <Link href="/Project/sds">
+              <Button
+                variant="outline"
+                size="sm"
+                className="flex-shrink-0 justify-start"
+              >
+                <ScanSearch className="mr-2 h-4 w-4" />
+                Supplemental-Documentation-System
+              </Button>
+            </Link>
+            <Link href="/Project/taikodive">
+              <Button
+                variant="outline"
+                size="sm"
+                className="flex-shrink-0 justify-start"
+              >
+                <Drum className="mr-2 h-4 w-4" /> TaikoDive
+              </Button>
+            </Link>
           </div>
-          <ScrollBar orientation="horizontal" />
+          <ScrollBar orientation="vertical" />
         </ScrollArea>
       </CardContent>
       <Separator />
