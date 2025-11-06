@@ -6,7 +6,7 @@
   "description": "",
   "content": {
     "概要": "",
-    "技術スタック": ""
+    "技術スタック": "フロントエンド: Next.js 15 (App Router), React 18, TypeScript\nスタイリング: Tailwind CSS\nデータベース: PostgreSQL (Neon)\nデプロイ: Vercel"
   },
   "links": {
     "GitHub": "https://github.com/sakurai-lab-07/OrderManager2"

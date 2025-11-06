@@ -13,6 +13,7 @@ export type Article = {
   description: string;
   content?: {
     概要?: string;
+    技術スタック?: string;
     想定クライアント?: string;
     目的?: string;
     目標?: string;

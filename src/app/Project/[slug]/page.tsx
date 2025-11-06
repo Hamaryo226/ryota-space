@@ -14,9 +14,9 @@ export function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const { slug } = params;
+  const { slug } = await params;
   const article = getArticleBySlug(slug);
 
   if (!article) {
@@ -29,12 +29,12 @@ export async function generateMetadata({
   };
 }
 
-export default function ProjectDetailPage({
+export default async function ProjectDetailPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const { slug } = params;
+  const { slug } = await params;
   const article = getArticleBySlug(slug);
 
   if (!article) notFound();
@@ -87,6 +87,12 @@ export default function ProjectDetailPage({
               <div>
                 <h2 className="text-lg font-semibold mb-2">概要</h2>
                 <p className="text-muted-foreground leading-relaxed">{article.content.概要}</p>
+              </div>
+            )}
+            {article.content.技術スタック && (
+              <div>
+                <h2 className="text-lg font-semibold mb-2">技術スタック</h2>
+                <p className="text-muted-foreground leading-relaxed">{article.content.技術スタック}</p>
               </div>
             )}
             <div className="grid gap-6 md:grid-cols-2">
