@@ -3,6 +3,54 @@ import Link from "next/link";
 import Image from "next/image";
 import { getArticleBySlug, getAllSlugs } from "@/lib/articles";
 
+// 技術名からロゴのパスを取得
+function getTechLogoPath(techName: string): string | null {
+  const normalizedName = techName.toLowerCase().replace(/\s+/g, '').replace(/#/g, 'sharp');
+  
+  const logoMap: Record<string, string> = {
+    // フロントエンド
+    'nextjs': '/Logo/nextjs.svg',
+    'next.js': '/Logo/nextjs.svg',
+    'react': '/Logo/nextjs.svg',
+    'javascript': '/Logo/javascript.svg',
+    'typescript': '/Logo/typescript.svg',
+    // スタイリング
+    'tailwindcss': '/Logo/tailwindcss.svg',
+    'tailwind': '/Logo/tailwindcss.svg',
+    'bootstrap': '/Logo/bootstrap.svg',
+    'bootstrap5': '/Logo/bootstrap.svg',
+    // バックエンド
+    'python': '/Logo/python.svg',
+    'django': '/Logo/django.svg',
+    'php': '/Logo/php_dark.svg',
+    // .NET
+    'csharp': '/Logo/csharp.svg',
+    'c#': '/Logo/csharp.svg',
+    'dotnet': '/Logo/dotnet.svg',
+    '.net': '/Logo/dotnet.svg',
+    '.netfreamework': '/Logo/dotnet.svg',
+    '.netframework': '/Logo/dotnet.svg',
+    // データベース
+    'neon': '/Logo/neon.svg',
+    'postgresql': '/Logo/neon.svg',
+    'postgresql(neon)': '/Logo/neon.svg',
+    // デプロイ
+    'vercel': '/Logo/Vercel_dark.svg',
+    'render': '/Logo/Vercel_dark.svg', // Renderのロゴがない場合の仮対応
+    // その他
+    'webcomponents': '/Logo/webcomponents.svg',
+  };
+  
+  // 部分一致でも検索
+  for (const [key, path] of Object.entries(logoMap)) {
+    if (normalizedName.includes(key)) {
+      return path;
+    }
+  }
+  
+  return null;
+}
+
 // 静的生成のためのパラメータを生成
 export function generateStaticParams() {
   return getAllSlugs().map((slug) => ({
@@ -89,12 +137,6 @@ export default async function ProjectDetailPage({
                 <p className="text-muted-foreground leading-relaxed">{article.content.概要}</p>
               </div>
             )}
-            {article.content.技術スタック && (
-              <div>
-                <h2 className="text-lg font-semibold mb-2">技術スタック</h2>
-                <p className="text-muted-foreground leading-relaxed">{article.content.技術スタック}</p>
-              </div>
-            )}
             <div className="grid gap-6 md:grid-cols-2">
               {article.content.想定クライアント && (
                 <div>
@@ -112,7 +154,36 @@ export default async function ProjectDetailPage({
             {article.content.目標 && (
               <div>
                 <h3 className="text-base font-semibold mb-2">目標</h3>
-                <p className="text-muted-foreground font-medium">{article.content.目標}</p>
+                <p className="text-muted-foreground">{article.content.目標}</p>
+              </div>
+            )}
+           {article.content.技術スタック && (
+              <div>
+                <h2 className="text-lg font-semibold mb-2">技術スタック</h2>
+                {typeof article.content.技術スタック === 'string' ? (
+                  <p className="text-muted-foreground leading-relaxed">{article.content.技術スタック}</p>
+                ) : (
+                  <div className="space-y-3">
+                    {Object.entries(article.content.技術スタック).map(([category, techs]) => (
+                      <div key={category} className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                        <h3 className="text-sm font-medium min-w-[100px] shrink-0">{category}</h3>
+                        <div className="flex flex-wrap gap-2">
+                          {techs.map((tech, i) => {
+                            const logoPath = getTechLogoPath(tech);
+                            return (
+                              <div key={i} className="flex items-center gap-2 px-3 py-1.5 border rounded-md bg-muted/30">
+                                {logoPath && (
+                                  <Image src={logoPath} alt={tech} width={18} height={18} className="object-contain" />
+                                )}
+                                <span className="text-sm text-muted-foreground">{tech}</span>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
             )}
           </section>

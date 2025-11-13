@@ -3,5 +3,13 @@
   "title": "TaikoDive",
   "description": "某音楽ゲームのアーケード版をPCで再現したソフトウェア「TaikoDive」を開発。",
   "systemname": "TaikoDive",
-  "date": "2025年1月 ~ 現在"
+  "date": "2025年1月 ~ 現在",
+  "content": {
+    "概要": "",
+    "技術スタック": {
+      "言語": ["C#"],
+      "フレームワーク": [".Net Freamework"],
+      "描画ライブラリ": ["DxLib"]
+    }
+  }
 }

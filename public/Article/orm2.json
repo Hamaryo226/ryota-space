@@ -3,10 +3,15 @@
   "title": "注文管理システム",
   "systemname": "OrderManager2",
   "date": "2025年7月 ~ 2025年10月",
-  "description": "",
+  "description": "学園祭で使用する注文管理システムの開発。",
   "content": {
     "概要": "",
-    "技術スタック": "フロントエンド: Next.js 15 (App Router), React 18, TypeScript\nスタイリング: Tailwind CSS\nデータベース: PostgreSQL (Neon)\nデプロイ: Vercel"
+    "技術スタック": {
+      "フロントエンド": ["Next.js 15 (App Router)", "React 18", "TypeScript"],
+      "スタイリング": ["Tailwind CSS"],
+      "データベース": ["PostgreSQL (Neon)"],
+      "デプロイ": ["Vercel"]
+    }
   },
   "links": {
     "GitHub": "https://github.com/sakurai-lab-07/OrderManager2"

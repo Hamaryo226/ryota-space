@@ -6,6 +6,7 @@ import orm2Data from "../../public/Article/orm2.json";
 
 export type Article = {
   slug: string;
+  category: "university" | "personal";
   thumbnail?: string;
   title: string;
   systemname: string;
@@ -13,7 +14,7 @@ export type Article = {
   description: string;
   content?: {
     概要?: string;
-    技術スタック?: string;
+    技術スタック?: string | Record<string, string[]>;
     想定クライアント?: string;
     目的?: string;
     目標?: string;
@@ -32,12 +33,12 @@ export type Article = {
   >;
 };
 
-// 記事データにslugを追加
+// 記事データにslugとcategoryを追加
 export const articles: Article[] = [
-  { ...fcsData, slug: "fcs" },
-  { ...sdsData, slug: "sds" },
-  { ...taikoData, slug: "taikodive" },
-  { ...orm2Data, slug: "orm2" }
+  { ...fcsData, slug: "fcs", category: "university" },
+  { ...sdsData, slug: "sds", category: "university" },
+  { ...taikoData, slug: "taikodive", category: "personal" },
+  { ...orm2Data, slug: "orm2", category: "university" }
 ];
 
 // slugから記事を取得
@@ -48,6 +49,11 @@ export function getArticleBySlug(slug: string): Article | undefined {
 // すべての記事を取得
 export function getAllArticles(): Article[] {
   return articles;
+}
+
+// カテゴリー別に記事を取得
+export function getArticlesByCategory(category: "university" | "personal"): Article[] {
+  return articles.filter((article) => article.category === category);
 }
 
 // すべてのslugを取得（静的生成用）
