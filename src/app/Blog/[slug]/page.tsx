@@ -88,12 +88,19 @@ export default async function BlogDetailPage({
           {blog.content.map((block, index) => {
             switch (block.type) {
               case "heading":
-                const HeadingTag = `h${block.level}` as keyof JSX.IntrinsicElements;
-                return (
-                  <HeadingTag key={index} className="font-bold mt-8 mb-4">
-                    {block.text}
-                  </HeadingTag>
-                );
+                if (block.level === 1) {
+                  return <h1 key={index} className="text-3xl font-bold mt-8 mb-4">{block.text}</h1>;
+                } else if (block.level === 2) {
+                  return <h2 key={index} className="text-2xl font-bold mt-8 mb-4">{block.text}</h2>;
+                } else if (block.level === 3) {
+                  return <h3 key={index} className="text-xl font-bold mt-6 mb-3">{block.text}</h3>;
+                } else if (block.level === 4) {
+                  return <h4 key={index} className="text-lg font-bold mt-6 mb-3">{block.text}</h4>;
+                } else if (block.level === 5) {
+                  return <h5 key={index} className="text-base font-bold mt-4 mb-2">{block.text}</h5>;
+                } else {
+                  return <h6 key={index} className="text-sm font-bold mt-4 mb-2">{block.text}</h6>;
+                }
               case "paragraph":
                 return (
                   <p key={index} className="mb-4 leading-relaxed text-muted-foreground">

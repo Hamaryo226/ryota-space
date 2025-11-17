@@ -19,7 +19,7 @@ export type Blog = {
 
 // ブログデータにslugを追加
 export const blogs: Blog[] = [
-  { ...firstBlogData, slug: "first-blog" }
+  { ...firstBlogData, slug: "first-blog" } as Blog
 ];
 
 // slugからブログを取得
