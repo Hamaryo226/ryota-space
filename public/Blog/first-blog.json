@@ -1,0 +1,54 @@
+{
+  "thumbnail": "/thum/0.jpg",
+  "title": "ポートフォリオサイトをNext.js 16で構築",
+  "date": "2025年11月17日",
+  "description": "Next.js 16のApp Routerを使用して、モダンなポートフォリオサイトを構築しました。技術スタックの選定から実装までの過程を紹介します。",
+  "tags": ["Next.js", "TypeScript", "Tailwind CSS"],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "はじめに"
+    },
+    {
+      "type": "paragraph",
+      "text": "このポートフォリオサイトは、Next.js 16のApp Routerを採用し、TypeScriptとTailwind CSSを使用して構築しました。プロジェクトとブログを管理できるシンプルで使いやすいサイトを目指しています。"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "技術スタック"
+    },
+    {
+      "type": "paragraph",
+      "text": "以下の技術を使用してサイトを構築しました："
+    },
+    {
+      "type": "list",
+      "items": [
+        "Next.js 15 - React フレームワーク",
+        "TypeScript - 型安全性の確保",
+        "Tailwind CSS - ユーティリティファーストのスタイリング",
+        "Vercel - デプロイとホスティング"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "実装のポイント"
+    },
+    {
+      "type": "paragraph",
+      "text": "App Routerを使用することで、ファイルベースのルーティングとサーバーコンポーネントを活用できました。プロジェクトとブログのデータはJSONファイルで管理し、動的ルーティングで個別ページを生成しています。"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "今後の展望"
+    },
+    {
+      "type": "paragraph",
+      "text": "今後は、ブログ記事の追加やプロジェクトの更新を継続的に行い、コンテンツを充実させていく予定です。また、パフォーマンスの最適化やSEO対策にも力を入れていきます。"
+    }
+  ]
+}

@@ -10,8 +10,7 @@ export default function Home() {
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="./"
-          target="_blank"
+          href="./Blog"
           rel="noopener noreferrer"
         >
           <Image
@@ -26,7 +25,6 @@ export default function Home() {
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
           href="./Project"
-          //target="_blank"
           rel="noopener noreferrer"
         >
           <Image
