@@ -1,0 +1,17 @@
+{  
+  "thumbnail": "/",
+  "title": "Drop-Watermark",
+  "systemname": "Drop-Watermark",
+  "date": "2025年5月 ~ 現在",
+  "description": "写真の下部に Apple スタイルのフッターを追加し、その上に Exif データ（カメラモデル、焦点距離、F 値、シャッタースピード、ISO、撮影日時）を表示します。",
+  "content": {
+    "概要": "",
+    "技術スタック": {
+      "言語": ["Python"],
+      "フレームワーク": ["pillow"]
+    }
+  },
+  "links": {
+    "GitHub": "https://github.com/Hamaryo-Space/Drop-Watermark"
+  }
+}

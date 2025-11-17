@@ -1,0 +1,17 @@
+{  
+  "thumbnail": "/",
+  "title": "Lyra - Discord Bot",
+  "systemname": "Lyra",
+  "date": "2025年4月",
+  "description": "Discord Bot for seminar",
+  "content": {
+    "概要": "",
+    "技術スタック": {
+      "言語": ["Python"],
+      "フレームワーク": ["discord.py"]
+    }
+  },
+  "links": {
+    "GitHub": "https://github.com/Hamaryo-Space/Lyra"
+  }
+}

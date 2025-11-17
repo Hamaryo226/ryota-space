@@ -4,47 +4,46 @@ import Image from "next/image";
 import { getArticleBySlug, getAllSlugs } from "@/lib/articles";
 
 // 技術名からロゴのパスを取得
-function getTechLogoPath(techName: string): string | null {
+function getTechLogoPath(techName: string): { light?: string; dark?: string } | null {
   const normalizedName = techName.toLowerCase().replace(/\s+/g, '').replace(/#/g, 'sharp');
   
-  const logoMap: Record<string, string> = {
+  const logoMap: Record<string, { light?: string; dark?: string }> = {
     // フロントエンド
-    'nextjs': '/Logo/nextjs.svg',
-    'next.js': '/Logo/nextjs.svg',
-    'react': '/Logo/nextjs.svg',
-    'javascript': '/Logo/javascript.svg',
-    'typescript': '/Logo/typescript.svg',
+    'nextjs': { light: '/Logo/nextjs.svg', dark: '/Logo/nextjs.svg' },
+    'next.js': { light: '/Logo/nextjs.svg', dark: '/Logo/nextjs.svg' },
+    'react': { light: '/Logo/nextjs.svg', dark: '/Logo/nextjs.svg' },
+    'javascript': { light: '/Logo/javascript.svg', dark: '/Logo/javascript.svg' },
+    'typescript': { light: '/Logo/typescript.svg', dark: '/Logo/typescript.svg' },
     // スタイリング
-    'tailwindcss': '/Logo/tailwindcss.svg',
-    'tailwind': '/Logo/tailwindcss.svg',
-    'bootstrap': '/Logo/bootstrap.svg',
-    'bootstrap5': '/Logo/bootstrap.svg',
+    'tailwindcss': { light: '/Logo/tailwindcss.svg', dark: '/Logo/tailwindcss.svg' },
+    'tailwind': { light: '/Logo/tailwindcss.svg', dark: '/Logo/tailwindcss.svg' },
+    'bootstrap': { light: '/Logo/bootstrap.svg', dark: '/Logo/bootstrap.svg' },
+    'bootstrap5': { light: '/Logo/bootstrap.svg', dark: '/Logo/bootstrap.svg' },
     // バックエンド
-    'python': '/Logo/python.svg',
-    'django': '/Logo/django.svg',
-    'php': '/Logo/php_dark.svg',
+    'python': { light: '/Logo/python.svg', dark: '/Logo/python.svg' },
+    'django': { light: '/Logo/django.svg', dark: '/Logo/django.svg' },
+    'php': { light: '/Logo/php.svg', dark: '/Logo/php_dark.svg' }, // ライトモードでは非表示（背景色追加で対応）
     // .NET
-    'csharp': '/Logo/csharp.svg',
-    'c#': '/Logo/csharp.svg',
-    'dotnet': '/Logo/dotnet.svg',
-    '.net': '/Logo/dotnet.svg',
-    '.netfreamework': '/Logo/dotnet.svg',
-    '.netframework': '/Logo/dotnet.svg',
+    'csharp': { light: '/Logo/csharp.svg', dark: '/Logo/csharp.svg' },
+    'c#': { light: '/Logo/csharp.svg', dark: '/Logo/csharp.svg' },
+    'dotnet': { light: '/Logo/dotnet.svg', dark: '/Logo/dotnet.svg' },
+    '.net': { light: '/Logo/dotnet.svg', dark: '/Logo/dotnet.svg' },
+    '.netfreamework': { light: '/Logo/dotnet.svg', dark: '/Logo/dotnet.svg' },
+    '.netframework': { light: '/Logo/dotnet.svg', dark: '/Logo/dotnet.svg' },
     // データベース
-    'neon': '/Logo/neon.svg',
-    'postgresql': '/Logo/neon.svg',
-    'postgresql(neon)': '/Logo/neon.svg',
+    'neon': { light: '/Logo/neon.svg', dark: '/Logo/neon.svg' },
+    'postgresql': { light: '/Logo/neon.svg', dark: '/Logo/neon.svg' },
+    'postgresql(neon)': { light: '/Logo/neon.svg', dark: '/Logo/neon.svg' },
     // デプロイ
-    'vercel': '/Logo/Vercel_dark.svg',
-    'render': '/Logo/Vercel_dark.svg', // Renderのロゴがない場合の仮対応
+    'vercel': { light: '/Logo/Vercel_light.svg', dark: '/Logo/Vercel_dark.svg' },
     // その他
-    'webcomponents': '/Logo/webcomponents.svg',
+    'webcomponents': { light: '/Logo/webcomponents.svg', dark: '/Logo/webcomponents.svg' },
   };
   
   // 部分一致でも検索
-  for (const [key, path] of Object.entries(logoMap)) {
+  for (const [key, paths] of Object.entries(logoMap)) {
     if (normalizedName.includes(key)) {
-      return path;
+      return paths;
     }
   }
   
@@ -169,11 +168,30 @@ export default async function ProjectDetailPage({
                         <h3 className="text-sm font-medium min-w-[100px] shrink-0">{category}</h3>
                         <div className="flex flex-wrap gap-2">
                           {techs.map((tech, i) => {
-                            const logoPath = getTechLogoPath(tech);
+                            const logoPaths = getTechLogoPath(tech);
                             return (
                               <div key={i} className="flex items-center gap-2 px-3 py-1.5 border rounded-md bg-muted/30">
-                                {logoPath && (
-                                  <Image src={logoPath} alt={tech} width={18} height={18} className="object-contain" />
+                                {logoPaths && (
+                                  <>
+                                    {logoPaths.light && (
+                                      <Image 
+                                        src={logoPaths.light} 
+                                        alt={tech} 
+                                        width={18} 
+                                        height={18} 
+                                        className="object-contain dark:hidden" 
+                                      />
+                                    )}
+                                    {logoPaths.dark && (
+                                      <Image 
+                                        src={logoPaths.dark} 
+                                        alt={tech} 
+                                        width={18} 
+                                        height={18} 
+                                        className="object-contain hidden dark:block" 
+                                      />
+                                    )}
+                                  </>
                                 )}
                                 <span className="text-sm text-muted-foreground">{tech}</span>
                               </div>

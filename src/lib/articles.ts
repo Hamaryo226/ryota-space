@@ -3,6 +3,8 @@ import fcsData from "../../public/Article/fcs.json";
 import sdsData from "../../public/Article/sds.json";
 import taikoData from "../../public/Article/taikodive.json";
 import orm2Data from "../../public/Article/orm2.json";
+import dwData from "../../public/Article/dw.json";
+import lyraData from "../../public/Article/lyra.json";
 
 export type Article = {
   slug: string;
@@ -38,7 +40,9 @@ export const articles: Article[] = [
   { ...fcsData, slug: "fcs", category: "university" },
   { ...sdsData, slug: "sds", category: "university" },
   { ...taikoData, slug: "taikodive", category: "personal" },
-  { ...orm2Data, slug: "orm2", category: "university" }
+  { ...orm2Data, slug: "orm2", category: "university" },
+  { ...dwData, slug: "drop-watermark", category: "personal" },
+  { ...lyraData, slug: "lyra", category: "personal" },
 ];
 
 // slugから記事を取得
