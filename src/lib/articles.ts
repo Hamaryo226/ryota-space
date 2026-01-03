@@ -5,6 +5,7 @@ import taikoData from "../../public/Article/taikodive.json";
 import orm2Data from "../../public/Article/orm2.json";
 import dwData from "../../public/Article/dw.json";
 import lyraData from "../../public/Article/lyra.json";
+import museData from "../../public/Article/muse.json";
 
 export type Article = {
   slug: string;
@@ -43,6 +44,7 @@ export const articles: Article[] = [
   { ...orm2Data, slug: "orm2", category: "university" },
   { ...dwData, slug: "drop-watermark", category: "personal" },
   { ...lyraData, slug: "lyra", category: "personal" },
+  { ...museData, slug: "muse", category: "personal" },
 ];
 
 // slugから記事を取得

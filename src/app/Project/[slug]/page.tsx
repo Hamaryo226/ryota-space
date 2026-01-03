@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { getArticleBySlug, getAllSlugs } from "@/lib/articles";
+import { Button } from "@/components/ui/button";
 
 // 技術名からロゴのパスを取得
 function getTechLogoPath(techName: string): { light?: string; dark?: string } | null {
@@ -127,6 +128,20 @@ export default async function ProjectDetailPage({
           <p className="text-base leading-relaxed text-muted-foreground mb-8">{article.description}</p>
         )}
 
+        {/* ダウンロードボタン */}
+        {article.links?.Installer && (
+          <div className="mb-8">
+            <Button asChild size="lg" className="gap-2">
+              <a href={article.links.Installer} download>
+                <svg aria-hidden className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                インストーラーをダウンロード
+              </a>
+            </Button>
+          </div>
+        )}
+
         {/* 詳細情報 */}
         {article.content && (
           <section className="mb-10 space-y-6">
@@ -250,11 +265,13 @@ export default async function ProjectDetailPage({
         )}
 
         {/* 関連リンク */}
-        {article.links && (
+        {article.links && Object.entries(article.links).filter(([title]) => title !== "Installer").length > 0 && (
           <section className="mb-10">
             <h2 className="text-lg font-semibold mb-3">関連リンク</h2>
             <ul className="space-y-2">
-              {Object.entries(article.links).map(([title, url], i) => (
+              {Object.entries(article.links)
+                .filter(([title]) => title !== "Installer")
+                .map(([title, url], i) => (
                 <li key={i}>
                   <a
                     href={url}
