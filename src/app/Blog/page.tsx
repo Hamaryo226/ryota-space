@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { getAllBlogs } from "@/lib/blogs";
+import { BackButton } from "@/components/back-button";
 
 export default function BlogPage() {
   const blogs = getAllBlogs();
@@ -9,13 +10,8 @@ export default function BlogPage() {
     <div className="min-h-screen w-full overflow-x-hidden">
       <main className="mx-auto w-full max-w-screen-lg px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
         {/* 戻るボタン */}
-        <div className="mb-4">
-          <Link href="/" className="inline-flex items-center gap-2 text-sm border rounded-md px-3 py-2">
-            <svg aria-hidden className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-            </svg>
-            ホームに戻る
-          </Link>
+        <div className="mb-6">
+          <BackButton href="/" label="ホームに戻る" />
         </div>
 
         <header className="mb-8">

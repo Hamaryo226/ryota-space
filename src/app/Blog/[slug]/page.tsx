@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { getBlogBySlug, getAllBlogSlugs } from "@/lib/blogs";
+import { BackButton } from "@/components/back-button";
 
 // 静的生成のためのパラメータを生成
 export function generateStaticParams() {
@@ -43,13 +44,8 @@ export default async function BlogDetailPage({
     <div className="min-h-screen w-full overflow-x-hidden">
       <main className="mx-auto w-full max-w-screen-md px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
         {/* 戻る */}
-        <div className="mb-4">
-          <Link href="/Blog" className="inline-flex items-center gap-2 text-sm border rounded-md px-3 py-2">
-            <svg aria-hidden className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-            </svg>
-            ブログ一覧に戻る
-          </Link>
+        <div className="mb-6">
+          <BackButton href="/Blog" label="ブログ一覧に戻る" />
         </div>
 
         {/* ヘッダー */}
@@ -71,13 +67,14 @@ export default async function BlogDetailPage({
 
         {/* サムネイル */}
         {blog.thumbnail && (
-          <div className="relative w-full h-64 sm:h-80 rounded-lg overflow-hidden border mb-8">
+          <div className="w-full rounded-lg overflow-hidden border mb-8">
             <Image
               src={blog.thumbnail}
               alt={blog.title}
-              fill
-              sizes="(max-width: 768px) 100vw, 768px"
-              className="object-cover"
+              width={0}
+              height={0}
+              sizes="100vw"
+              style={{ width: '100%', height: 'auto' }}
               priority
             />
           </div>
@@ -129,12 +126,7 @@ export default async function BlogDetailPage({
 
         {/* フッターの戻るリンク */}
         <div className="mt-12 pt-8 border-t">
-          <Link href="/Blog" className="inline-flex items-center gap-2 text-sm border rounded-md px-4 py-2">
-            <svg aria-hidden className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-            </svg>
-            ブログ一覧に戻る
-          </Link>
+          <BackButton href="/Blog" label="ブログ一覧に戻る" />
         </div>
       </main>
     </div>

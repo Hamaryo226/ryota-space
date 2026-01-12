@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getArticleBySlug, getAllSlugs } from "@/lib/articles";
 import { Button } from "@/components/ui/button";
+import { BackButton } from "@/components/back-button";
 
 // 技術名からロゴのパスを取得
 function getTechLogoPath(techName: string): { light?: string; dark?: string } | null {
@@ -91,13 +92,8 @@ export default async function ProjectDetailPage({
     <div className="min-h-screen w-full overflow-x-hidden">
       <main className="mx-auto w-full max-w-screen-md px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
         {/* 戻る */}
-        <div className="mb-4">
-          <Link href="/" className="inline-flex items-center gap-2 text-sm border rounded-md px-3 py-2">
-            <svg aria-hidden className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-            </svg>
-            戻る
-          </Link>
+        <div className="mb-6">
+          <BackButton href="/Project" label="プロジェクト一覧に戻る" />
         </div>
 
         {/* ヘッダー */}
@@ -111,13 +107,14 @@ export default async function ProjectDetailPage({
 
         {/* サムネイル */}
         {article.thumbnail && (
-          <div className="relative w-full h-48 sm:h-56 md:h-64 rounded-lg overflow-hidden border mb-6">
+          <div className="w-full rounded-lg overflow-hidden border mb-6">
             <Image
               src={article.thumbnail}
               alt={article.title}
-              fill
-              sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, 768px"
-              className="object-cover"
+              width={0}
+              height={0}
+              sizes="100vw"
+              style={{ width: '100%', height: 'auto' }}
               priority
             />
           </div>
@@ -288,13 +285,8 @@ export default async function ProjectDetailPage({
         )}
 
         {/* フッターの戻るリンク */}
-        <div className="mt-8">
-          <Link href="/" className="inline-flex items-center gap-2 text-sm border rounded-md px-4 py-2">
-            <svg aria-hidden className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-            </svg>
-            戻る
-          </Link>
+        <div className="mt-8 pt-8 border-t">
+          <BackButton href="/Project" label="プロジェクト一覧に戻る" />
         </div>
       </main>
     </div>
