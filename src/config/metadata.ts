@@ -6,6 +6,14 @@ export const defaultMetadata: Metadata = {
   title: "ryota-space",
   description: "Ryota's personal space",
   appleWebApp: true,
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
   openGraph: {
     title: "ryota-space",
     description: "",

@@ -2,10 +2,26 @@ import { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: {
-      userAgent: '*',
-      allow: '/',
-    },
-    sitemap: 'https://ryota-space.vercel.app/sitemap.xml',
+    rules: [
+      {
+        userAgent: '*',
+        disallow: '/',
+      },
+      {
+        userAgent: [
+          'GPTBot',
+          'ChatGPT-User',
+          'Google-Extended',
+          'CCBot',
+          'Omgilibot',
+          'FacebookBot',
+          'anthropic-ai',
+          'Claude-Web',
+          'ClaudeBot',
+          'cohere-ai',
+        ],
+        disallow: '/',
+      },
+    ],
   }
 }
