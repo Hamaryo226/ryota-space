@@ -7,64 +7,62 @@ export default function BlogPage() {
   const blogs = getAllBlogs();
 
   return (
-    <div className="min-h-screen w-full overflow-x-hidden">
+    <div className="min-h-screen w-full overflow-x-hidden bg-gradient-to-b from-background to-muted/20">
       <main className="mx-auto w-full max-w-screen-lg px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
-        {/* 戻るボタン */}
         <div className="mb-6">
           <BackButton href="/" label="ホームに戻る" />
         </div>
 
-        <header className="mb-8">
+        <header className="mb-10">
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight">ブログ</h1>
           <p className="mt-2 text-sm text-muted-foreground">技術記事や開発の記録を投稿しています。</p>
         </header>
 
         <section>
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {blogs.map((blog) => (
-              <li key={blog.slug}>
-                <Link
-                  href={`/Blog/${blog.slug}`}
-                  className="block h-full border rounded-lg overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary"
-                >
-                  {blog.thumbnail && (
-                    <div className="relative w-full h-48 bg-muted">
-                      <Image
-                        src={blog.thumbnail}
-                        alt={blog.title}
-                        fill
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                        className="object-cover"
-                      />
-                    </div>
-                  )}
-                  <div className="p-4">
-                    <div className="flex items-start justify-between gap-2 mb-2">
-                      <h2 className="text-lg font-semibold line-clamp-2 break-words">
-                        {blog.title}
-                      </h2>
-                    </div>
-                    <p className="text-xs text-muted-foreground mb-2">{blog.date}</p>
-                    {blog.tags && blog.tags.length > 0 && (
-                      <div className="flex flex-wrap gap-2 mb-2">
-                        {blog.tags.map((tag, i) => (
-                          <span key={i} className="text-xs px-2 py-1 bg-muted rounded-md">
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-                    <p className="text-sm text-muted-foreground line-clamp-3">
-                      {blog.description}
-                    </p>
-                  </div>
-                  <span className="sr-only">詳細を見る</span>
-                </Link>
-              </li>
+              <BlogCard key={blog.slug} blog={blog} />
             ))}
-          </ul>
+          </div>
         </section>
       </main>
     </div>
+  );
+}
+
+function BlogCard({ blog }: { blog: { slug: string; thumbnail?: string; title: string; date: string; description: string; tags?: string[] } }) {
+  return (
+    <Link
+      href={`/Blog/${blog.slug}`}
+      className="group block h-full rounded-xl border bg-card overflow-hidden hover:shadow-md transition-all hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+    >
+      {blog.thumbnail && (
+        <div className="relative w-full h-40 bg-muted overflow-hidden">
+          <Image
+            src={blog.thumbnail}
+            alt={blog.title}
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      )}
+      <div className="p-4">
+        <div className="flex items-center gap-2 mb-2">
+          {blog.tags && blog.tags.length > 0 && blog.tags.map((tag, i) => (
+            <span key={i} className="text-[10px] px-2 py-0.5 rounded-full font-medium bg-primary/10 text-primary border border-primary/20">
+              {tag}
+            </span>
+          ))}
+          <span className="text-[11px] text-muted-foreground ml-auto">{blog.date}</span>
+        </div>
+        <h2 className="font-semibold text-sm line-clamp-2 mb-1">
+          {blog.title}
+        </h2>
+        <p className="text-xs text-muted-foreground line-clamp-2">
+          {blog.description}
+        </p>
+      </div>
+    </Link>
   );
 }

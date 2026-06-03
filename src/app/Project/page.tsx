@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { getArticlesByCategory } from "@/lib/articles";
+import Image from "next/image";
+import { type Article, getArticlesByCategory } from "@/lib/articles";
 import { BackButton } from "@/components/back-button";
 
 export default function ProjectPage() {
@@ -9,72 +10,78 @@ export default function ProjectPage() {
   return (
     <div className="min-h-screen w-full overflow-x-hidden">
       <main className="mx-auto w-full max-w-screen-lg px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
-        {/* 戻るボタン */}
         <div className="mb-6">
           <BackButton href="/" label="ホームに戻る" />
         </div>
 
-        <header className="mb-8">
+        <header className="mb-10">
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight">プロジェクト</h1>
           <p className="mt-2 text-sm text-muted-foreground">制作したプロジェクトの一覧です。</p>
         </header>
 
-        {/* 大学開発プロジェクト */}
-        <section className="mb-10">
-          <h2 className="text-xl md:text-2xl font-semibold mb-4">大学開発</h2>
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+        <section className="mb-12">
+          <h2 className="text-xl md:text-2xl font-semibold mb-6 flex items-center gap-3">
+            <span className="w-1 h-7 bg-primary rounded-full" />
+            大学開発
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {universityProjects.map((article) => (
-              <li key={article.slug}>
-                <Link
-                  href={`/Project/${article.slug}`}
-                  className="block h-full border rounded-lg p-4 focus:outline-none focus:ring-2 focus:ring-primary"
-                >
-                  <div className="flex items-start justify-between gap-2">
-                    <h3 className="text-lg font-semibold line-clamp-2 break-words">
-                      {article.title}
-                    </h3>
-                    <span className="text-[11px] md:text-xs text-muted-foreground whitespace-nowrap">
-                      {article.date}
-                    </span>
-                  </div>
-                  <p className="mt-2 text-sm text-muted-foreground line-clamp-3">
-                    {article.description}
-                  </p>
-                  <span className="sr-only">詳細を見る</span>
-                </Link>
-              </li>
+              <ProjectCard key={article.slug} article={article} />
             ))}
-          </ul>
+          </div>
         </section>
 
-        {/* 個人開発プロジェクト */}
-        <section className="mb-10">
-          <h2 className="text-xl md:text-2xl font-semibold mb-4">個人開発</h2>
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+        <section className="mb-12">
+          <h2 className="text-xl md:text-2xl font-semibold mb-6 flex items-center gap-3">
+            <span className="w-1 h-7 bg-primary rounded-full" />
+            個人開発
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {personalProjects.map((article) => (
-              <li key={article.slug}>
-                <Link
-                  href={`/Project/${article.slug}`}
-                  className="block h-full border rounded-lg p-4 focus:outline-none focus:ring-2 focus:ring-primary"
-                >
-                  <div className="flex items-start justify-between gap-2">
-                    <h3 className="text-lg font-semibold line-clamp-2 break-words">
-                      {article.title}
-                    </h3>
-                    <span className="text-[11px] md:text-xs text-muted-foreground whitespace-nowrap">
-                      {article.date}
-                    </span>
-                  </div>
-                  <p className="mt-2 text-sm text-muted-foreground line-clamp-3">
-                    {article.description}
-                  </p>
-                  <span className="sr-only">詳細を見る</span>
-                </Link>
-              </li>
+              <ProjectCard key={article.slug} article={article} />
             ))}
-          </ul>
+          </div>
         </section>
       </main>
     </div>
+  );
+}
+
+function ProjectCard({ article }: { article: Article }) {
+  return (
+    <Link
+      href={`/Project/${article.slug}`}
+      className="group block h-full rounded-xl border bg-card overflow-hidden hover:shadow-md transition-all hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+    >
+      {article.thumbnail && (
+        <div className="relative w-full h-40 bg-muted overflow-hidden">
+          <Image
+            src={article.thumbnail}
+            alt={article.title}
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      )}
+      <div className="p-4">
+        <div className="flex items-center gap-2 mb-2">
+          <span className={`text-[10px] px-2 py-0.5 rounded-full font-medium ${
+            article.category === "university"
+              ? "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400"
+              : "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400"
+          }`}>
+            {article.category === "university" ? "大学開発" : "個人開発"}
+          </span>
+          <span className="text-[11px] text-muted-foreground">{article.date}</span>
+        </div>
+        <h3 className="font-semibold text-sm line-clamp-2 mb-1">
+          {article.title}
+        </h3>
+        <p className="text-xs text-muted-foreground line-clamp-2">
+          {article.description}
+        </p>
+      </div>
+    </Link>
   );
 }
