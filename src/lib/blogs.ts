@@ -5,6 +5,7 @@ export type BlogContent =
   | { type: "paragraph"; text: string }
   | { type: "heading"; level: 1 | 2 | 3 | 4 | 5 | 6; text: string }
   | { type: "list"; items: string[] }
+  | { type: "image"; src: string; alt: string; caption?: string }
   | { type: "code"; language: string; code: string };
 
 export type Blog = {

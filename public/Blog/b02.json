@@ -2,8 +2,8 @@
   "thumbnail": "/thum/0.jpg",
   "title": "ドメインを取得しました！",
   "date": "2026年6月5日",
-  "description": "以前から興味があった独自ドメインを取得しました。ポートフォリオサイトの再公開と、今後のサイト運営について紹介します。",
-  "tags": ["Domain", "Vercel", "Portfolio"],
+  "description": "以前から興味があった独自ドメインを取得しました。ポートフォリオサイトの再公開と、ドメイン取得の経緯について紹介します。",
+  "tags": ["Domain", "Cloudflare", "Vercel", "Portfolio"],
   "content": [
     {
       "type": "heading",
@@ -35,6 +35,38 @@
     {
       "type": "paragraph",
       "text": "せっかく再公開するならデザインも新しくしたいと思い、さらに以前から興味があった独自ドメインも取得しました。"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "ドメイン取得サービスについて"
+    },
+    {
+      "type": "image",
+      "src": "/img/IMG_8785.webp",
+      "alt": "ポートフォリオサイトのイメージ",
+      "caption": "Cloudflare Registrarでドメインを取得"
+    },
+    {
+      "type": "paragraph",
+      "text": "今回のドメイン取得には、Cloudflare RegistrarというCloudflareが提供しているドメイン登録・更新サービスを利用しました。"
+    },
+    {
+      "type": "paragraph",
+      "text": "他にもVercel DomainsというVercel内でドメインを取得できるサービスがあり、今回のポートフォリオサイトのデプロイ先もVercelのため、同じエコシステムで管理できるメリットがあります。"
+    },
+    {
+      "type": "paragraph",
+      "text": "しかし、Cloudflare Registrarは手数料がかからないことや、大手サービスで安心して利用できる点から、今回はCloudflare Registrarを選択しました。"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "ドメインの設定"
+    },
+    {
+      "type": "paragraph",
+      "text": "ドメインの切り替えはDNSにレコードを追加することで設定しました。設定後はすぐに反映され、問題なくサイトへアクセスできるようになりました。"
     },
     {
       "type": "heading",

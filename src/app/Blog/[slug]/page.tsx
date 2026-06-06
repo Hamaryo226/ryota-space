@@ -126,6 +126,25 @@ export default async function BlogDetailPage({
                     ))}
                   </ul>
                 );
+              case "image":
+                return (
+                  <figure key={index} className="my-8 overflow-hidden rounded-xl border bg-muted/20 shadow-sm">
+                    <div className="relative aspect-[16/9] w-full">
+                      <Image
+                        src={block.src}
+                        alt={block.alt}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 768px"
+                        className="object-cover"
+                      />
+                    </div>
+                    {block.caption && (
+                      <figcaption className="px-4 py-3 text-sm text-muted-foreground">
+                        {block.caption}
+                      </figcaption>
+                    )}
+                  </figure>
+                );
               case "code":
                 return (
                   <div key={index} className="rounded-xl border overflow-hidden shadow-sm mb-6">
