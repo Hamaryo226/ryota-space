@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getArticleBySlug, getAllSlugs } from "@/lib/articles";
 import { BackButton } from "@/components/back-button";
+import { ModeToggle } from "@/components/mode-togle";
 
 function getTechLogoPath(techName: string): { light?: string; dark?: string } | null {
   const normalizedName = techName.toLowerCase().replace(/\s+/g, '').replace(/#/g, 'sharp');
@@ -86,8 +87,11 @@ export default async function ProjectDetailPage({
       <main className="mx-auto w-full max-w-screen-lg px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
 
         {/* 戻る */}
-        <div className="mb-6">
+        <div className="mb-6 flex items-center justify-between">
           <BackButton href="/Project" label="プロジェクト一覧に戻る" />
+          <div>
+            <ModeToggle />
+          </div>
         </div>
 
         {/* ===== HERO ===== */}

@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getAllBlogs } from "@/lib/blogs";
 import { BackButton } from "@/components/back-button";
+import { ModeToggle } from "@/components/mode-togle";
 
 export default function BlogPage() {
   const blogs = getAllBlogs();
@@ -9,8 +10,11 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen w-full overflow-x-hidden bg-gradient-to-b from-background to-muted/20">
       <main className="mx-auto w-full max-w-screen-lg px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
-        <div className="mb-6">
+        <div className="mb-6 flex items-center justify-between">
           <BackButton href="/" label="ホームに戻る" />
+          <div>
+            <ModeToggle />
+          </div>
         </div>
 
         <header className="mb-10">

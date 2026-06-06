@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { type Article, getArticlesByCategory } from "@/lib/articles";
 import { BackButton } from "@/components/back-button";
+import { ModeToggle } from "@/components/mode-togle";
 
 export default function ProjectPage() {
   const universityProjects = getArticlesByCategory("university");
@@ -10,8 +11,11 @@ export default function ProjectPage() {
   return (
     <div className="min-h-screen w-full overflow-x-hidden">
       <main className="mx-auto w-full max-w-screen-lg px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
-        <div className="mb-6">
+        <div className="mb-6 flex items-center justify-between">
           <BackButton href="/" label="ホームに戻る" />
+          <div>
+            <ModeToggle />
+          </div>
         </div>
 
         <header className="mb-10">

@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getBlogBySlug, getAllBlogSlugs } from "@/lib/blogs";
 import { BackButton } from "@/components/back-button";
+import { ModeToggle } from "@/components/mode-togle";
 
 function getSpotifyEmbedUrl(url: string) {
   try {
@@ -56,8 +57,11 @@ export default async function BlogDetailPage({
       <main className="mx-auto w-full max-w-screen-md px-4 sm:px-6 py-6 sm:py-10">
 
         {/* 戻る */}
-        <div className="mb-6">
+        <div className="mb-6 flex items-center justify-between">
           <BackButton href="/Blog" label="ブログ一覧に戻る" />
+          <div>
+            <ModeToggle />
+          </div>
         </div>
 
         {/* ===== HERO ===== */}
@@ -209,7 +213,12 @@ export default async function BlogDetailPage({
 
         {/* フッター戻る */}
         <div className="mt-12 pt-8 border-t">
-          <BackButton href="/Blog" label="ブログ一覧に戻る" />
+          <div className="flex items-center justify-between">
+            <BackButton href="/Blog" label="ブログ一覧に戻る" />
+            <div>
+              <ModeToggle />
+            </div>
+          </div>
         </div>
       </main>
     </div>
