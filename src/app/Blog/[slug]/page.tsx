@@ -4,6 +4,19 @@ import Image from "next/image";
 import { getBlogBySlug, getAllBlogSlugs } from "@/lib/blogs";
 import { BackButton } from "@/components/back-button";
 
+function getSpotifyEmbedUrl(url: string) {
+  try {
+    const parsedUrl = new URL(url);
+    const match = parsedUrl.pathname.match(/^\/(playlist|track|album|episode|show)\/([^/]+)/);
+
+    if (!match) return url;
+
+    return `https://open.spotify.com/embed/${match[1]}/${match[2]}`;
+  } catch {
+    return url;
+  }
+}
+
 export function generateStaticParams() {
   return getAllBlogSlugs().map((slug) => ({
     slug: slug,
@@ -114,6 +127,38 @@ export default async function BlogDetailPage({
                   <p key={index} className="mb-5 leading-relaxed text-foreground/80">
                     {block.text}
                   </p>
+                );
+              case "link":
+                return (
+                  <div key={index} className="mb-5">
+                    <a
+                      href={block.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-3 py-2 bg-primary text-white rounded-md hover:opacity-90"
+                    >
+                      {block.text}
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14 3h7v7m0 0L10 21l-7-7 11-11z" />
+                      </svg>
+                    </a>
+                  </div>
+                );
+              case "embed":
+                return (
+                  <figure key={index} className="my-8 overflow-hidden rounded-xl border bg-muted/20 shadow-sm">
+                    {block.platform === "spotify" ? (
+                      <iframe
+                        src={getSpotifyEmbedUrl(block.url)}
+                        width="100%"
+                        height="352"
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        loading="lazy"
+                        className="block w-full border-0"
+                        title="Spotify埋め込み"
+                      />
+                    ) : null}
+                  </figure>
                 );
               case "list":
                 return (

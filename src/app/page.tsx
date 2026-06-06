@@ -75,7 +75,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h2 className="font-semibold text-sm sm:text-base">ブログ</h2>
-                  <p className="text-xs sm:text-sm text-muted-foreground">技術記事や開発記録</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground">技術記事や開発記録、その他の考え</p>
                 </div>
               </div>
             </Link>

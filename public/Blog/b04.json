@@ -1,0 +1,111 @@
+{
+  "thumbnail": "/thum/Spotify- GPTImjage.png",
+  "title": "最近リピートしている楽曲",
+  "date": "2026年6月7日",
+  "description": "最近よく聴いている楽曲をジャンル別にまとめました。KPOP、JPOP、洋楽からお気に入りの曲を紹介します。",
+  "tags": ["Music", "Spotify", "Playlist"],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "はじめに"
+    },
+    {
+      "type": "paragraph",
+      "text": "普段作業をするときや移動中など、音楽を聴くことが多いので、最近特にリピートしている楽曲をまとめました。"
+    },
+    {
+      "type": "paragraph",
+      "text": "その時の気分や作業内容によって聴くジャンルは変わりますが、今回は最近よく聴いている曲をジャンル別に紹介します。"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "KPOP"
+    },
+    {
+      "type": "embed",
+      "platform": "spotify",
+      "url": "https://open.spotify.com/playlist/5k6P9fm2sRLMQaCdJPJXvd?si=202a6c5577ab4220"
+    },
+    {
+      "type": "list",
+      "items": [
+        "It's Me - ILLIT",
+        "CELEBRATION - LE SSERAFIM",
+        "Eve, Psyche & The Bluebeard’s wife - LE SSERAFIM",
+        "Whiplash - aespa",
+        "Dark Arts - aespa",
+        "JUMP - BLACKPINK",
+        "like JENNIE - JENNIE"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "JPOP"
+    },
+    {
+      "type": "embed",
+      "platform": "spotify",
+      "url": "https://open.spotify.com/playlist/5iATnkt0ZhQRItjDCB3Rw9?si=851abdb411314186"
+    },
+    {
+      "type": "list",
+      "items": [
+        "あぶく - ヨルシカ",
+        "なくしもの - キタニタツヤ",
+        "ダーリン - 須田景凪",
+        "月光(feat. はるまきごはん) - キタニタツヤ",
+        "モナリザ - a子",
+        "MOVE MOVE - a子",
+        "暴く春 - a子",
+        "喜劇 - 星野源",
+        "ミッドナイト・リフレクション - NOMELON NOLEMON",
+        "GORILLA芝居 - Vaundy",
+        "SPEED - なとり",
+        "モス - サカナクション",
+        "タイムマシーンにのって/家族の風景 - PUNPEE",
+        "さん - FRUITS ZIPPER",
+        "化けの皮 - MAISONdes",
+        "Run - iri",
+        "MASCARA - King Gnu",
+        "Sins - Furui Riho",
+        "キューにストップできません! - CUTIE STREET",
+        "doku - yama",
+        "D(evil) feat.yama - 春野",
+        "さよーならまたいつか！ - 米津玄師"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "洋楽"
+    },
+    {
+      "type": "embed",
+      "platform": "spotify",
+      "url": "https://open.spotify.com/playlist/3OOPRdLKz4cjmpCNHW6trl?si=0861a935378840a3"
+    },
+    {
+      "type": "list",
+      "items": [
+        "777 - Joji",
+        "Bluffin' - Joji & The Kid Laroi",
+        "Whatcha Doing - Dua Lipa",
+        "Dracula - Tame Impala",
+        "Wonder - Shawn Mendes",
+        "Fire Away (feat. Slayyyter) - Madeon"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "まとめ"
+    },
+    {
+      "type": "paragraph",
+      "text": "今回は最近リピートしている楽曲をまとめました。音楽は作業環境や気分を変える大きな要素なので、これからも新しくハマった曲があれば追加していきたいと思います。"
+    }
+  ]
+}

@@ -15,7 +15,7 @@ export default function BlogPage() {
 
         <header className="mb-10">
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight">ブログ</h1>
-          <p className="mt-2 text-sm text-muted-foreground">技術記事や開発の記録を投稿しています。</p>
+          <p className="mt-2 text-sm text-muted-foreground">技術記事や開発の記録、その他の考えを投稿しています。</p>
         </header>
 
         <section>

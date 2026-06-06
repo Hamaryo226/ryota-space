@@ -1,0 +1,89 @@
+{
+  "thumbnail": "/thum/Windows - GPTImage.png",
+  "title": "おすすめのWindowsアプリケーション",
+  "date": "2026年6月7日",
+  "description": "普段Windows環境で利用している、作業効率や使いやすさを向上させるおすすめアプリケーションを紹介します。",
+  "tags": ["Windows", "Apps", "Tools"],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "はじめに"
+    },
+    {
+      "type": "paragraph",
+      "text": "普段PCを使っていると、標準アプリでは少し物足りなかったり、もっと快適に使いたいと思う場面があります。今回は、Windows環境で実際に利用している便利なアプリケーションを紹介します。"
+    },
+    {
+      "type": "paragraph",
+      "text": "見た目のデザインや操作性、作業効率など、日常的に使うからこそ気になる部分を改善してくれるアプリを中心にまとめました。"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Cider"
+    },
+    {
+      "type": "paragraph",
+      "text": "CiderはApple Musicを利用するための非公式クライアントアプリです。WindowsでApple Musicを利用する場合、公式クライアントもありますが、Ciderはデザインや操作性、安定性の面で優れていると感じています。"
+    },
+    {
+      "type": "link",
+      "text": "公式サイト（Cider）",
+      "url": "https://cider.sh/"
+    },
+    {
+      "type": "paragraph",
+      "text": "普段から音楽を聴く環境では、アプリを開く頻度も高いため、見た目や操作感が快適であることは意外と重要だと思います。シンプルでまとまったUIになっており、WindowsでもApple Musicを自然に利用できます。"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Files"
+    },
+    {
+      "type": "paragraph",
+      "text": "FilesはWindows向けのファイル管理アプリケーションです。Windows標準のエクスプローラーを置き換える選択肢の1つで、タブ機能など便利な機能が追加されています。"
+    },
+    {
+      "type": "paragraph",
+      "text": "特にWinUIを使用して構築されている点が特徴で、Windowsのデザインに馴染むモダンなUIになっています。普段からファイル操作をする機会は多いため、使いやすいファイル管理アプリを使うことで日々の小さなストレスを減らせます。"
+    },
+    {
+      "type": "link",
+      "text": "公式サイト（Files）",
+      "url": "https://files.community/"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "PowerToys"
+    },
+    {
+      "type": "paragraph",
+      "text": "PowerToysはMicrosoft公式が開発しているWindows向けの便利ツール集です。Windowsをより便利に使うための機能が複数まとめられています。"
+    },
+    {
+      "type": "link",
+      "text": "公式サイト（PowerToys）",
+      "url": "https://learn.microsoft.com/ja-jp/windows/powertoys/install?tabs=gh%2Cextract-094"
+    },
+    {
+      "type": "paragraph",
+      "text": "ウィンドウ配置を効率化する機能や、ファイル操作を補助する機能、ショートカット関連の機能など、標準機能では少し足りない部分を補ってくれます。"
+    },
+    {
+      "type": "paragraph",
+      "text": "開発や作業で複数のアプリを同時に使うことが多い場合、作業環境を整えるために入れておきたいツールの1つです。"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "まとめ"
+    },
+    {
+      "type": "paragraph",
+      "text": "今回は普段利用しているWindows向けアプリケーションを紹介しました。PC環境は毎日使うものだからこそ、自分に合ったアプリを導入することで作業効率や快適さが大きく変わります。"
+    }
+  ]
+}
