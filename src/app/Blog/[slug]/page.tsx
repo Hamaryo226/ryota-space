@@ -139,7 +139,7 @@ export default async function BlogDetailPage({
                       href={block.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-3 py-2 bg-primary text-white rounded-md hover:opacity-90"
+                      className="inline-flex items-center gap-2 px-3 py-2 bg-primary text-primary-foreground rounded-md hover:opacity-90"
                     >
                       {block.text}
                       <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
