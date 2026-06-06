@@ -1,5 +1,5 @@
 // ブログデータを統合管理
-import firstBlogData from "../../public/Blog/first-blog.json";
+import b02 from "../../public/Blog/b02.json";
 
 export type BlogContent = 
   | { type: "paragraph"; text: string }
@@ -19,7 +19,7 @@ export type Blog = {
 
 // ブログデータにslugを追加
 export const blogs: Blog[] = [
-  { ...firstBlogData, slug: "first-blog" } as Blog
+  { ...b02, slug: "02" } as Blog
 ];
 
 // slugからブログを取得
