@@ -139,7 +139,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row flex-wrap gap-3">
             <SocialLink href="https://twitter.com/fumolat" icon={Twitter} label="X (Twitter)" />
             <SocialLink href="https://www.instagram.com/hamaryo_2" icon={Instagram} label="Instagram" />
-            <SocialLink href="https://github.com/HamaguchiRyota" icon={Github} label="GitHub" />
+            <SocialLink href="https://github.com/Hamaryo226" icon={Github} label="GitHub" />
             <SocialLink href="https://www.youtube.com/@Fumolat" icon={Youtube} label="YouTube" />
           </div>
         </section>
