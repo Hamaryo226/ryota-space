@@ -7,6 +7,7 @@ import dwData from "../../public/Article/dw.json";
 import lyraData from "../../public/Article/lyra.json";
 import museData from "../../public/Article/muse.json";
 import health2bpmData from "../../public/Article/health2bpm.json";
+import orderManager2Data from "../../public/Article/order-manager2.json";
 
 export type Article = {
   slug: string;
@@ -42,11 +43,11 @@ export const articles: Article[] = [
   { ...fcsData, slug: "fcs", category: "university" },
   { ...sdsData, slug: "sds", category: "university" },
   { ...taikoData, slug: "taikodive", category: "personal" },
-  { ...orm2Data, slug: "orm2", category: "university" },
   { ...dwData, slug: "drop-watermark", category: "personal" },
   { ...lyraData, slug: "lyra", category: "personal" },
   { ...museData, slug: "muse", category: "personal" },
   { ...health2bpmData, slug: "health2bpm", category: "personal" },
+  { ...orderManager2Data, slug: "order-manager2", category: "university" },
 ];
 
 // slugから記事を取得

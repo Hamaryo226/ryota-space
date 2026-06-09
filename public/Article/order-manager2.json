@@ -1,0 +1,20 @@
+{
+  "thumbnail": "/thum/0.jpg",
+  "title": "OrderManager2 - 注文管理システム",
+  "systemname": "OrderManager2",
+  "date": "2025年7月 ~ 2025年10月",
+  "description": "学祭で使用する注文管理システム。Next.jsとPostgreSQLを用いて、注文受付から調理管理、呼び出し表示までを一貫して管理。",
+  "content": {
+    "概要": "学祭の模擬店などで使用する注文管理Webアプリケーション。Next.js 15のApp Routerを採用し、PostgreSQL (Neon)をデータベースとして使用。注文作成から調理完了、呼び出し表示、受け取り完了までをシームレスに管理できる。\n\n主な機能:\n- **注文作成フォーム**: 数量を選択して注文を作成\n- **注文統計**: 調理中・呼び出し中・総数をリアルタイム表示\n- **調理管理**: 調理完了ボタンでステータスを遷移\n- **呼び出し表示**: 専用ディスプレイ画面で呼び出し番号を大きく表示（外部モニター最適化）\n- **3ステータス管理**: pending（調理中）→ ready（呼び出し中）→ completed（受け取り完了）",
+    "目的": "学祭での注文業務を効率化し、調理・呼び出し・受け渡しの流れをスムーズにする",
+    "技術スタック": {
+      "フロントエンド": ["Next.js", "React", "TypeScript"],
+      "スタイリング": ["Tailwind CSS"],
+      "データベース": ["PostgreSQL(Neon)"],
+      "デプロイ": ["Vercel"]
+    }
+  },
+  "links": {
+    "GitHub": "https://github.com/sakurai-lab-07/OrderManager2"
+  }
+}
