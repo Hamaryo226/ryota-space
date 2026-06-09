@@ -1,4 +1,5 @@
 // ブログデータを統合管理
+import b01 from "../../public/Blog/b01.json";
 import b02 from "../../public/Blog/b02.json";
 import b03 from "../../public/Blog/b03.json";
 import b04 from "../../public/Blog/b04.json";
@@ -26,7 +27,8 @@ export type Blog = {
 export const blogs: Blog[] = [
   { ...b04, slug: "04" } as Blog,
   { ...b03, slug: "03" } as Blog,
-  { ...b02, slug: "02" } as Blog
+  { ...b02, slug: "02" } as Blog,
+  { ...b01, slug: "01" } as Blog,
 ];
 
 // slugからブログを取得
