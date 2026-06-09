@@ -1,0 +1,19 @@
+{
+  "thumbnail": "/thum/0.jpg",
+  "title": "Health2BPM - iOS/watchOS App",
+  "systemname": "Health2BPM",
+  "date": "2026年5月 ~ 現在",
+  "description": "Apple Watchから心拍数を読み取り、選択したムードと組み合わせてBPMに合ったSpotifyトラックを提案するiOS/watchOSアプリ。",
+  "content": {
+    "概要": "Apple Watchで計測した心拍数（BPM）とユーザーが選択したムードを組み合わせ、現在のBPMに近いテンポのSpotifyトラックを提案するプロトタイプアプリ。SwiftUIネイティブのiOSアプリにwatchOSコンパニオンアプリが連携する構成。\n\n主な機能:\n- **心拍数計測**: Apple WatchのHealthKitを通じてリアルタイムに心拍数を取得\n- **BPM同期**: WatchConnectivityを使用してApple WatchからiPhoneへBPMを転送\n- **ムード選択**: ユーザーが現在の気分を選択可能\n- **Spotify連携**: OAuth PKCE認証でSpotify APIに接続し、BPMとムードに合ったトラックを提案\n- **設定画面**: Spotify Client ID、Redirect URI、マーケットを設定可能",
+    "目的": "Apple Watchの心拍数とSpotify APIを連携させ、ユーザーの生体情報に適した楽曲を提案するプロトタイプの開発",
+    "技術スタック": {
+      "言語": ["Swift"],
+      "フレームワーク": ["SwiftUI", "HealthKit", "WatchConnectivity"],
+      "API": ["Spotify API"]
+    }
+  },
+  "links": {
+    "GitHub": "https://github.com/Hamaryo226/Health2BPM"
+  }
+}
