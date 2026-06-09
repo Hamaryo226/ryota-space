@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Twitter, Instagram, Github, Youtube } from "lucide-react";
+import { Twitter, Instagram, Github, Youtube, Info } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { ModeToggle } from "@/components/mode-togle";
 import { getAllArticles } from "@/lib/articles";
@@ -79,6 +79,20 @@ export default function Home() {
                 </div>
               </div>
             </Link>
+            <Link
+              href="/Info"
+              className="flex-1 group relative overflow-hidden rounded-xl border bg-card p-4 sm:p-6 hover:shadow-md transition-all hover:-translate-y-0.5"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                  <Info className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
+                </div>
+                <div>
+                  <h2 className="font-semibold text-sm sm:text-base">サイト情報</h2>
+                  <p className="text-xs sm:text-sm text-muted-foreground">技術スタック・バージョン・リポジトリ</p>
+                </div>
+              </div>
+            </Link>
           </div>
         </section>
 
@@ -152,6 +166,7 @@ export default function Home() {
           <div className="flex items-center gap-4">
             <Link href="/Project" className="hover:text-foreground transition-colors">Project</Link>
             <Link href="/Blog" className="hover:text-foreground transition-colors">Blog</Link>
+            <Link href="/Info" className="hover:text-foreground transition-colors">Info</Link>
           </div>
         </div>
       </footer>
