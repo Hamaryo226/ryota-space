@@ -2,7 +2,6 @@
 import fcsData from "../../public/Article/fcs.json";
 import sdsData from "../../public/Article/sds.json";
 import taikoData from "../../public/Article/taikodive.json";
-import orm2Data from "../../public/Article/orm2.json";
 import dwData from "../../public/Article/dw.json";
 import lyraData from "../../public/Article/lyra.json";
 import museData from "../../public/Article/muse.json";
