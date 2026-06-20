@@ -14,7 +14,6 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://hamaryo.dev"),
   title: "ryota-space",
   description: "Ryota's personal space",
   icons: {

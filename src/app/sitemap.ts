@@ -2,10 +2,8 @@ import { MetadataRoute } from 'next'
 import { getAllArticles } from '@/lib/articles'
 import { getAllBlogs } from '@/lib/blogs'
 
-export const dynamic = 'force-static'
-
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://hamaryo.dev'
+  const baseUrl = 'https://ryota-space.vercel.app'
 
   // 静的ルート
   const routes = ['', '/Project', '/Blog'].map((route) => ({

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-const baseUrl = "https://hamaryo.dev";
+const baseUrl = "https://ryota-space.vercel.app";
 
 export const defaultMetadata: Metadata = {
   title: "ryota-space",
