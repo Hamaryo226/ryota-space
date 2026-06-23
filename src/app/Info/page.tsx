@@ -1,5 +1,3 @@
-import { execSync } from "child_process";
-
 import type { ElementType } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -81,7 +79,8 @@ const repoInfo = {
   url: "https://github.com/Hamaryo226/ryota-space",
 };
 
-const lastUpdated = execSync('git log -1 --format=%cd --date=format:"%Y/%m/%d"').toString().trim();
+const buildDate = new Date();
+const lastUpdated = `${buildDate.getFullYear()}/${String(buildDate.getMonth() + 1).padStart(2, "0")}/${String(buildDate.getDate()).padStart(2, "0")}`;
 
 export default function InfoPage() {
   return (
