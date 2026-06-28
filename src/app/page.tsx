@@ -151,10 +151,10 @@ export default function Home() {
             リンク
           </h2>
           <div className="flex flex-col sm:flex-row flex-wrap gap-3">
-            <SocialLink href="https://twitter.com/_hamaryo" icon={Twitter} label="X (Twitter)" />
+            {/* <SocialLink href="https://twitter.com/_hamaryo" icon={Twitter} label="X (Twitter)" /> */}
             <SocialLink href="https://www.instagram.com/ryota_ztts" icon={Instagram} label="Instagram" />
             <SocialLink href="https://github.com/Hamaryo226" icon={Github} label="GitHub" />
-            <SocialLink href="https://www.youtube.com/@Fumolat" icon={Youtube} label="YouTube" />
+            {/* <SocialLink href="https://www.youtube.com/@Fumolat" icon={Youtube} label="YouTube" /> */}
           </div>
         </section>
       </main>
