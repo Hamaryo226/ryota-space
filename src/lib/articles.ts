@@ -41,12 +41,12 @@ export type Article = {
 export const articles: Article[] = [
   { ...fcsData, slug: "fcs", category: "university" },
   { ...sdsData, slug: "sds", category: "university" },
+  { ...orderManager2Data, slug: "order-manager2", category: "university" },
   { ...taikoData, slug: "taikodive", category: "personal" },
   { ...dwData, slug: "drop-watermark", category: "personal" },
   { ...lyraData, slug: "lyra", category: "personal" },
   { ...museData, slug: "muse", category: "personal" },
   { ...health2bpmData, slug: "health2bpm", category: "personal" },
-  { ...orderManager2Data, slug: "order-manager2", category: "university" },
 ];
 
 // slugから記事を取得

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { getArticleBySlug, getAllSlugs } from "@/lib/articles";
 import { BackButton } from "@/components/back-button";
 import { ModeToggle } from "@/components/mode-togle";
+import { WipBanner } from "@/components/wip-banner";
 
 function getTechLogoPath(techName: string): { light?: string; dark?: string } | null {
   const normalizedName = techName.toLowerCase().replace(/\s+/g, '').replace(/#/g, 'sharp');
@@ -134,6 +135,8 @@ export default async function ProjectDetailPage({
 
           {/* ===== メインコンテンツ ===== */}
           <div className="min-w-0">
+
+            <WipBanner />
 
             {/* 説明 */}
             {article.description && (

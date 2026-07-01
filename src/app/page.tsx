@@ -65,6 +65,7 @@ export default function Home() {
                 </div>
               </div>
             </Link>
+            {/*}
             <Link
               href="/Blog"
               className="flex-1 group relative overflow-hidden rounded-xl border bg-card p-4 sm:p-6 hover:shadow-md transition-all hover:-translate-y-0.5"
@@ -79,6 +80,7 @@ export default function Home() {
                 </div>
               </div>
             </Link>
+            */}
             <Link
               href="/Info"
               className="flex-1 group relative overflow-hidden rounded-xl border bg-card p-4 sm:p-6 hover:shadow-md transition-all hover:-translate-y-0.5"
@@ -96,12 +98,12 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ===== 注目プロジェクト ===== */}
+        {/* ===== プロジェクト ===== */}
         <section className="mb-12 md:mb-20">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl sm:text-2xl font-bold flex items-center gap-2">
               <span className="w-1 h-5 sm:h-6 bg-primary rounded-full" />
-              注目プロジェクト
+              プロジェクト
             </h2>
             <Link href="/Project" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               すべて見る →
@@ -165,7 +167,7 @@ export default function Home() {
           <p>&copy; {new Date().getFullYear()} Hamaryo</p>
           <div className="flex items-center gap-4">
             <Link href="/Project" className="hover:text-foreground transition-colors">Project</Link>
-            <Link href="/Blog" className="hover:text-foreground transition-colors">Blog</Link>
+            {/*<Link href="/Blog" className="hover:text-foreground transition-colors">Blog</Link>*/}
             <Link href="/Info" className="hover:text-foreground transition-colors">Info</Link>
           </div>
         </div>

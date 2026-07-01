@@ -56,7 +56,7 @@ const CloudflareIcon = () => (
 );
 
 const techStack: TechItem[] = [
-  { name: "Next.js", version: packageJson.dependencies.next, category: "Framework", icon: Globe, brand: VercelIcon },
+  { name: "Next.js", version: packageJson.dependencies.next, category: "Framework", icon: Globe},
   { name: "React", version: packageJson.dependencies.react, category: "UI Library", icon: Layers },
   { name: "TypeScript", version: packageJson.devDependencies.typescript, category: "Language", icon: FileCode },
   { name: "Tailwind CSS", version: packageJson.devDependencies.tailwindcss, category: "Styling", icon: Palette },
