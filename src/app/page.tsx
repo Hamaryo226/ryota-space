@@ -10,10 +10,10 @@ export default function Home() {
 
   return (
     <div className="min-h-screen w-full overflow-x-hidden bg-gradient-to-b from-background to-muted/20">
-      <main className="mx-auto w-full max-w-screen-lg px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <main className="mx-auto w-full max-w-screen-lg px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
 
         {/* ===== ヘッダー ===== */}
-        <div className="flex items-center justify-between mb-8 sm:mb-16">
+        <div className="mb-6 flex items-center justify-between">
           <Link href="/" className="text-sm font-mono text-muted-foreground hover:text-foreground transition-colors">
             ryota-space
           </Link>
