@@ -1,7 +1,6 @@
 // 記事データを統合管理
 import fcsData from "../../public/Article/fcs.json";
 import sdsData from "../../public/Article/sds.json";
-import taikoData from "../../public/Article/taikodive.json";
 import dwData from "../../public/Article/dw.json";
 import lyraData from "../../public/Article/lyra.json";
 import museData from "../../public/Article/muse.json";
@@ -42,7 +41,6 @@ export const articles: Article[] = [
   { ...fcsData, slug: "fcs", category: "university" },
   { ...sdsData, slug: "sds", category: "university" },
   { ...orderManager2Data, slug: "order-manager2", category: "university" },
-  { ...taikoData, slug: "taikodive", category: "personal" },
   { ...dwData, slug: "drop-watermark", category: "personal" },
   { ...lyraData, slug: "lyra", category: "personal" },
   { ...museData, slug: "muse", category: "personal" },
